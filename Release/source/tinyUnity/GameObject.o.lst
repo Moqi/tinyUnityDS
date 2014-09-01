@@ -1,0 +1,235 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"GameObject.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	_ZN9tinyUnity10GameObjectD2Ev
+  19              	_ZN9tinyUnity10GameObjectD2Ev:
+  20              	.LFB190:
+  21              		.file 1 "../source/tinyUnity/GameObject.cpp"
+   1:../source/tinyUnity/GameObject.cpp **** /*
+   2:../source/tinyUnity/GameObject.cpp ****  * GameObject.cpp
+   3:../source/tinyUnity/GameObject.cpp ****  *
+   4:../source/tinyUnity/GameObject.cpp ****  *  Created on: 2013-07-09
+   5:../source/tinyUnity/GameObject.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/GameObject.cpp ****  */
+   7:../source/tinyUnity/GameObject.cpp **** 
+   8:../source/tinyUnity/GameObject.cpp **** #include "GameObject.h"
+   9:../source/tinyUnity/GameObject.cpp **** 
+  10:../source/tinyUnity/GameObject.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/GameObject.cpp **** 
+  12:../source/tinyUnity/GameObject.cpp **** GameObject::GameObject() {
+  13:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated constructor stub
+  14:../source/tinyUnity/GameObject.cpp **** 
+  15:../source/tinyUnity/GameObject.cpp **** }
+  16:../source/tinyUnity/GameObject.cpp **** 
+  17:../source/tinyUnity/GameObject.cpp **** GameObject::~GameObject() {
+  22              		.loc 1 17 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              	.LVL0:
+  28 0000 10402DE9 		stmfd	sp!, {r4, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 4, -8
+  32              		.cfi_offset 14, -4
+  33              	.LBB2:
+  34              		.loc 1 17 0
+  35 0004 14309FE5 		ldr	r3, .L2
+  36              	.LBE2:
+  37 0008 0040A0E1 		mov	r4, r0
+  38              	.LBB3:
+  39 000c 003080E5 		str	r3, [r0]
+  18:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated destructor stub
+  19:../source/tinyUnity/GameObject.cpp **** }
+  40              		.loc 1 19 0
+  41 0010 FEFFFFEB 		bl	_ZN9tinyUnity6ObjectD2Ev
+  42              	.LVL1:
+  43              	.LBE3:
+  44 0014 0400A0E1 		mov	r0, r4
+  45 0018 1040BDE8 		ldmfd	sp!, {r4, lr}
+  46              	.LVL2:
+  47 001c 1EFF2FE1 		bx	lr
+  48              	.L3:
+  49              		.align	2
+  50              	.L2:
+  51 0020 08000000 		.word	.LANCHOR0+8
+  52              		.cfi_endproc
+  53              	.LFE190:
+  55              		.global	_ZN9tinyUnity10GameObjectD1Ev
+  56              		.set	_ZN9tinyUnity10GameObjectD1Ev,_ZN9tinyUnity10GameObjectD2Ev
+  57              		.align	2
+  58              		.global	_ZN9tinyUnity10GameObjectD0Ev
+  60              	_ZN9tinyUnity10GameObjectD0Ev:
+  61              	.LFB192:
+  17:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated destructor stub
+  62              		.loc 1 17 0
+  63              		.cfi_startproc
+  64              		@ Function supports interworking.
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              	.LVL3:
+  68 0024 10402DE9 		stmfd	sp!, {r4, lr}
+  69              	.LCFI1:
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 4, -8
+  72              		.cfi_offset 14, -4
+  17:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated destructor stub
+  73              		.loc 1 17 0
+  74 0028 0040A0E1 		mov	r4, r0
+  75              		.loc 1 19 0
+  76 002c FEFFFFEB 		bl	_ZN9tinyUnity10GameObjectD1Ev
+  77              	.LVL4:
+  78 0030 0400A0E1 		mov	r0, r4
+  79 0034 FEFFFFEB 		bl	_ZdlPv
+  80              	.LVL5:
+  81 0038 0400A0E1 		mov	r0, r4
+  82 003c 1040BDE8 		ldmfd	sp!, {r4, lr}
+  83              	.LVL6:
+  84 0040 1EFF2FE1 		bx	lr
+  85              		.cfi_endproc
+  86              	.LFE192:
+  88              		.align	2
+  89              		.global	_ZN9tinyUnity10GameObjectC2Ev
+  91              	_ZN9tinyUnity10GameObjectC2Ev:
+  92              	.LFB187:
+  12:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated constructor stub
+  93              		.loc 1 12 0
+  94              		.cfi_startproc
+  95              		@ Function supports interworking.
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              	.LVL7:
+  99 0044 10402DE9 		stmfd	sp!, {r4, lr}
+ 100              	.LCFI2:
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 4, -8
+ 103              		.cfi_offset 14, -4
+  12:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated constructor stub
+ 104              		.loc 1 12 0
+ 105 0048 0040A0E1 		mov	r4, r0
+ 106              	.LBB4:
+ 107 004c FEFFFFEB 		bl	_ZN9tinyUnity6ObjectC2Ev
+ 108              	.LVL8:
+ 109 0050 0C309FE5 		ldr	r3, .L6
+ 110              	.LBE4:
+  15:../source/tinyUnity/GameObject.cpp **** 
+ 111              		.loc 1 15 0
+ 112 0054 0400A0E1 		mov	r0, r4
+ 113              	.LBB5:
+  12:../source/tinyUnity/GameObject.cpp **** 	// TODO Auto-generated constructor stub
+ 114              		.loc 1 12 0
+ 115 0058 003084E5 		str	r3, [r4]
+ 116              	.LBE5:
+  15:../source/tinyUnity/GameObject.cpp **** 
+ 117              		.loc 1 15 0
+ 118 005c 1040BDE8 		ldmfd	sp!, {r4, lr}
+ 119              	.LVL9:
+ 120 0060 1EFF2FE1 		bx	lr
+ 121              	.L7:
+ 122              		.align	2
+ 123              	.L6:
+ 124 0064 08000000 		.word	.LANCHOR0+8
+ 125              		.cfi_endproc
+ 126              	.LFE187:
+ 128              		.global	_ZN9tinyUnity10GameObjectC1Ev
+ 129              		.set	_ZN9tinyUnity10GameObjectC1Ev,_ZN9tinyUnity10GameObjectC2Ev
+ 130              		.global	_ZTVN9tinyUnity10GameObjectE
+ 131              		.section	.rodata
+ 132              		.align	3
+ 133              		.set	.LANCHOR0,. + 0
+ 136              	_ZTVN9tinyUnity10GameObjectE:
+ 137 0000 00000000 		.word	0
+ 138 0004 00000000 		.word	0
+ 139 0008 00000000 		.word	_ZN9tinyUnity10GameObjectD1Ev
+ 140 000c 00000000 		.word	_ZN9tinyUnity10GameObjectD0Ev
+ 141              		.text
+ 142              	.Letext0:
+ 143              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 144              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 145              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 146              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 147              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 148              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 149              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 150              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 151              		.file 10 "../source/tinyUnity/Object.h"
+ 152              		.file 11 "../source/tinyUnity/GameObject.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 GameObject.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:19     .text:00000000 _ZN9tinyUnity10GameObjectD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:51     .text:00000020 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:19     .text:00000000 _ZN9tinyUnity10GameObjectD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:57     .text:00000024 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:60     .text:00000024 _ZN9tinyUnity10GameObjectD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:91     .text:00000044 _ZN9tinyUnity10GameObjectC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:124    .text:00000064 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:91     .text:00000044 _ZN9tinyUnity10GameObjectC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:136    .rodata:00000000 _ZTVN9tinyUnity10GameObjectE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccreZjbE.s:132    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.ef717f0b0fe6f53a02cd0d67063b9d5b
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.dma.h.50.a955dbc97e195f4838666434bca4a52b
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.sassert.h.43.7e84097964ba1c61c895bb636f8df047
+                           .group:00000000 wm4.video.h.83.235168beab22bda04c79ff9483358ca5
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.bios.h.30.169aa6d169a53cccccf3763844018a52
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+_ZN9tinyUnity6ObjectD2Ev
+_ZdlPv
+_ZN9tinyUnity6ObjectC2Ev

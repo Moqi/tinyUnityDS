@@ -1,0 +1,437 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Vector3.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	_ZN9tinyUnity7Vector3D2Ev
+  19              	_ZN9tinyUnity7Vector3D2Ev:
+  20              	.LFB190:
+  21              		.file 1 "../source/tinyUnity/Vector3.cpp"
+   1:../source/tinyUnity/Vector3.cpp **** /*
+   2:../source/tinyUnity/Vector3.cpp ****  * Vector3.cpp
+   3:../source/tinyUnity/Vector3.cpp ****  *
+   4:../source/tinyUnity/Vector3.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/Vector3.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/Vector3.cpp ****  */
+   7:../source/tinyUnity/Vector3.cpp **** 
+   8:../source/tinyUnity/Vector3.cpp **** #include "Vector3.h"
+   9:../source/tinyUnity/Vector3.cpp **** #include <nds.h>
+  10:../source/tinyUnity/Vector3.cpp **** #include <nds/arm9/videoGL.h>
+  11:../source/tinyUnity/Vector3.cpp **** 
+  12:../source/tinyUnity/Vector3.cpp **** namespace tinyUnity{
+  13:../source/tinyUnity/Vector3.cpp **** Vector3::Vector3()
+  14:../source/tinyUnity/Vector3.cpp **** {
+  15:../source/tinyUnity/Vector3.cpp **** 	x,y,z = 0;
+  16:../source/tinyUnity/Vector3.cpp **** 	// TODO Auto-generated constructor stub
+  17:../source/tinyUnity/Vector3.cpp **** 
+  18:../source/tinyUnity/Vector3.cpp **** }
+  19:../source/tinyUnity/Vector3.cpp **** 
+  20:../source/tinyUnity/Vector3.cpp **** Vector3::~Vector3() {
+  22              		.loc 1 20 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28              	.LVL0:
+  29              	.LBB5:
+  30              		.loc 1 20 0
+  31 0000 04309FE5 		ldr	r3, .L2
+  32 0004 003080E5 		str	r3, [r0]
+  33              	.LBE5:
+  21:../source/tinyUnity/Vector3.cpp **** 	// TODO Auto-generated destructor stub
+  22:../source/tinyUnity/Vector3.cpp **** }
+  34              		.loc 1 22 0
+  35 0008 1EFF2FE1 		bx	lr
+  36              	.L3:
+  37              		.align	2
+  38              	.L2:
+  39 000c 08000000 		.word	.LANCHOR0+8
+  40              		.cfi_endproc
+  41              	.LFE190:
+  43              		.global	_ZN9tinyUnity7Vector3D1Ev
+  44              		.set	_ZN9tinyUnity7Vector3D1Ev,_ZN9tinyUnity7Vector3D2Ev
+  45              		.align	2
+  46              		.global	_ZN9tinyUnity7Vector3D0Ev
+  48              	_ZN9tinyUnity7Vector3D0Ev:
+  49              	.LFB192:
+  20:../source/tinyUnity/Vector3.cpp **** 	// TODO Auto-generated destructor stub
+  50              		.loc 1 20 0
+  51              		.cfi_startproc
+  52              		@ Function supports interworking.
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              	.LVL1:
+  56 0010 10402DE9 		stmfd	sp!, {r4, lr}
+  57              	.LCFI0:
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 4, -8
+  60              		.cfi_offset 14, -4
+  61              	.LBB6:
+  62              	.LBB7:
+  20:../source/tinyUnity/Vector3.cpp **** 	// TODO Auto-generated destructor stub
+  63              		.loc 1 20 0
+  64 0014 14309FE5 		ldr	r3, .L5
+  65              	.LBE7:
+  66              	.LBE6:
+  67 0018 0040A0E1 		mov	r4, r0
+  68              	.LBB9:
+  69              	.LBB8:
+  70 001c 003080E5 		str	r3, [r0]
+  71              	.LBE8:
+  72              	.LBE9:
+  73              		.loc 1 22 0
+  74 0020 FEFFFFEB 		bl	_ZdlPv
+  75              	.LVL2:
+  76 0024 0400A0E1 		mov	r0, r4
+  77 0028 1040BDE8 		ldmfd	sp!, {r4, lr}
+  78              	.LVL3:
+  79 002c 1EFF2FE1 		bx	lr
+  80              	.L6:
+  81              		.align	2
+  82              	.L5:
+  83 0030 08000000 		.word	.LANCHOR0+8
+  84              		.cfi_endproc
+  85              	.LFE192:
+  87              		.align	2
+  88              		.global	_ZN9tinyUnity7Vector3C2Ev
+  90              	_ZN9tinyUnity7Vector3C2Ev:
+  91              	.LFB187:
+  13:../source/tinyUnity/Vector3.cpp **** {
+  92              		.loc 1 13 0
+  93              		.cfi_startproc
+  94              		@ Function supports interworking.
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98              	.LVL4:
+  99              	.LBB10:
+  13:../source/tinyUnity/Vector3.cpp **** {
+ 100              		.loc 1 13 0
+ 101 0034 0C209FE5 		ldr	r2, .L8
+ 102 0038 002080E5 		str	r2, [r0]
+  15:../source/tinyUnity/Vector3.cpp **** 	// TODO Auto-generated constructor stub
+ 103              		.loc 1 15 0
+ 104 003c 0020A0E3 		mov	r2, #0
+ 105 0040 B820C0E1 		strh	r2, [r0, #8]	@ movhi
+ 106              	.LBE10:
+  18:../source/tinyUnity/Vector3.cpp **** 
+ 107              		.loc 1 18 0
+ 108 0044 1EFF2FE1 		bx	lr
+ 109              	.L9:
+ 110              		.align	2
+ 111              	.L8:
+ 112 0048 08000000 		.word	.LANCHOR0+8
+ 113              		.cfi_endproc
+ 114              	.LFE187:
+ 116              		.global	_ZN9tinyUnity7Vector3C1Ev
+ 117              		.set	_ZN9tinyUnity7Vector3C1Ev,_ZN9tinyUnity7Vector3C2Ev
+ 118              		.global	__aeabi_i2f
+ 119              		.global	__aeabi_fmul
+ 120              		.align	2
+ 121              		.global	_ZN9tinyUnity7Vector38DistanceES0_
+ 123              	_ZN9tinyUnity7Vector38DistanceES0_:
+ 124              	.LFB193:
+  23:../source/tinyUnity/Vector3.cpp **** 
+  24:../source/tinyUnity/Vector3.cpp **** float Vector3::Distance(Vector3 v)
+  25:../source/tinyUnity/Vector3.cpp **** {
+ 125              		.loc 1 25 0
+ 126              		.cfi_startproc
+ 127              		@ Function supports interworking.
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              	.LVL5:
+  26:../source/tinyUnity/Vector3.cpp **** 	return f32tofloat(sqrtf32(v.x*v.x +v.y*v.y +v.z*v.z));
+ 131              		.loc 1 26 0
+ 132 004c F620D1E1 		ldrsh	r2, [r1, #6]
+ 133 0050 F4C0D1E1 		ldrsh	ip, [r1, #4]
+  25:../source/tinyUnity/Vector3.cpp **** 	return f32tofloat(sqrtf32(v.x*v.x +v.y*v.y +v.z*v.z));
+ 134              		.loc 1 25 0
+ 135 0054 08402DE9 		stmfd	sp!, {r3, lr}
+ 136              	.LCFI1:
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 3, -8
+ 139              		.cfi_offset 14, -4
+ 140              		.loc 1 26 0
+ 141 0058 F830D1E1 		ldrsh	r3, [r1, #8]
+ 142 005c 920201E0 		mul	r1, r2, r2
+ 143              	.LVL6:
+ 144 0060 0120A0E1 		mov	r2, r1
+ 145 0064 9C2C21E0 		mla	r1, ip, ip, r2
+ 146 0068 01C0A0E1 		mov	ip, r1
+ 147 006c 93C32CE0 		mla	ip, r3, r3, ip
+ 148              	.LVL7:
+ 149              	.LBB13:
+ 150              	.LBB14:
+ 151              		.file 2 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h"
+   1:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** /*---------------------------------------------------------------------------------
+   2:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+   3:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	math functions
+   4:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+   5:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	Copyright (C) 2005
+   6:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		Michael Noland (joat)
+   7:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		Jason Rogers (dovoto)
+   8:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		Dave Murphy (WinterMute)
+   9:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  10:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	This software is provided 'as-is', without any express or implied
+  11:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	warranty.  In no event will the authors be held liable for any
+  12:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	damages arising from the use of this software.
+  13:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  14:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	Permission is granted to anyone to use this software for any
+  15:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	purpose, including commercial applications, and to alter it and
+  16:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	redistribute it freely, subject to the following restrictions:
+  17:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  18:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	1.	The origin of this software must not be misrepresented; you
+  19:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		must not claim that you wrote the original software. If you use
+  20:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		this software in a product, an acknowledgment in the product
+  21:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		documentation would be appreciated but is not required.
+  22:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	2.	Altered source versions must be plainly marked as such, and
+  23:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		must not be misrepresented as being the original software.
+  24:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	3.	This notice may not be removed or altered from any source
+  25:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 		distribution.
+  26:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  27:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** ---------------------------------------------------------------------------------*/
+  28:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** /*!	\file math.h
+  29:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	\brief hardware coprocessor math instructions.
+  30:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** */
+  31:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  32:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #ifndef MATH_ARM9_INCLUDE
+  33:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define MATH_ARM9_INCLUDE
+  34:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  35:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #include "nds/ndstypes.h"
+  36:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  37:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  38:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIVCNT			(*(vu16*)(0x04000280))
+  39:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_NUMER		(*(vs64*) (0x04000290))
+  40:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_NUMER_L		(*(vs32*) (0x04000290))
+  41:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_NUMER_H		(*(vs32*) (0x04000294))
+  42:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_DENOM		(*(vs64*) (0x04000298))
+  43:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_DENOM_L		(*(vs32*) (0x04000298))
+  44:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_DENOM_H		(*(vs32*) (0x0400029C))
+  45:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_RESULT		(*(vs64*) (0x040002A0))
+  46:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_RESULT_L	(*(vs32*) (0x040002A0))
+  47:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIV_RESULT_H	(*(vs32*) (0x040002A4))
+  48:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIVREM_RESULT	(*(vs64*) (0x040002A8))
+  49:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIVREM_RESULT_L	(*(vs32*) (0x040002A8))
+  50:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_DIVREM_RESULT_H	(*(vs32*) (0x040002AC))
+  51:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  52:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_SQRTCNT			(*(vu16*)(0x040002B0))
+  53:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_SQRT_PARAM		(*(vs64*) (0x040002B8))
+  54:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_SQRT_PARAM_L	(*(vs32*) (0x040002B8))
+  55:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_SQRT_PARAM_H	(*(vs32*) (0x040002BC))
+  56:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define REG_SQRT_RESULT		(*(vu32*) (0x040002B4))
+  57:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  58:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** //  Math coprocessor modes
+  59:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  60:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define DIV_64_64			2
+  61:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define DIV_64_32			1
+  62:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define DIV_32_32			0
+  63:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define DIV_BUSY			(1<<15)
+  64:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  65:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define SQRT_64				1
+  66:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define SQRT_32				0
+  67:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define SQRT_BUSY			(1<<15)
+  68:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  69:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** //  Fixed point conversion macros
+  70:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  71:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define inttof32(n)          ((n) << 12) /*!< \brief convert int to f32 */
+  72:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define f32toint(n)          ((n) >> 12) /*!< \brief convert f32 to int */
+  73:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define floattof32(n)        ((int)((n) * (1 << 12))) /*!< \brief convert float to f32 */
+  74:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** #define f32tofloat(n)        (((float)(n)) / (float)(1<<12)) /*!< \brief convert f32 to float */
+  75:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  76:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** //  Fixed Point versions
+  77:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  78:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** static inline
+  79:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** /**
+  80:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *    \brief Fixed point divide
+  81:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *    \param num Takes 20.12 numerator.
+  82:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *    \param den Takes 20.12 denominator.
+  83:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *    \return returns 20.12 result.
+  84:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** */
+  85:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** int32 divf32(int32 num, int32 den)
+  86:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** {
+  87:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	REG_DIVCNT = DIV_64_32;
+  88:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  89:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	while(REG_DIVCNT & DIV_BUSY);
+  90:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  91:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	REG_DIV_NUMER = ((int64)num) << 12;
+  92:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	REG_DIV_DENOM_L = den;
+  93:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  94:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	while(REG_DIVCNT & DIV_BUSY);
+  95:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  96:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	return (REG_DIV_RESULT_L);
+  97:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** }
+  98:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+  99:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** static inline
+ 100:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** /**
+ 101:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \brief Fixed point multiply
+ 102:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \param a Takes 20.12
+ 103:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \param b Takes 20.12
+ 104:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \return returns 20.12 result
+ 105:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** */
+ 106:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** int32 mulf32(int32 a, int32 b)
+ 107:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** {
+ 108:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	long long result = (long long)a * (long long)b;
+ 109:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	return (int32)(result >> 12);
+ 110:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** }
+ 111:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+ 112:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** static inline
+ 113:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** /**
+ 114:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \brief Fixed point sqrt
+ 115:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \param a Takes 20.12
+ 116:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** *   \return returns 20.12 result
+ 117:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** */
+ 118:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** int32 sqrtf32(int32 a)
+ 119:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** {
+ 120:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	REG_SQRTCNT = SQRT_64;
+ 152              		.loc 2 120 0
+ 153 0070 0123A0E3 		mov	r2, #67108864
+ 154 0074 2B3EA0E3 		mov	r3, #688
+ 155 0078 0110A0E3 		mov	r1, #1
+ 156 007c B31082E1 		strh	r1, [r2, r3]	@ movhi
+ 157              	.L12:
+ 121:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+ 122:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	while(REG_SQRTCNT & SQRT_BUSY);
+ 158              		.loc 2 122 0
+ 159 0080 B31092E1 		ldrh	r1, [r2, r3]
+ 160 0084 01E3A0E3 		mov	lr, #67108864
+ 161 0088 020911E3 		tst	r1, #32768
+ 162 008c FBFFFF1A 		bne	.L12
+ 123:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+ 124:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	REG_SQRT_PARAM = ((int64)a) << 12;
+ 163              		.loc 2 124 0
+ 164 0090 CC1FA0E1 		mov	r1, ip, asr #31
+ 165 0094 0136A0E1 		mov	r3, r1, asl #12
+ 166 0098 0C26A0E1 		mov	r2, ip, asl #12
+ 167 009c 2C3A83E1 		orr	r3, r3, ip, lsr #20
+ 168 00a0 B8228EE5 		str	r2, [lr, #696]
+ 169 00a4 BC328EE5 		str	r3, [lr, #700]
+ 125:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+ 126:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	while(REG_SQRTCNT & SQRT_BUSY);
+ 170              		.loc 2 126 0
+ 171 00a8 2B2EA0E3 		mov	r2, #688
+ 172              	.L14:
+ 173 00ac B2309EE1 		ldrh	r3, [lr, r2]
+ 174 00b0 020913E3 		tst	r3, #32768
+ 175 00b4 FCFFFF1A 		bne	.L14
+ 127:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 
+ 128:/Users/awiebe/devkitPro/libnds/include/nds/arm9/math.h **** 	return REG_SQRT_RESULT;
+ 176              		.loc 2 128 0
+ 177 00b8 0133A0E3 		mov	r3, #67108864
+ 178 00bc B40293E5 		ldr	r0, [r3, #692]
+ 179              	.LVL8:
+ 180              	.LBE14:
+ 181              	.LBE13:
+ 182              		.loc 1 26 0
+ 183 00c0 FEFFFFEB 		bl	__aeabi_i2f
+ 184              	.LVL9:
+ 185 00c4 E615A0E3 		mov	r1, #964689920
+ 186 00c8 FEFFFFEB 		bl	__aeabi_fmul
+ 187              	.LVL10:
+  27:../source/tinyUnity/Vector3.cpp **** }
+ 188              		.loc 1 27 0
+ 189 00cc 0840BDE8 		ldmfd	sp!, {r3, lr}
+ 190 00d0 1EFF2FE1 		bx	lr
+ 191              		.cfi_endproc
+ 192              	.LFE193:
+ 194              		.global	_ZTVN9tinyUnity7Vector3E
+ 195              		.section	.rodata
+ 196              		.align	3
+ 197              		.set	.LANCHOR0,. + 0
+ 200              	_ZTVN9tinyUnity7Vector3E:
+ 201 0000 00000000 		.word	0
+ 202 0004 00000000 		.word	0
+ 203 0008 00000000 		.word	_ZN9tinyUnity7Vector3D1Ev
+ 204 000c 00000000 		.word	_ZN9tinyUnity7Vector3D0Ev
+ 205              		.text
+ 206              	.Letext0:
+ 207              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 208              		.file 4 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 209              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 210              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 211              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 212              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 213              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 214              		.file 10 "../source/tinyUnity/Vector3.h"
+ 215              		.file 11 "../source/tinyUnity/types.h"
+ 216              		.file 12 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Vector3.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:19     .text:00000000 _ZN9tinyUnity7Vector3D2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:39     .text:0000000c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:19     .text:00000000 _ZN9tinyUnity7Vector3D1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:45     .text:00000010 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:48     .text:00000010 _ZN9tinyUnity7Vector3D0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:83     .text:00000030 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:87     .text:00000034 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:90     .text:00000034 _ZN9tinyUnity7Vector3C2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:112    .text:00000048 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:90     .text:00000034 _ZN9tinyUnity7Vector3C1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:120    .text:0000004c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:123    .text:0000004c _ZN9tinyUnity7Vector38DistanceES0_
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:200    .rodata:00000000 _ZTVN9tinyUnity7Vector3E
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2QYvLw.s:196    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.ef717f0b0fe6f53a02cd0d67063b9d5b
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.dma.h.50.a955dbc97e195f4838666434bca4a52b
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.sassert.h.43.7e84097964ba1c61c895bb636f8df047
+                           .group:00000000 wm4.video.h.83.235168beab22bda04c79ff9483358ca5
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.bios.h.30.169aa6d169a53cccccf3763844018a52
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+_ZdlPv
+__aeabi_i2f
+__aeabi_fmul

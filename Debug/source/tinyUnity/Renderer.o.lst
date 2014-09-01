@@ -1,0 +1,246 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Renderer.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.text
+  23              		.align	2
+  24              		.global	_ZN9tinyUnity8RendererC2Ev
+  26              	_ZN9tinyUnity8RendererC2Ev:
+  27              	.LFB195:
+  28              		.file 1 "../source/tinyUnity/Renderer.cpp"
+   1:../source/tinyUnity/Renderer.cpp **** /*
+   2:../source/tinyUnity/Renderer.cpp ****  * Renderer.cpp
+   3:../source/tinyUnity/Renderer.cpp ****  *
+   4:../source/tinyUnity/Renderer.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/Renderer.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/Renderer.cpp ****  */
+   7:../source/tinyUnity/Renderer.cpp **** 
+   8:../source/tinyUnity/Renderer.cpp **** #include "Renderer.h"
+   9:../source/tinyUnity/Renderer.cpp **** namespace tinyUnity{
+  10:../source/tinyUnity/Renderer.cpp **** Renderer::Renderer() {
+  29              		.loc 1 10 0
+  30              		.cfi_startproc
+  31              		@ Function supports interworking.
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35 0000 04B02DE5 		str	fp, [sp, #-4]!
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 11, -4
+  39 0004 00B08DE2 		add	fp, sp, #0
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_register 11
+  42 0008 0CD04DE2 		sub	sp, sp, #12
+  43 000c 08000BE5 		str	r0, [fp, #-8]
+  44              	.LBB2:
+  45              		.loc 1 10 0
+  46 0010 08301BE5 		ldr	r3, [fp, #-8]
+  47 0014 14209FE5 		ldr	r2, .L4
+  48 0018 002083E5 		str	r2, [r3]
+  49              	.LBE2:
+  11:../source/tinyUnity/Renderer.cpp **** 	// TODO Auto-generated constructor stub
+  12:../source/tinyUnity/Renderer.cpp **** 
+  13:../source/tinyUnity/Renderer.cpp **** }
+  50              		.loc 1 13 0
+  51 001c 08301BE5 		ldr	r3, [fp, #-8]
+  52 0020 0300A0E1 		mov	r0, r3
+  53 0024 00D04BE2 		sub	sp, fp, #0
+  54              		@ sp needed
+  55 0028 04B09DE4 		ldr	fp, [sp], #4
+  56 002c 1EFF2FE1 		bx	lr
+  57              	.L5:
+  58              		.align	2
+  59              	.L4:
+  60 0030 08000000 		.word	_ZTVN9tinyUnity8RendererE+8
+  61              		.cfi_endproc
+  62              	.LFE195:
+  64              		.global	_ZN9tinyUnity8RendererC1Ev
+  65              		.set	_ZN9tinyUnity8RendererC1Ev,_ZN9tinyUnity8RendererC2Ev
+  66              		.align	2
+  67              		.global	_ZN9tinyUnity8RendererD2Ev
+  69              	_ZN9tinyUnity8RendererD2Ev:
+  70              	.LFB198:
+  14:../source/tinyUnity/Renderer.cpp **** 
+  15:../source/tinyUnity/Renderer.cpp **** Renderer::~Renderer() {
+  71              		.loc 1 15 0
+  72              		.cfi_startproc
+  73              		@ Function supports interworking.
+  74              		@ args = 0, pretend = 0, frame = 8
+  75              		@ frame_needed = 1, uses_anonymous_args = 0
+  76 0034 00482DE9 		stmfd	sp!, {fp, lr}
+  77              	.LCFI2:
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 11, -8
+  80              		.cfi_offset 14, -4
+  81 0038 04B08DE2 		add	fp, sp, #4
+  82              	.LCFI3:
+  83              		.cfi_def_cfa 11, 4
+  84 003c 08D04DE2 		sub	sp, sp, #8
+  85 0040 08000BE5 		str	r0, [fp, #-8]
+  86              	.LBB3:
+  87              		.loc 1 15 0
+  88 0044 08301BE5 		ldr	r3, [fp, #-8]
+  89 0048 28209FE5 		ldr	r2, .L10
+  90 004c 002083E5 		str	r2, [r3]
+  91              	.LBE3:
+  16:../source/tinyUnity/Renderer.cpp **** 	// TODO Auto-generated destructor stub
+  17:../source/tinyUnity/Renderer.cpp **** }
+  92              		.loc 1 17 0
+  93 0050 0030A0E3 		mov	r3, #0
+  94 0054 000053E3 		cmp	r3, #0
+  95 0058 0100000A 		beq	.L8
+  96              		.loc 1 17 0 is_stmt 0 discriminator 1
+  97 005c 08001BE5 		ldr	r0, [fp, #-8]
+  98 0060 FEFFFFEB 		bl	_ZdlPv
+  99              	.L8:
+ 100              		.loc 1 17 0 discriminator 2
+ 101 0064 08301BE5 		ldr	r3, [fp, #-8]
+ 102 0068 0300A0E1 		mov	r0, r3
+ 103 006c 04D04BE2 		sub	sp, fp, #4
+ 104              		@ sp needed
+ 105 0070 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 106 0074 1EFF2FE1 		bx	lr
+ 107              	.L11:
+ 108              		.align	2
+ 109              	.L10:
+ 110 0078 08000000 		.word	_ZTVN9tinyUnity8RendererE+8
+ 111              		.cfi_endproc
+ 112              	.LFE198:
+ 114              		.global	_ZN9tinyUnity8RendererD1Ev
+ 115              		.set	_ZN9tinyUnity8RendererD1Ev,_ZN9tinyUnity8RendererD2Ev
+ 116              		.align	2
+ 117              		.global	_ZN9tinyUnity8RendererD0Ev
+ 119              	_ZN9tinyUnity8RendererD0Ev:
+ 120              	.LFB200:
+  15:../source/tinyUnity/Renderer.cpp **** 	// TODO Auto-generated destructor stub
+ 121              		.loc 1 15 0 is_stmt 1
+ 122              		.cfi_startproc
+ 123              		@ Function supports interworking.
+ 124              		@ args = 0, pretend = 0, frame = 8
+ 125              		@ frame_needed = 1, uses_anonymous_args = 0
+ 126 007c 00482DE9 		stmfd	sp!, {fp, lr}
+ 127              	.LCFI4:
+ 128              		.cfi_def_cfa_offset 8
+ 129              		.cfi_offset 11, -8
+ 130              		.cfi_offset 14, -4
+ 131 0080 04B08DE2 		add	fp, sp, #4
+ 132              	.LCFI5:
+ 133              		.cfi_def_cfa 11, 4
+ 134 0084 08D04DE2 		sub	sp, sp, #8
+ 135 0088 08000BE5 		str	r0, [fp, #-8]
+ 136              		.loc 1 17 0
+ 137 008c 08001BE5 		ldr	r0, [fp, #-8]
+ 138 0090 FEFFFFEB 		bl	_ZN9tinyUnity8RendererD1Ev
+ 139 0094 08001BE5 		ldr	r0, [fp, #-8]
+ 140 0098 FEFFFFEB 		bl	_ZdlPv
+ 141 009c 08301BE5 		ldr	r3, [fp, #-8]
+ 142 00a0 0300A0E1 		mov	r0, r3
+ 143 00a4 04D04BE2 		sub	sp, fp, #4
+ 144              		@ sp needed
+ 145 00a8 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 146 00ac 1EFF2FE1 		bx	lr
+ 147              		.cfi_endproc
+ 148              	.LFE200:
+ 150              		.global	_ZTVN9tinyUnity8RendererE
+ 151              		.section	.rodata
+ 152              		.align	3
+ 155              	_ZTVN9tinyUnity8RendererE:
+ 156 0000 00000000 		.word	0
+ 157 0004 00000000 		.word	0
+ 158 0008 00000000 		.word	_ZN9tinyUnity8RendererD1Ev
+ 159 000c 00000000 		.word	_ZN9tinyUnity8RendererD0Ev
+ 160              		.text
+ 161              	.Letext0:
+ 162              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 163              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 164              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 165              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 166              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 167              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 168              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 169              		.file 9 "../source/tinyUnity/Renderer.h"
+ 170              		.file 10 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 171              		.file 11 "../source/tinyUnity/types.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Renderer.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:26     .text:00000000 _ZN9tinyUnity8RendererC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:60     .text:00000030 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:155    .rodata:00000000 _ZTVN9tinyUnity8RendererE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:26     .text:00000000 _ZN9tinyUnity8RendererC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:66     .text:00000034 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:69     .text:00000034 _ZN9tinyUnity8RendererD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:110    .text:00000078 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:69     .text:00000034 _ZN9tinyUnity8RendererD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:116    .text:0000007c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:119    .text:0000007c _ZN9tinyUnity8RendererD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc0W1pji.s:152    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.c1d3c39fe92b3c0ea0c4445ea1455857
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.dma.h.50.a955dbc97e195f4838666434bca4a52b
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.sassert.h.43.7e84097964ba1c61c895bb636f8df047
+                           .group:00000000 wm4.video.h.83.235168beab22bda04c79ff9483358ca5
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.bios.h.30.169aa6d169a53cccccf3763844018a52
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData
+_ZdlPv

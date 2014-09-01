@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/CPATH/delimiter=\:
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/CPATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/CPLUS_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/C_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/append=true
+environment/buildEnvironmentInclude/org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557/appendContributed=true

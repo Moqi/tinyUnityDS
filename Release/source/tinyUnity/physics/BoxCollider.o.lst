@@ -1,0 +1,204 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"BoxCollider.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	_ZN9tinyUnity11BoxColliderC2Ev
+  19              	_ZN9tinyUnity11BoxColliderC2Ev:
+  20              	.LFB189:
+  21              		.file 1 "../source/tinyUnity/physics/BoxCollider.cpp"
+   1:../source/tinyUnity/physics/BoxCollider.cpp **** /*
+   2:../source/tinyUnity/physics/BoxCollider.cpp ****  * BoxCollider.cpp
+   3:../source/tinyUnity/physics/BoxCollider.cpp ****  *
+   4:../source/tinyUnity/physics/BoxCollider.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/physics/BoxCollider.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/physics/BoxCollider.cpp ****  */
+   7:../source/tinyUnity/physics/BoxCollider.cpp **** 
+   8:../source/tinyUnity/physics/BoxCollider.cpp **** #include "BoxCollider.h"
+   9:../source/tinyUnity/physics/BoxCollider.cpp **** namespace tinyUnity{
+  10:../source/tinyUnity/physics/BoxCollider.cpp **** BoxCollider::BoxCollider() {
+  22              		.loc 1 10 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              	.LVL0:
+  28 0000 10402DE9 		stmfd	sp!, {r4, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 4, -8
+  32              		.cfi_offset 14, -4
+  33              		.loc 1 10 0
+  34 0004 0040A0E1 		mov	r4, r0
+  35              	.LBB2:
+  36 0008 FEFFFFEB 		bl	_ZN9tinyUnity8ColliderC2Ev
+  37              	.LVL1:
+  38 000c 0C309FE5 		ldr	r3, .L2
+  39              	.LBE2:
+  11:../source/tinyUnity/physics/BoxCollider.cpp **** 	// TODO Auto-generated constructor stub
+  12:../source/tinyUnity/physics/BoxCollider.cpp **** 
+  13:../source/tinyUnity/physics/BoxCollider.cpp **** }
+  40              		.loc 1 13 0
+  41 0010 0400A0E1 		mov	r0, r4
+  42              	.LBB3:
+  10:../source/tinyUnity/physics/BoxCollider.cpp **** 	// TODO Auto-generated constructor stub
+  43              		.loc 1 10 0
+  44 0014 003084E5 		str	r3, [r4]
+  45              	.LBE3:
+  46              		.loc 1 13 0
+  47 0018 1040BDE8 		ldmfd	sp!, {r4, lr}
+  48              	.LVL2:
+  49 001c 1EFF2FE1 		bx	lr
+  50              	.L3:
+  51              		.align	2
+  52              	.L2:
+  53 0020 08000000 		.word	_ZTVN9tinyUnity11BoxColliderE+8
+  54              		.cfi_endproc
+  55              	.LFE189:
+  57              		.global	_ZN9tinyUnity11BoxColliderC1Ev
+  58              		.set	_ZN9tinyUnity11BoxColliderC1Ev,_ZN9tinyUnity11BoxColliderC2Ev
+  59              		.align	2
+  60              		.global	_ZN9tinyUnity11BoxColliderD2Ev
+  62              	_ZN9tinyUnity11BoxColliderD2Ev:
+  63              	.LFB192:
+  14:../source/tinyUnity/physics/BoxCollider.cpp **** 
+  15:../source/tinyUnity/physics/BoxCollider.cpp **** BoxCollider::~BoxCollider() {
+  64              		.loc 1 15 0
+  65              		.cfi_startproc
+  66              		@ Function supports interworking.
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              	.LVL3:
+  70 0024 10402DE9 		stmfd	sp!, {r4, lr}
+  71              	.LCFI1:
+  72              		.cfi_def_cfa_offset 8
+  73              		.cfi_offset 4, -8
+  74              		.cfi_offset 14, -4
+  75              	.LBB4:
+  76              		.loc 1 15 0
+  77 0028 14309FE5 		ldr	r3, .L5
+  78              	.LBE4:
+  79 002c 0040A0E1 		mov	r4, r0
+  80              	.LBB5:
+  81 0030 003080E5 		str	r3, [r0]
+  16:../source/tinyUnity/physics/BoxCollider.cpp **** 	// TODO Auto-generated destructor stub
+  17:../source/tinyUnity/physics/BoxCollider.cpp **** }
+  82              		.loc 1 17 0
+  83 0034 FEFFFFEB 		bl	_ZN9tinyUnity8ColliderD2Ev
+  84              	.LVL4:
+  85              	.LBE5:
+  86 0038 0400A0E1 		mov	r0, r4
+  87 003c 1040BDE8 		ldmfd	sp!, {r4, lr}
+  88              	.LVL5:
+  89 0040 1EFF2FE1 		bx	lr
+  90              	.L6:
+  91              		.align	2
+  92              	.L5:
+  93 0044 08000000 		.word	_ZTVN9tinyUnity11BoxColliderE+8
+  94              		.cfi_endproc
+  95              	.LFE192:
+  97              		.global	_ZN9tinyUnity11BoxColliderD1Ev
+  98              		.set	_ZN9tinyUnity11BoxColliderD1Ev,_ZN9tinyUnity11BoxColliderD2Ev
+  99              		.weak	_ZTVN9tinyUnity11BoxColliderE
+ 100              		.section	.rodata._ZTVN9tinyUnity11BoxColliderE,"aG",%progbits,_ZTVN9tinyUnity11BoxColliderE,comdat
+ 101              		.align	3
+ 104              	_ZTVN9tinyUnity11BoxColliderE:
+ 105 0000 00000000 		.word	0
+ 106 0004 00000000 		.word	0
+ 107 0008 00000000 		.word	_ZN9tinyUnity9Component11fixedUpdateEv
+ 108 000c 00000000 		.word	_ZN9tinyUnity9Component6updateEv
+ 109 0010 00000000 		.word	_ZN9tinyUnity9Component5awakeEv
+ 110 0014 00000000 		.word	_ZN9tinyUnity9Component16onCollisionEnterEv
+ 111 0018 00000000 		.word	_ZN9tinyUnity9Component15onCollisionExitEv
+ 112 001c 00000000 		.text
+ 113              	.Letext0:
+ 114              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 115              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 116              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 117              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 118              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 119              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 120              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 121              		.file 9 "../source/tinyUnity/physics/BoxCollider.h"
+ 122              		.file 10 "../source/tinyUnity/physics/Collider.h"
+ 123              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 124              		.file 12 "../source/tinyUnity/physics/../Command.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 BoxCollider.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:19     .text:00000000 _ZN9tinyUnity11BoxColliderC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:53     .text:00000020 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:104    .rodata._ZTVN9tinyUnity11BoxColliderE:00000000 _ZTVN9tinyUnity11BoxColliderE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:19     .text:00000000 _ZN9tinyUnity11BoxColliderC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:59     .text:00000024 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:62     .text:00000024 _ZN9tinyUnity11BoxColliderD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:93     .text:00000044 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:62     .text:00000024 _ZN9tinyUnity11BoxColliderD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc2ZHJEM.s:101    .rodata._ZTVN9tinyUnity11BoxColliderE:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.ef717f0b0fe6f53a02cd0d67063b9d5b
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+_ZN9tinyUnity8ColliderC2Ev
+_ZN9tinyUnity8ColliderD2Ev
+_ZN9tinyUnity9Component11fixedUpdateEv
+_ZN9tinyUnity9Component6updateEv
+_ZN9tinyUnity9Component5awakeEv
+_ZN9tinyUnity9Component16onCollisionEnterEv
+_ZN9tinyUnity9Component15onCollisionExitEv

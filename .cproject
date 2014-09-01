@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.scarab.nds.managedbuilder.parser.NDSParser" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.staticLib" description="" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557" name="Debug" parent="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug">
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.toolchain.debug.1075336053" name="ARM Mac OS X GCC (devkitPro)" nonInternalBuilderId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.toolchain.debug">
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.debugging.level.901991014" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumbinterwork.1599254598" name="Thumb interwork (-mthumb-interwork)" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumbinterwork" value="true" valueType="boolean"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.processor.253277012" name="Processor" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.processor" value="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.arm9" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumb.814882280" name="Thumb (-mthumb)" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumb" value="false" valueType="boolean"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF;org.scarab.nds.managedbuilder.parser.NDSParser;org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.platform.debug.285871392" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.platform.debug"/>
+							<builder buildPath="${workspace_loc:/tinyUnity}/Debug" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug.621191902" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="ARM devkitPro Mac OS X GNU Make builder" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.debug.1764238947" name="ARM devkitPro Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.debug">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input.1141116636" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input"/>
+							</tool>
+							<tool command="arm-none-eabi-gcc" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.debug.432146237" name="ARM devkitPro Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.102583178" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1889496089" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARM9"/>
+								</option>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input.875485284" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input"/>
+							</tool>
+							<tool command="arm-none-eabi-g++" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.debug.1603428915" name="ARM devkitPro Mac OS X GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.1996079102" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.include.paths.1504692680" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/Users/awiebe/devkitPro/libnds/include"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.preprocessor.def.2136782309" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARM9"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.pedantic.661197971" name="Pedantic (-pedantic)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.pedantic" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.extrawarn.391982315" name="Extra warnings (-Wextra)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.extrawarn" value="true" valueType="boolean"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input.2097891381" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.linker.base.605483201" name="ARM devkitPro Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.linker.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.linker.base.1576062383" name="ARM devkitPro Mac OS X GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.linker.base"/>
+							<tool command="arm-none-eabi-ar" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.archiver.debug.31581036" name="ARM devkitPro Mac OS X GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.archiver.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createflash.base.1551724278" name="ARM devkitPro Mac OS X GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createflash.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createlisting.base.1597629409" name="ARM devkitPro Mac OS X GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createlisting.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.printsize.base.2042152178" name="ARM devkitPro Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.printsize.base"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="source/tinyUnity/physics/Octree.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="tinyUnity;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+		</cconfiguration>
+		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.1822599020">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.1822599020" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.scarab.nds.managedbuilder.parser.NDSParser" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension=".nds" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" description="" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.1822599020" name="Release" parent="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug">
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.1822599020." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.toolchain.debug.2019021349" name="ARM Mac OS X GCC (devkitPro)" nonInternalBuilderId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.toolchain.debug">
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.debugging.level.634424272" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumbinterwork.1874475720" name="Thumb interwork (-mthumb-interwork)" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumbinterwork" value="true" valueType="boolean"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.processor.947113687" name="Processor" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.processor" value="org.eclipse.cdt.cross.arm.gnu.base.option.mcpu.arm9" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumb.456339900" name="Thumb (-mthumb)" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.option.target.thumb" value="false" valueType="boolean"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.GNU_ELF;org.scarab.nds.managedbuilder.parser.NDSParser;org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.platform.debug.1072490140" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.platform.debug"/>
+							<builder buildPath="${workspace_loc:/tinyUnity}/Debug" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug.961086027" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="ARM devkitPro Mac OS X GNU Make builder" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.builder.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.debug.1103094914" name="ARM devkitPro Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.debug">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input.991179306" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input"/>
+							</tool>
+							<tool command="arm-none-eabi-gcc" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.debug.977558756" name="ARM devkitPro Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.920120659" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.795709116" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARM9"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn.1305814692" name="All warnings (-Wall)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn" value="false" valueType="boolean"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input.66752377" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input"/>
+							</tool>
+							<tool command="arm-none-eabi-g++" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.debug.1152922384" name="ARM devkitPro Mac OS X GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.1751495578" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.include.paths.1712550009" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/Users/awiebe/devkitPro/libnds/include"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.preprocessor.def.686247011" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARM9"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.pedantic.78265081" name="Pedantic (-pedantic)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.pedantic" value="false" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.extrawarn.2108038840" name="Extra warnings (-Wextra)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.extrawarn" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.effc.2091280620" name="Effective C++ warnings (-Weffc++)" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.warnings.effc" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.flags.1660686240" name="Other optimization flags" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.flags" value="-fwhole-program" valueType="string"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input.1733081648" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.linker.base.627198389" name="ARM devkitPro Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.linker.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.linker.base.408355269" name="ARM devkitPro Mac OS X GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.linker.base">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.cpp.linker.input.762231040" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool command="arm-none-eabi-ar" id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.archiver.debug.1323717654" name="ARM devkitPro Mac OS X GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.archiver.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createflash.base.711447782" name="ARM devkitPro Mac OS X GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createflash.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createlisting.base.97903957" name="ARM devkitPro Mac OS X GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.createlisting.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.printsize.base.262838537" name="ARM devkitPro Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.printsize.base"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="source/tinyUnity/physics/Octree.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="tinyUnity;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="tinyUnity.org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.956756168" name="ARM Cross Target Static Library" projectType="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.release.795567900;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input.1412895757">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.assembler.debug.1764238947;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.assembler.base.input.1141116636">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.debug.432146237;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input.875485284">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.release.535674298;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input.1868903130">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.debug.1401863557.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.cpp.compiler.debug.1603428915;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.cpp.compiler.base.input.2097891381">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.release.1468176874.;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.lib.c.compiler.release.947377109;org.eclipse.cdt.cross.arm.gnu.devkitpro.macosx.c.compiler.base.input.1390633844">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_DK_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/tinyUnity"/>
+		</configuration>
+		<configuration configurationName="Releaseold">
+			<resource resourceType="PROJECT" workspacePath="/tinyUnity"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/tinyUnity"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>

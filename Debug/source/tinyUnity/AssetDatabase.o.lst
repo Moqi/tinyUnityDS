@@ -1,0 +1,33 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"AssetDatabase.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.global	_ZN9tinyUnity13AssetDatabase8usesToonE
+  17              		.bss
+  20              	_ZN9tinyUnity13AssetDatabase8usesToonE:
+  21 0000 00       		.space	1
+  22              		.global	_ZN9tinyUnity13AssetDatabase9usesShinyE
+  25              	_ZN9tinyUnity13AssetDatabase9usesShinyE:
+  26 0001 00       		.space	1
+  27              		.text
+  28              	.Letext0:
+  29              		.file 1 "../source/tinyUnity/AssetDatabase.cpp"
+DEFINED SYMBOLS
+                            *ABS*:00000000 AssetDatabase.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc8iFtda.s:20     .bss:00000000 _ZN9tinyUnity13AssetDatabase8usesToonE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc8iFtda.s:21     .bss:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc8iFtda.s:25     .bss:00000001 _ZN9tinyUnity13AssetDatabase9usesShinyE
+                           .group:00000000 wm4.1.c1d3c39fe92b3c0ea0c4445ea1455857
+
+NO UNDEFINED SYMBOLS

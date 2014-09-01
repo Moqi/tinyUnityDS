@@ -1,0 +1,253 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"SubMesh.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.text
+  23              		.align	2
+  24              		.global	_ZN9tinyUnity7SubMeshD2Ev
+  26              	_ZN9tinyUnity7SubMeshD2Ev:
+  27              	.LFB114:
+  28              		.file 1 "../source/tinyUnity/SubMesh.cpp"
+   1:../source/tinyUnity/SubMesh.cpp **** /*
+   2:../source/tinyUnity/SubMesh.cpp ****  * SubMesh.cpp
+   3:../source/tinyUnity/SubMesh.cpp ****  *
+   4:../source/tinyUnity/SubMesh.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/SubMesh.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/SubMesh.cpp ****  */
+   7:../source/tinyUnity/SubMesh.cpp **** 
+   8:../source/tinyUnity/SubMesh.cpp **** #include "SubMesh.h"
+   9:../source/tinyUnity/SubMesh.cpp **** namespace tinyUnity{
+  10:../source/tinyUnity/SubMesh.cpp **** template <typename T,typename N>
+  11:../source/tinyUnity/SubMesh.cpp **** SubMesh::SubMesh(T* a_triangleIndicies,N count)
+  12:../source/tinyUnity/SubMesh.cpp **** {
+  13:../source/tinyUnity/SubMesh.cpp **** 	this->triangleIndicies = a_triangleIndicies;
+  14:../source/tinyUnity/SubMesh.cpp **** 	indiciesLength = count;
+  15:../source/tinyUnity/SubMesh.cpp **** 	// TODO Auto-generated constructor stub
+  16:../source/tinyUnity/SubMesh.cpp **** 
+  17:../source/tinyUnity/SubMesh.cpp **** }
+  18:../source/tinyUnity/SubMesh.cpp **** 
+  19:../source/tinyUnity/SubMesh.cpp **** SubMesh::~SubMesh() {
+  29              		.loc 1 19 0
+  30              		.cfi_startproc
+  31              		@ Function supports interworking.
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34 0000 00482DE9 		stmfd	sp!, {fp, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 11, -8
+  38              		.cfi_offset 14, -4
+  39 0004 04B08DE2 		add	fp, sp, #4
+  40              	.LCFI1:
+  41              		.cfi_def_cfa 11, 4
+  42 0008 08D04DE2 		sub	sp, sp, #8
+  43 000c 08000BE5 		str	r0, [fp, #-8]
+  44              	.LBB2:
+  45              		.loc 1 19 0
+  46 0010 08301BE5 		ldr	r3, [fp, #-8]
+  47 0014 28209FE5 		ldr	r2, .L5
+  48 0018 002083E5 		str	r2, [r3]
+  49              	.LBE2:
+  20:../source/tinyUnity/SubMesh.cpp **** 	// TODO Auto-generated destructor stub
+  21:../source/tinyUnity/SubMesh.cpp **** }
+  50              		.loc 1 21 0
+  51 001c 0030A0E3 		mov	r3, #0
+  52 0020 000053E3 		cmp	r3, #0
+  53 0024 0100000A 		beq	.L3
+  54              		.loc 1 21 0 is_stmt 0 discriminator 1
+  55 0028 08001BE5 		ldr	r0, [fp, #-8]
+  56 002c FEFFFFEB 		bl	_ZdlPv
+  57              	.L3:
+  58              		.loc 1 21 0 discriminator 2
+  59 0030 08301BE5 		ldr	r3, [fp, #-8]
+  60 0034 0300A0E1 		mov	r0, r3
+  61 0038 04D04BE2 		sub	sp, fp, #4
+  62              		@ sp needed
+  63 003c 0048BDE8 		ldmfd	sp!, {fp, lr}
+  64 0040 1EFF2FE1 		bx	lr
+  65              	.L6:
+  66              		.align	2
+  67              	.L5:
+  68 0044 08000000 		.word	_ZTVN9tinyUnity7SubMeshE+8
+  69              		.cfi_endproc
+  70              	.LFE114:
+  72              		.global	_ZN9tinyUnity7SubMeshD1Ev
+  73              		.set	_ZN9tinyUnity7SubMeshD1Ev,_ZN9tinyUnity7SubMeshD2Ev
+  74              		.align	2
+  75              		.global	_ZN9tinyUnity7SubMeshD0Ev
+  77              	_ZN9tinyUnity7SubMeshD0Ev:
+  78              	.LFB116:
+  19:../source/tinyUnity/SubMesh.cpp **** 	// TODO Auto-generated destructor stub
+  79              		.loc 1 19 0 is_stmt 1
+  80              		.cfi_startproc
+  81              		@ Function supports interworking.
+  82              		@ args = 0, pretend = 0, frame = 8
+  83              		@ frame_needed = 1, uses_anonymous_args = 0
+  84 0048 00482DE9 		stmfd	sp!, {fp, lr}
+  85              	.LCFI2:
+  86              		.cfi_def_cfa_offset 8
+  87              		.cfi_offset 11, -8
+  88              		.cfi_offset 14, -4
+  89 004c 04B08DE2 		add	fp, sp, #4
+  90              	.LCFI3:
+  91              		.cfi_def_cfa 11, 4
+  92 0050 08D04DE2 		sub	sp, sp, #8
+  93 0054 08000BE5 		str	r0, [fp, #-8]
+  94              		.loc 1 21 0
+  95 0058 08001BE5 		ldr	r0, [fp, #-8]
+  96 005c FEFFFFEB 		bl	_ZN9tinyUnity7SubMeshD1Ev
+  97 0060 08001BE5 		ldr	r0, [fp, #-8]
+  98 0064 FEFFFFEB 		bl	_ZdlPv
+  99 0068 08301BE5 		ldr	r3, [fp, #-8]
+ 100 006c 0300A0E1 		mov	r0, r3
+ 101 0070 04D04BE2 		sub	sp, fp, #4
+ 102              		@ sp needed
+ 103 0074 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 104 0078 1EFF2FE1 		bx	lr
+ 105              		.cfi_endproc
+ 106              	.LFE116:
+ 108              		.align	2
+ 109              		.global	_ZN9tinyUnity7SubMesh4drawEv
+ 111              	_ZN9tinyUnity7SubMesh4drawEv:
+ 112              	.LFB117:
+  22:../source/tinyUnity/SubMesh.cpp **** 
+  23:../source/tinyUnity/SubMesh.cpp **** void tinyUnity::SubMesh::draw()
+  24:../source/tinyUnity/SubMesh.cpp **** {
+ 113              		.loc 1 24 0
+ 114              		.cfi_startproc
+ 115              		@ Function supports interworking.
+ 116              		@ args = 0, pretend = 0, frame = 16
+ 117              		@ frame_needed = 1, uses_anonymous_args = 0
+ 118 007c 00482DE9 		stmfd	sp!, {fp, lr}
+ 119              	.LCFI4:
+ 120              		.cfi_def_cfa_offset 8
+ 121              		.cfi_offset 11, -8
+ 122              		.cfi_offset 14, -4
+ 123 0080 04B08DE2 		add	fp, sp, #4
+ 124              	.LCFI5:
+ 125              		.cfi_def_cfa 11, 4
+ 126 0084 10D04DE2 		sub	sp, sp, #16
+ 127 0088 10000BE5 		str	r0, [fp, #-16]
+ 128              	.LBB3:
+  25:../source/tinyUnity/SubMesh.cpp **** 	this->material->execute();
+ 129              		.loc 1 25 0
+ 130 008c 10301BE5 		ldr	r3, [fp, #-16]
+ 131 0090 103093E5 		ldr	r3, [r3, #16]
+ 132 0094 003093E5 		ldr	r3, [r3]
+ 133 0098 083083E2 		add	r3, r3, #8
+ 134 009c 003093E5 		ldr	r3, [r3]
+ 135 00a0 10201BE5 		ldr	r2, [fp, #-16]
+ 136 00a4 102092E5 		ldr	r2, [r2, #16]
+ 137 00a8 0200A0E1 		mov	r0, r2
+ 138 00ac 0FE0A0E1 		mov	lr, pc
+ 139 00b0 13FF2FE1 		bx	r3
+ 140              	.LBB4:
+  26:../source/tinyUnity/SubMesh.cpp **** 
+  27:../source/tinyUnity/SubMesh.cpp **** 	for(int i=0; i<this->indiciesLength;i++)
+ 141              		.loc 1 27 0
+ 142 00b4 0030A0E3 		mov	r3, #0
+ 143 00b8 08300BE5 		str	r3, [fp, #-8]
+ 144 00bc 020000EA 		b	.L11
+ 145              	.L12:
+ 146              		.loc 1 27 0 is_stmt 0 discriminator 2
+ 147 00c0 08301BE5 		ldr	r3, [fp, #-8]
+ 148 00c4 013083E2 		add	r3, r3, #1
+ 149 00c8 08300BE5 		str	r3, [fp, #-8]
+ 150              	.L11:
+ 151              		.loc 1 27 0 discriminator 1
+ 152 00cc 10301BE5 		ldr	r3, [fp, #-16]
+ 153 00d0 0C2093E5 		ldr	r2, [r3, #12]
+ 154 00d4 08301BE5 		ldr	r3, [fp, #-8]
+ 155 00d8 030052E1 		cmp	r2, r3
+ 156 00dc F7FFFFCA 		bgt	.L12
+ 157              	.LBE4:
+ 158              	.LBE3:
+  28:../source/tinyUnity/SubMesh.cpp **** 	{
+  29:../source/tinyUnity/SubMesh.cpp **** 		//glVertex()
+  30:../source/tinyUnity/SubMesh.cpp **** 	}
+  31:../source/tinyUnity/SubMesh.cpp **** }
+ 159              		.loc 1 31 0 is_stmt 1
+ 160 00e0 04D04BE2 		sub	sp, fp, #4
+ 161              		@ sp needed
+ 162 00e4 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 163 00e8 1EFF2FE1 		bx	lr
+ 164              		.cfi_endproc
+ 165              	.LFE117:
+ 167              		.global	_ZTVN9tinyUnity7SubMeshE
+ 168              		.section	.rodata
+ 169              		.align	3
+ 172              	_ZTVN9tinyUnity7SubMeshE:
+ 173 0000 00000000 		.word	0
+ 174 0004 00000000 		.word	0
+ 175 0008 00000000 		.word	_ZN9tinyUnity7SubMeshD1Ev
+ 176 000c 00000000 		.word	_ZN9tinyUnity7SubMeshD0Ev
+ 177              		.text
+ 178              	.Letext0:
+ 179              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 180              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 181              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 182              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 183              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 184              		.file 7 "../source/tinyUnity/SubMesh.h"
+ 185              		.file 8 "../source/tinyUnity/types.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 SubMesh.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:26     .text:00000000 _ZN9tinyUnity7SubMeshD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:68     .text:00000044 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:172    .rodata:00000000 _ZTVN9tinyUnity7SubMeshE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:26     .text:00000000 _ZN9tinyUnity7SubMeshD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:74     .text:00000048 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:77     .text:00000048 _ZN9tinyUnity7SubMeshD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:111    .text:0000007c _ZN9tinyUnity7SubMesh4drawEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccs55JSa.s:169    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.c1d3c39fe92b3c0ea0c4445ea1455857
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.dma.h.50.a955dbc97e195f4838666434bca4a52b
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.sassert.h.43.7e84097964ba1c61c895bb636f8df047
+                           .group:00000000 wm4.video.h.83.235168beab22bda04c79ff9483358ca5
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+
+UNDEFINED SYMBOLS
+glGlobalData
+_ZdlPv

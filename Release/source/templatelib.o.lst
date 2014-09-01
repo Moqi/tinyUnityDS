@@ -1,0 +1,46 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"templatelib.c"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	myLibFunction
+  19              	myLibFunction:
+  20              	.LFB0:
+  21              		.file 1 "../source/templatelib.c"
+   1:../source/templatelib.c **** int myLibFunction() {
+  22              		.loc 1 1 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+   2:../source/templatelib.c **** 
+   3:../source/templatelib.c **** 	
+   4:../source/templatelib.c **** 	return 42;
+   5:../source/templatelib.c **** 
+   6:../source/templatelib.c **** }
+  28              		.loc 1 6 0
+  29 0000 2A00A0E3 		mov	r0, #42
+  30 0004 1EFF2FE1 		bx	lr
+  31              		.cfi_endproc
+  32              	.LFE0:
+  34              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 templatelib.c
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cckPjNGw.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cckPjNGw.s:19     .text:00000000 myLibFunction
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.0120b2cafef982250393e50e94e3b155
+
+NO UNDEFINED SYMBOLS
