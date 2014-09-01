@@ -12,7 +12,7 @@ namespace tinyUnity {
 namespace AssetDatabase
 {
 	bool usesToon,usesShiny;
-	void* assetWithID;
+	void* loadAsset(int id);
 }
 
 } /* namespace tinyUnity */
