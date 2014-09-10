@@ -1,0 +1,184 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"AudioClip.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	_ZN9AudioClipC2Ev
+  19              	_ZN9AudioClipC2Ev:
+  20              	.LFB1:
+  21              		.file 1 "../source/tinyUnity/audio/AudioClip.cpp"
+   1:../source/tinyUnity/audio/AudioClip.cpp **** /*
+   2:../source/tinyUnity/audio/AudioClip.cpp ****  * AudioClip.cpp
+   3:../source/tinyUnity/audio/AudioClip.cpp ****  *
+   4:../source/tinyUnity/audio/AudioClip.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/audio/AudioClip.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/audio/AudioClip.cpp ****  */
+   7:../source/tinyUnity/audio/AudioClip.cpp **** 
+   8:../source/tinyUnity/audio/AudioClip.cpp **** #include "AudioClip.h"
+   9:../source/tinyUnity/audio/AudioClip.cpp **** 
+  10:../source/tinyUnity/audio/AudioClip.cpp **** AudioClip::AudioClip() {
+  22              		.loc 1 10 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 1, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 04B02DE5 		str	fp, [sp, #-4]!
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 4
+  31              		.cfi_offset 11, -4
+  32 0004 00B08DE2 		add	fp, sp, #0
+  33              	.LCFI1:
+  34              		.cfi_def_cfa_register 11
+  35 0008 0CD04DE2 		sub	sp, sp, #12
+  36 000c 08000BE5 		str	r0, [fp, #-8]
+  37              	.LBB2:
+  38              		.loc 1 10 0
+  39 0010 08301BE5 		ldr	r3, [fp, #-8]
+  40 0014 14209FE5 		ldr	r2, .L4
+  41 0018 002083E5 		str	r2, [r3]
+  42              	.LBE2:
+  11:../source/tinyUnity/audio/AudioClip.cpp **** 	// TODO Auto-generated constructor stub
+  12:../source/tinyUnity/audio/AudioClip.cpp **** 
+  13:../source/tinyUnity/audio/AudioClip.cpp **** }
+  43              		.loc 1 13 0
+  44 001c 08301BE5 		ldr	r3, [fp, #-8]
+  45 0020 0300A0E1 		mov	r0, r3
+  46 0024 00D04BE2 		sub	sp, fp, #0
+  47              		@ sp needed
+  48 0028 04B09DE4 		ldr	fp, [sp], #4
+  49 002c 1EFF2FE1 		bx	lr
+  50              	.L5:
+  51              		.align	2
+  52              	.L4:
+  53 0030 08000000 		.word	_ZTV9AudioClip+8
+  54              		.cfi_endproc
+  55              	.LFE1:
+  57              		.global	_ZN9AudioClipC1Ev
+  58              		.set	_ZN9AudioClipC1Ev,_ZN9AudioClipC2Ev
+  59              		.align	2
+  60              		.global	_ZN9AudioClipD2Ev
+  62              	_ZN9AudioClipD2Ev:
+  63              	.LFB4:
+  14:../source/tinyUnity/audio/AudioClip.cpp **** 
+  15:../source/tinyUnity/audio/AudioClip.cpp **** AudioClip::~AudioClip() {
+  64              		.loc 1 15 0
+  65              		.cfi_startproc
+  66              		@ Function supports interworking.
+  67              		@ args = 0, pretend = 0, frame = 8
+  68              		@ frame_needed = 1, uses_anonymous_args = 0
+  69 0034 00482DE9 		stmfd	sp!, {fp, lr}
+  70              	.LCFI2:
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 11, -8
+  73              		.cfi_offset 14, -4
+  74 0038 04B08DE2 		add	fp, sp, #4
+  75              	.LCFI3:
+  76              		.cfi_def_cfa 11, 4
+  77 003c 08D04DE2 		sub	sp, sp, #8
+  78 0040 08000BE5 		str	r0, [fp, #-8]
+  79              	.LBB3:
+  80              		.loc 1 15 0
+  81 0044 08301BE5 		ldr	r3, [fp, #-8]
+  82 0048 28209FE5 		ldr	r2, .L10
+  83 004c 002083E5 		str	r2, [r3]
+  84              	.LBE3:
+  16:../source/tinyUnity/audio/AudioClip.cpp **** 	// TODO Auto-generated destructor stub
+  17:../source/tinyUnity/audio/AudioClip.cpp **** }
+  85              		.loc 1 17 0
+  86 0050 0030A0E3 		mov	r3, #0
+  87 0054 000053E3 		cmp	r3, #0
+  88 0058 0100000A 		beq	.L8
+  89              		.loc 1 17 0 is_stmt 0 discriminator 1
+  90 005c 08001BE5 		ldr	r0, [fp, #-8]
+  91 0060 FEFFFFEB 		bl	_ZdlPv
+  92              	.L8:
+  93              		.loc 1 17 0 discriminator 2
+  94 0064 08301BE5 		ldr	r3, [fp, #-8]
+  95 0068 0300A0E1 		mov	r0, r3
+  96 006c 04D04BE2 		sub	sp, fp, #4
+  97              		@ sp needed
+  98 0070 0048BDE8 		ldmfd	sp!, {fp, lr}
+  99 0074 1EFF2FE1 		bx	lr
+ 100              	.L11:
+ 101              		.align	2
+ 102              	.L10:
+ 103 0078 08000000 		.word	_ZTV9AudioClip+8
+ 104              		.cfi_endproc
+ 105              	.LFE4:
+ 107              		.global	_ZN9AudioClipD1Ev
+ 108              		.set	_ZN9AudioClipD1Ev,_ZN9AudioClipD2Ev
+ 109              		.align	2
+ 110              		.global	_ZN9AudioClipD0Ev
+ 112              	_ZN9AudioClipD0Ev:
+ 113              	.LFB6:
+  15:../source/tinyUnity/audio/AudioClip.cpp **** 	// TODO Auto-generated destructor stub
+ 114              		.loc 1 15 0 is_stmt 1
+ 115              		.cfi_startproc
+ 116              		@ Function supports interworking.
+ 117              		@ args = 0, pretend = 0, frame = 8
+ 118              		@ frame_needed = 1, uses_anonymous_args = 0
+ 119 007c 00482DE9 		stmfd	sp!, {fp, lr}
+ 120              	.LCFI4:
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 11, -8
+ 123              		.cfi_offset 14, -4
+ 124 0080 04B08DE2 		add	fp, sp, #4
+ 125              	.LCFI5:
+ 126              		.cfi_def_cfa 11, 4
+ 127 0084 08D04DE2 		sub	sp, sp, #8
+ 128 0088 08000BE5 		str	r0, [fp, #-8]
+ 129              		.loc 1 17 0
+ 130 008c 08001BE5 		ldr	r0, [fp, #-8]
+ 131 0090 FEFFFFEB 		bl	_ZN9AudioClipD1Ev
+ 132 0094 08001BE5 		ldr	r0, [fp, #-8]
+ 133 0098 FEFFFFEB 		bl	_ZdlPv
+ 134 009c 08301BE5 		ldr	r3, [fp, #-8]
+ 135 00a0 0300A0E1 		mov	r0, r3
+ 136 00a4 04D04BE2 		sub	sp, fp, #4
+ 137              		@ sp needed
+ 138 00a8 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 139 00ac 1EFF2FE1 		bx	lr
+ 140              		.cfi_endproc
+ 141              	.LFE6:
+ 143              		.global	_ZTV9AudioClip
+ 144              		.section	.rodata
+ 145              		.align	3
+ 148              	_ZTV9AudioClip:
+ 149 0000 00000000 		.word	0
+ 150 0004 00000000 		.word	0
+ 151 0008 00000000 		.word	_ZN9AudioClipD1Ev
+ 152 000c 00000000 		.word	_ZN9AudioClipD0Ev
+ 153              		.text
+ 154              	.Letext0:
+ 155              		.file 2 "../source/tinyUnity/audio/AudioClip.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 AudioClip.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:19     .text:00000000 _ZN9AudioClipC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:53     .text:00000030 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:148    .rodata:00000000 _ZTV9AudioClip
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:19     .text:00000000 _ZN9AudioClipC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:59     .text:00000034 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:62     .text:00000034 _ZN9AudioClipD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:103    .text:00000078 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:62     .text:00000034 _ZN9AudioClipD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:109    .text:0000007c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:112    .text:0000007c _ZN9AudioClipD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOHM4is.s:145    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+
+UNDEFINED SYMBOLS
+_ZdlPv

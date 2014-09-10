@@ -1,0 +1,84 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Input.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.text
+  23              	.Letext0:
+  24              		.file 1 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+  25              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+  26              		.file 3 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+  27              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/system.h"
+  28              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+  29              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+  30              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+  31              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+  32              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+  33              		.file 10 "../source/Input.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Input.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHQLvi5.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHQLvi5.s:20     .data:00000000 _ZL6glGlob
+                           .group:00000000 wm4.1.c1d3c39fe92b3c0ea0c4445ea1455857
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.ec336385f0acb2b8514cd40ae0acc4ae
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.14405de79e849c7e89fd312e10f494ac
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.53.1a82a3cc35cb0a04319c41bcf41d2a02
+                           .group:00000000 wm4.cdefs.h.56.d8c921dd752528cc5369e93873b9bfb1
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.string.h.126.6ff3aa59129e7f66b2c273baf353e066
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData

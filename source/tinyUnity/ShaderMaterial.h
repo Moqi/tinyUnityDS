@@ -10,10 +10,14 @@
 
 #include "Material.h"
 namespace tinyUnity {
+/**
+ * Describes a material that uses a packed shader
+ */
 class ShaderMaterial: public Material {
 public:
 	ShaderMaterial();
 	virtual ~ShaderMaterial();
+	virtual void execute();
 };
 }
 

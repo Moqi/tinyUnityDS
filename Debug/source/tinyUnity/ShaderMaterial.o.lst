@@ -1,0 +1,256 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"ShaderMaterial.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.text
+  23              		.align	2
+  24              		.global	_ZN9tinyUnity14ShaderMaterialC2Ev
+  26              	_ZN9tinyUnity14ShaderMaterialC2Ev:
+  27              	.LFB188:
+  28              		.file 1 "../source/tinyUnity/ShaderMaterial.cpp"
+   1:../source/tinyUnity/ShaderMaterial.cpp **** /*
+   2:../source/tinyUnity/ShaderMaterial.cpp ****  * ShaderMaterial.cpp
+   3:../source/tinyUnity/ShaderMaterial.cpp ****  *
+   4:../source/tinyUnity/ShaderMaterial.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/ShaderMaterial.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/ShaderMaterial.cpp ****  */
+   7:../source/tinyUnity/ShaderMaterial.cpp **** 
+   8:../source/tinyUnity/ShaderMaterial.cpp **** #include "ShaderMaterial.h"
+   9:../source/tinyUnity/ShaderMaterial.cpp **** namespace tinyUnity{
+  10:../source/tinyUnity/ShaderMaterial.cpp **** ShaderMaterial::ShaderMaterial() {
+  29              		.loc 1 10 0
+  30              		.cfi_startproc
+  31              		@ Function supports interworking.
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34 0000 00482DE9 		stmfd	sp!, {fp, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 11, -8
+  38              		.cfi_offset 14, -4
+  39 0004 04B08DE2 		add	fp, sp, #4
+  40              	.LCFI1:
+  41              		.cfi_def_cfa 11, 4
+  42 0008 08D04DE2 		sub	sp, sp, #8
+  43 000c 08000BE5 		str	r0, [fp, #-8]
+  44              	.LBB2:
+  45              		.loc 1 10 0
+  46 0010 08301BE5 		ldr	r3, [fp, #-8]
+  47 0014 0300A0E1 		mov	r0, r3
+  48 0018 FEFFFFEB 		bl	_ZN9tinyUnity8MaterialC2Ev
+  49 001c 08301BE5 		ldr	r3, [fp, #-8]
+  50 0020 14209FE5 		ldr	r2, .L4
+  51 0024 002083E5 		str	r2, [r3]
+  52              	.LBE2:
+  11:../source/tinyUnity/ShaderMaterial.cpp **** 	// TODO Auto-generated constructor stub
+  12:../source/tinyUnity/ShaderMaterial.cpp **** 
+  13:../source/tinyUnity/ShaderMaterial.cpp **** }
+  53              		.loc 1 13 0
+  54 0028 08301BE5 		ldr	r3, [fp, #-8]
+  55 002c 0300A0E1 		mov	r0, r3
+  56 0030 04D04BE2 		sub	sp, fp, #4
+  57              		@ sp needed
+  58 0034 0048BDE8 		ldmfd	sp!, {fp, lr}
+  59 0038 1EFF2FE1 		bx	lr
+  60              	.L5:
+  61              		.align	2
+  62              	.L4:
+  63 003c 08000000 		.word	_ZTVN9tinyUnity14ShaderMaterialE+8
+  64              		.cfi_endproc
+  65              	.LFE188:
+  67              		.global	_ZN9tinyUnity14ShaderMaterialC1Ev
+  68              		.set	_ZN9tinyUnity14ShaderMaterialC1Ev,_ZN9tinyUnity14ShaderMaterialC2Ev
+  69              		.align	2
+  70              		.global	_ZN9tinyUnity14ShaderMaterialD2Ev
+  72              	_ZN9tinyUnity14ShaderMaterialD2Ev:
+  73              	.LFB191:
+  14:../source/tinyUnity/ShaderMaterial.cpp **** 
+  15:../source/tinyUnity/ShaderMaterial.cpp **** ShaderMaterial::~ShaderMaterial() {
+  74              		.loc 1 15 0
+  75              		.cfi_startproc
+  76              		@ Function supports interworking.
+  77              		@ args = 0, pretend = 0, frame = 8
+  78              		@ frame_needed = 1, uses_anonymous_args = 0
+  79 0040 00482DE9 		stmfd	sp!, {fp, lr}
+  80              	.LCFI2:
+  81              		.cfi_def_cfa_offset 8
+  82              		.cfi_offset 11, -8
+  83              		.cfi_offset 14, -4
+  84 0044 04B08DE2 		add	fp, sp, #4
+  85              	.LCFI3:
+  86              		.cfi_def_cfa 11, 4
+  87 0048 08D04DE2 		sub	sp, sp, #8
+  88 004c 08000BE5 		str	r0, [fp, #-8]
+  89              	.LBB3:
+  90              		.loc 1 15 0
+  91 0050 08301BE5 		ldr	r3, [fp, #-8]
+  92 0054 34209FE5 		ldr	r2, .L10
+  93 0058 002083E5 		str	r2, [r3]
+  94 005c 08301BE5 		ldr	r3, [fp, #-8]
+  16:../source/tinyUnity/ShaderMaterial.cpp **** 	// TODO Auto-generated destructor stub
+  17:../source/tinyUnity/ShaderMaterial.cpp **** }
+  95              		.loc 1 17 0
+  96 0060 0300A0E1 		mov	r0, r3
+  97 0064 FEFFFFEB 		bl	_ZN9tinyUnity8MaterialD2Ev
+  98              	.LBE3:
+  99 0068 0030A0E3 		mov	r3, #0
+ 100 006c 000053E3 		cmp	r3, #0
+ 101 0070 0100000A 		beq	.L8
+ 102              		.loc 1 17 0 is_stmt 0 discriminator 1
+ 103 0074 08001BE5 		ldr	r0, [fp, #-8]
+ 104 0078 FEFFFFEB 		bl	_ZdlPv
+ 105              	.L8:
+ 106              		.loc 1 17 0 discriminator 2
+ 107 007c 08301BE5 		ldr	r3, [fp, #-8]
+ 108 0080 0300A0E1 		mov	r0, r3
+ 109 0084 04D04BE2 		sub	sp, fp, #4
+ 110              		@ sp needed
+ 111 0088 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 112 008c 1EFF2FE1 		bx	lr
+ 113              	.L11:
+ 114              		.align	2
+ 115              	.L10:
+ 116 0090 08000000 		.word	_ZTVN9tinyUnity14ShaderMaterialE+8
+ 117              		.cfi_endproc
+ 118              	.LFE191:
+ 120              		.global	_ZN9tinyUnity14ShaderMaterialD1Ev
+ 121              		.set	_ZN9tinyUnity14ShaderMaterialD1Ev,_ZN9tinyUnity14ShaderMaterialD2Ev
+ 122              		.align	2
+ 123              		.global	_ZN9tinyUnity14ShaderMaterialD0Ev
+ 125              	_ZN9tinyUnity14ShaderMaterialD0Ev:
+ 126              	.LFB193:
+  15:../source/tinyUnity/ShaderMaterial.cpp **** 	// TODO Auto-generated destructor stub
+ 127              		.loc 1 15 0 is_stmt 1
+ 128              		.cfi_startproc
+ 129              		@ Function supports interworking.
+ 130              		@ args = 0, pretend = 0, frame = 8
+ 131              		@ frame_needed = 1, uses_anonymous_args = 0
+ 132 0094 00482DE9 		stmfd	sp!, {fp, lr}
+ 133              	.LCFI4:
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 11, -8
+ 136              		.cfi_offset 14, -4
+ 137 0098 04B08DE2 		add	fp, sp, #4
+ 138              	.LCFI5:
+ 139              		.cfi_def_cfa 11, 4
+ 140 009c 08D04DE2 		sub	sp, sp, #8
+ 141 00a0 08000BE5 		str	r0, [fp, #-8]
+ 142              		.loc 1 17 0
+ 143 00a4 08001BE5 		ldr	r0, [fp, #-8]
+ 144 00a8 FEFFFFEB 		bl	_ZN9tinyUnity14ShaderMaterialD1Ev
+ 145 00ac 08001BE5 		ldr	r0, [fp, #-8]
+ 146 00b0 FEFFFFEB 		bl	_ZdlPv
+ 147 00b4 08301BE5 		ldr	r3, [fp, #-8]
+ 148 00b8 0300A0E1 		mov	r0, r3
+ 149 00bc 04D04BE2 		sub	sp, fp, #4
+ 150              		@ sp needed
+ 151 00c0 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 152 00c4 1EFF2FE1 		bx	lr
+ 153              		.cfi_endproc
+ 154              	.LFE193:
+ 156              		.global	_ZTVN9tinyUnity14ShaderMaterialE
+ 157              		.section	.rodata
+ 158              		.align	3
+ 161              	_ZTVN9tinyUnity14ShaderMaterialE:
+ 162 0000 00000000 		.word	0
+ 163 0004 00000000 		.word	0
+ 164 0008 00000000 		.word	_ZN9tinyUnity14ShaderMaterialD1Ev
+ 165 000c 00000000 		.word	_ZN9tinyUnity14ShaderMaterialD0Ev
+ 166 0010 00000000 		.word	_ZN9tinyUnity14ShaderMaterial7executeEv
+ 167 0014 00000000 		.text
+ 168              	.Letext0:
+ 169              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 170              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 171              		.file 4 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 172              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/system.h"
+ 173              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 174              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 175              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 176              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 177              		.file 10 "../source/tinyUnity/ShaderMaterial.h"
+ 178              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 179              		.file 12 "../source/tinyUnity/Texture2D.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ShaderMaterial.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:26     .text:00000000 _ZN9tinyUnity14ShaderMaterialC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:63     .text:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:161    .rodata:00000000 _ZTVN9tinyUnity14ShaderMaterialE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:26     .text:00000000 _ZN9tinyUnity14ShaderMaterialC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:69     .text:00000040 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:72     .text:00000040 _ZN9tinyUnity14ShaderMaterialD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:116    .text:00000090 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:72     .text:00000040 _ZN9tinyUnity14ShaderMaterialD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:122    .text:00000094 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:125    .text:00000094 _ZN9tinyUnity14ShaderMaterialD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccOU9Eq7.s:158    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.7a7c9736cc6d4c59c817f754af461a43
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.stdlib.h.53.a73f7e963d962393b7f9086194931e4a
+                           .group:00000000 wm4.cdefs.h.56.862c22ff4fc3f08ba284da94c8439388
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData
+_ZN9tinyUnity8MaterialC2Ev
+_ZN9tinyUnity8MaterialD2Ev
+_ZdlPv
+_ZN9tinyUnity14ShaderMaterial7executeEv

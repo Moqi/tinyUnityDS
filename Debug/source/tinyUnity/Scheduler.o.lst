@@ -1,0 +1,699 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Scheduler.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.section	.text._ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE,"axG",%progbits,_ZN9tinyUnity9Sched
+  23              		.align	2
+  24              		.weak	_ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE
+  26              	_ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE:
+  27              	.LFB186:
+  28              		.file 1 "../source/tinyUnity/Scheduler.h"
+   1:../source/tinyUnity/Scheduler.h **** /*
+   2:../source/tinyUnity/Scheduler.h ****  * Scheduler.h
+   3:../source/tinyUnity/Scheduler.h ****  *
+   4:../source/tinyUnity/Scheduler.h ****  *  Created on: Sep 1, 2014
+   5:../source/tinyUnity/Scheduler.h ****  *      Author: awiebe
+   6:../source/tinyUnity/Scheduler.h ****  */
+   7:../source/tinyUnity/Scheduler.h **** 
+   8:../source/tinyUnity/Scheduler.h **** #ifndef SCHEDULER_H_
+   9:../source/tinyUnity/Scheduler.h **** #define SCHEDULER_H_
+  10:../source/tinyUnity/Scheduler.h **** #include <stdint.h>
+  11:../source/tinyUnity/Scheduler.h **** #include "Component.h"
+  12:../source/tinyUnity/Scheduler.h **** #include <nds.h>
+  13:../source/tinyUnity/Scheduler.h **** namespace tinyUnity {
+  14:../source/tinyUnity/Scheduler.h **** 
+  15:../source/tinyUnity/Scheduler.h **** class Scheduler {
+  16:../source/tinyUnity/Scheduler.h **** 
+  17:../source/tinyUnity/Scheduler.h **** 	/**
+  18:../source/tinyUnity/Scheduler.h **** 	 * Task and execution time, actionID is resolved into routine by Monobehaviour,
+  19:../source/tinyUnity/Scheduler.h **** 	 * because C++ doesn't understand target-action, and command isn't good enough.
+  20:../source/tinyUnity/Scheduler.h **** 	 * @note To save space required to store state, a task is dead if its target is null.
+  21:../source/tinyUnity/Scheduler.h **** 	 */
+  22:../source/tinyUnity/Scheduler.h **** 	struct Task
+  23:../source/tinyUnity/Scheduler.h **** 	{
+  24:../source/tinyUnity/Scheduler.h **** 		unsigned long executeAt;
+  25:../source/tinyUnity/Scheduler.h **** 		Component* target;
+  26:../source/tinyUnity/Scheduler.h **** 		int actionID;
+  27:../source/tinyUnity/Scheduler.h **** 	};
+  28:../source/tinyUnity/Scheduler.h **** public:
+  29:../source/tinyUnity/Scheduler.h **** 	static const unsigned int MAX_QUEUED_TASKS = 128;
+  30:../source/tinyUnity/Scheduler.h **** 	/**
+  31:../source/tinyUnity/Scheduler.h **** 	 * Allocate a time (0-3)
+  32:../source/tinyUnity/Scheduler.h **** 	 * @warning Do not use 3 if using DSWIFI
+  33:../source/tinyUnity/Scheduler.h **** 	 * @warning Do not use 0 if using maxmod.
+  34:../source/tinyUnity/Scheduler.h **** 	 */
+  35:../source/tinyUnity/Scheduler.h **** 	static void Start(int timer =2, const float resolutionSeconds=0.01);
+  36:../source/tinyUnity/Scheduler.h **** private:
+  37:../source/tinyUnity/Scheduler.h **** 	static unsigned char resolutionMillis;
+  38:../source/tinyUnity/Scheduler.h **** 	static bool busy;
+  39:../source/tinyUnity/Scheduler.h ****     static uint64_t nowMillis ;
+  40:../source/tinyUnity/Scheduler.h ****     static unsigned short capacity;
+  41:../source/tinyUnity/Scheduler.h ****     static unsigned short poolMax;
+  42:../source/tinyUnity/Scheduler.h ****     static void timerCallback();
+  43:../source/tinyUnity/Scheduler.h ****     static long getPoolSpace();
+  44:../source/tinyUnity/Scheduler.h ****     static bool isDeadTask(Task* t){ return t->target == nullptr;}
+  29              		.loc 1 44 0
+  30              		.cfi_startproc
+  31              		@ Function supports interworking.
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35 0000 04B02DE5 		str	fp, [sp, #-4]!
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 11, -4
+  39 0004 00B08DE2 		add	fp, sp, #0
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_register 11
+  42 0008 0CD04DE2 		sub	sp, sp, #12
+  43 000c 08000BE5 		str	r0, [fp, #-8]
+  44              		.loc 1 44 0
+  45 0010 08301BE5 		ldr	r3, [fp, #-8]
+  46 0014 043093E5 		ldr	r3, [r3, #4]
+  47 0018 000053E3 		cmp	r3, #0
+  48 001c 0030A013 		movne	r3, #0
+  49 0020 0130A003 		moveq	r3, #1
+  50 0024 FF3003E2 		and	r3, r3, #255
+  51 0028 0300A0E1 		mov	r0, r3
+  52 002c 00D04BE2 		sub	sp, fp, #0
+  53              		@ sp needed
+  54 0030 04B09DE4 		ldr	fp, [sp], #4
+  55 0034 1EFF2FE1 		bx	lr
+  56              		.cfi_endproc
+  57              	.LFE186:
+  59              		.global	__aeabi_fmul
+  60              		.global	__aeabi_f2uiz
+  61              		.global	__aeabi_fdiv
+  62              		.text
+  63              		.align	2
+  64              		.global	_ZN9tinyUnity9Scheduler5StartEif
+  66              	_ZN9tinyUnity9Scheduler5StartEif:
+  67              	.LFB187:
+  68              		.file 2 "../source/tinyUnity/Scheduler.cpp"
+   1:../source/tinyUnity/Scheduler.cpp **** /*
+   2:../source/tinyUnity/Scheduler.cpp ****  * Scheduler.cpp
+   3:../source/tinyUnity/Scheduler.cpp ****  *
+   4:../source/tinyUnity/Scheduler.cpp ****  *  Created on: Sep 1, 2014
+   5:../source/tinyUnity/Scheduler.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/Scheduler.cpp ****  */
+   7:../source/tinyUnity/Scheduler.cpp **** 
+   8:../source/tinyUnity/Scheduler.cpp **** #include "Scheduler.h"
+   9:../source/tinyUnity/Scheduler.cpp **** 
+  10:../source/tinyUnity/Scheduler.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/Scheduler.cpp **** 
+  12:../source/tinyUnity/Scheduler.cpp **** 
+  13:../source/tinyUnity/Scheduler.cpp ****  void Scheduler::Start(int timer =2, const float resolutionSeconds=0.01)
+  14:../source/tinyUnity/Scheduler.cpp **** {
+  69              		.loc 2 14 0
+  70              		.cfi_startproc
+  71              		@ Function supports interworking.
+  72              		@ args = 0, pretend = 0, frame = 16
+  73              		@ frame_needed = 1, uses_anonymous_args = 0
+  74 0000 10482DE9 		stmfd	sp!, {r4, fp, lr}
+  75              	.LCFI2:
+  76              		.cfi_def_cfa_offset 12
+  77              		.cfi_offset 4, -12
+  78              		.cfi_offset 11, -8
+  79              		.cfi_offset 14, -4
+  80 0004 08B08DE2 		add	fp, sp, #8
+  81              	.LCFI3:
+  82              		.cfi_def_cfa 11, 4
+  83 0008 14D04DE2 		sub	sp, sp, #20
+  84 000c 18000BE5 		str	r0, [fp, #-24]
+  85 0010 1C100BE5 		str	r1, [fp, #-28]	@ float
+  86              	.LBB2:
+  15:../source/tinyUnity/Scheduler.cpp **** 	nowMillis = 0;
+  87              		.loc 2 15 0
+  88 0014 F8209FE5 		ldr	r2, .L6
+  89 0018 0030A0E3 		mov	r3, #0
+  90 001c 0040A0E3 		mov	r4, #0
+  91 0020 180082E8 		stmia	r2, {r3-r4}
+  16:../source/tinyUnity/Scheduler.cpp **** 	resolutionMillis = resolutionSeconds *100;
+  92              		.loc 2 16 0
+  93 0024 1C001BE5 		ldr	r0, [fp, #-28]	@ float
+  94 0028 E8109FE5 		ldr	r1, .L6+4
+  95 002c FEFFFFEB 		bl	__aeabi_fmul
+  96 0030 0030A0E1 		mov	r3, r0
+  97 0034 0300A0E1 		mov	r0, r3
+  98 0038 FEFFFFEB 		bl	__aeabi_f2uiz
+  99 003c 0030A0E1 		mov	r3, r0
+ 100 0040 FF2003E2 		and	r2, r3, #255
+ 101 0044 D0309FE5 		ldr	r3, .L6+8
+ 102 0048 0020C3E5 		strb	r2, [r3]
+  17:../source/tinyUnity/Scheduler.cpp **** 	busy = false;
+ 103              		.loc 2 17 0
+ 104 004c CC309FE5 		ldr	r3, .L6+12
+ 105 0050 0020A0E3 		mov	r2, #0
+ 106 0054 0020C3E5 		strb	r2, [r3]
+  18:../source/tinyUnity/Scheduler.cpp **** 	timerStart(0, ClockDivider_256 , TIMER_FREQ_256(resolutionSeconds), timerCallback);
+ 107              		.loc 2 18 0
+ 108 0058 C4009FE5 		ldr	r0, .L6+16
+ 109 005c 1C101BE5 		ldr	r1, [fp, #-28]	@ float
+ 110 0060 FEFFFFEB 		bl	__aeabi_fdiv
+ 111 0064 0030A0E1 		mov	r3, r0
+ 112 0068 0300A0E1 		mov	r0, r3
+ 113 006c FEFFFFEB 		bl	__aeabi_f2uiz
+ 114 0070 0030A0E1 		mov	r3, r0
+ 115 0074 0338A0E1 		mov	r3, r3, asl #16
+ 116 0078 2338A0E1 		mov	r3, r3, lsr #16
+ 117 007c 0000A0E3 		mov	r0, #0
+ 118 0080 0210A0E3 		mov	r1, #2
+ 119 0084 0320A0E1 		mov	r2, r3
+ 120 0088 98309FE5 		ldr	r3, .L6+20
+ 121 008c FEFFFFEB 		bl	timerStart
+  19:../source/tinyUnity/Scheduler.cpp **** 	taskQueue = new Task*[MAX_QUEUED_TASKS];
+ 122              		.loc 2 19 0
+ 123 0090 020CA0E3 		mov	r0, #512
+ 124 0094 FEFFFFEB 		bl	_Znaj
+ 125 0098 0020A0E1 		mov	r2, r0
+ 126 009c 88309FE5 		ldr	r3, .L6+24
+ 127 00a0 002083E5 		str	r2, [r3]
+  20:../source/tinyUnity/Scheduler.cpp **** 	capacity = MAX_QUEUED_TASKS;
+ 128              		.loc 2 20 0
+ 129 00a4 84309FE5 		ldr	r3, .L6+28
+ 130 00a8 8020A0E3 		mov	r2, #128
+ 131 00ac B020C3E1 		strh	r2, [r3]	@ movhi
+  21:../source/tinyUnity/Scheduler.cpp **** 	poolMax =0;
+ 132              		.loc 2 21 0
+ 133 00b0 7C309FE5 		ldr	r3, .L6+32
+ 134 00b4 0020A0E3 		mov	r2, #0
+ 135 00b8 B020C3E1 		strh	r2, [r3]	@ movhi
+ 136              	.LBB3:
+  22:../source/tinyUnity/Scheduler.cpp **** 
+  23:../source/tinyUnity/Scheduler.cpp **** 	for(int i =0; i< capacity; i++)
+ 137              		.loc 2 23 0
+ 138 00bc 0030A0E3 		mov	r3, #0
+ 139 00c0 10300BE5 		str	r3, [fp, #-16]
+ 140 00c4 090000EA 		b	.L4
+ 141              	.L5:
+  24:../source/tinyUnity/Scheduler.cpp **** 	{
+  25:../source/tinyUnity/Scheduler.cpp **** 		taskQueue[i] = nullptr;
+ 142              		.loc 2 25 0 discriminator 2
+ 143 00c8 5C309FE5 		ldr	r3, .L6+24
+ 144 00cc 002093E5 		ldr	r2, [r3]
+ 145 00d0 10301BE5 		ldr	r3, [fp, #-16]
+ 146 00d4 0331A0E1 		mov	r3, r3, asl #2
+ 147 00d8 033082E0 		add	r3, r2, r3
+ 148 00dc 0020A0E3 		mov	r2, #0
+ 149 00e0 002083E5 		str	r2, [r3]
+  23:../source/tinyUnity/Scheduler.cpp **** 	{
+ 150              		.loc 2 23 0 discriminator 2
+ 151 00e4 10301BE5 		ldr	r3, [fp, #-16]
+ 152 00e8 013083E2 		add	r3, r3, #1
+ 153 00ec 10300BE5 		str	r3, [fp, #-16]
+ 154              	.L4:
+  23:../source/tinyUnity/Scheduler.cpp **** 	{
+ 155              		.loc 2 23 0 is_stmt 0 discriminator 1
+ 156 00f0 38309FE5 		ldr	r3, .L6+28
+ 157 00f4 B030D3E1 		ldrh	r3, [r3]
+ 158 00f8 0320A0E1 		mov	r2, r3
+ 159 00fc 10301BE5 		ldr	r3, [fp, #-16]
+ 160 0100 030052E1 		cmp	r2, r3
+ 161 0104 EFFFFFCA 		bgt	.L5
+ 162              	.LBE3:
+ 163              	.LBE2:
+  26:../source/tinyUnity/Scheduler.cpp **** 	}
+  27:../source/tinyUnity/Scheduler.cpp **** }
+ 164              		.loc 2 27 0 is_stmt 1
+ 165 0108 08D04BE2 		sub	sp, fp, #8
+ 166              		@ sp needed
+ 167 010c 1048BDE8 		ldmfd	sp!, {r4, fp, lr}
+ 168 0110 1EFF2FE1 		bx	lr
+ 169              	.L7:
+ 170              		.align	2
+ 171              	.L6:
+ 172 0114 00000000 		.word	_ZN9tinyUnity9Scheduler9nowMillisE
+ 173 0118 0000C842 		.word	1120403456
+ 174 011c 00000000 		.word	_ZN9tinyUnity9Scheduler16resolutionMillisE
+ 175 0120 00000000 		.word	_ZN9tinyUnity9Scheduler4busyE
+ 176 0124 80B0FFC7 		.word	-939544448
+ 177 0128 00000000 		.word	_ZN9tinyUnity9Scheduler13timerCallbackEv
+ 178 012c 00000000 		.word	_ZN9tinyUnity9Scheduler9taskQueueE
+ 179 0130 00000000 		.word	_ZN9tinyUnity9Scheduler8capacityE
+ 180 0134 00000000 		.word	_ZN9tinyUnity9Scheduler7poolMaxE
+ 181              		.cfi_endproc
+ 182              	.LFE187:
+ 184              		.align	2
+ 185              		.global	_ZN9tinyUnity9Scheduler13timerCallbackEv
+ 187              	_ZN9tinyUnity9Scheduler13timerCallbackEv:
+ 188              	.LFB188:
+  28:../source/tinyUnity/Scheduler.cpp **** 
+  29:../source/tinyUnity/Scheduler.cpp **** void Scheduler::timerCallback()
+  30:../source/tinyUnity/Scheduler.cpp **** {
+ 189              		.loc 2 30 0
+ 190              		.cfi_startproc
+ 191              		@ Function supports interworking.
+ 192              		@ args = 0, pretend = 0, frame = 8
+ 193              		@ frame_needed = 1, uses_anonymous_args = 0
+ 194              		@ link register save eliminated.
+ 195 0138 10082DE9 		stmfd	sp!, {r4, fp}
+ 196              	.LCFI4:
+ 197              		.cfi_def_cfa_offset 8
+ 198              		.cfi_offset 4, -8
+ 199              		.cfi_offset 11, -4
+ 200 013c 04B08DE2 		add	fp, sp, #4
+ 201              	.LCFI5:
+ 202              		.cfi_def_cfa 11, 4
+ 203 0140 08D04DE2 		sub	sp, sp, #8
+ 204              	.LBB4:
+  31:../source/tinyUnity/Scheduler.cpp **** 	busy = true;
+ 205              		.loc 2 31 0
+ 206 0144 98309FE5 		ldr	r3, .L12
+ 207 0148 0120A0E3 		mov	r2, #1
+ 208 014c 0020C3E5 		strb	r2, [r3]
+  32:../source/tinyUnity/Scheduler.cpp **** 	nowMillis += resolutionMillis;
+ 209              		.loc 2 32 0
+ 210 0150 90309FE5 		ldr	r3, .L12+4
+ 211 0154 0030D3E5 		ldrb	r3, [r3]	@ zero_extendqisi2
+ 212 0158 FF1003E2 		and	r1, r3, #255
+ 213 015c 0020A0E3 		mov	r2, #0
+ 214 0160 84309FE5 		ldr	r3, .L12+8
+ 215 0164 180093E8 		ldmia	r3, {r3-r4}
+ 216 0168 013093E0 		adds	r3, r3, r1
+ 217 016c 0240A4E0 		adc	r4, r4, r2
+ 218 0170 74209FE5 		ldr	r2, .L12+8
+ 219 0174 180082E8 		stmia	r2, {r3-r4}
+ 220              	.LBB5:
+  33:../source/tinyUnity/Scheduler.cpp **** 	for(int i=0; i<poolMax;i++)
+ 221              		.loc 2 33 0
+ 222 0178 0030A0E3 		mov	r3, #0
+ 223 017c 08300BE5 		str	r3, [fp, #-8]
+ 224 0180 0B0000EA 		b	.L9
+ 225              	.L11:
+  34:../source/tinyUnity/Scheduler.cpp **** 	{
+  35:../source/tinyUnity/Scheduler.cpp **** 
+  36:../source/tinyUnity/Scheduler.cpp **** 		if( i == poolMax)
+ 226              		.loc 2 36 0
+ 227 0184 64309FE5 		ldr	r3, .L12+12
+ 228 0188 B030D3E1 		ldrh	r3, [r3]
+ 229 018c 0320A0E1 		mov	r2, r3
+ 230 0190 08301BE5 		ldr	r3, [fp, #-8]
+ 231 0194 030052E1 		cmp	r2, r3
+ 232 0198 0200001A 		bne	.L10
+  37:../source/tinyUnity/Scheduler.cpp **** 		{
+  38:../source/tinyUnity/Scheduler.cpp **** 			i--;
+ 233              		.loc 2 38 0
+ 234 019c 08301BE5 		ldr	r3, [fp, #-8]
+ 235 01a0 013043E2 		sub	r3, r3, #1
+ 236 01a4 08300BE5 		str	r3, [fp, #-8]
+ 237              	.L10:
+  33:../source/tinyUnity/Scheduler.cpp **** 	{
+ 238              		.loc 2 33 0
+ 239 01a8 08301BE5 		ldr	r3, [fp, #-8]
+ 240 01ac 013083E2 		add	r3, r3, #1
+ 241 01b0 08300BE5 		str	r3, [fp, #-8]
+ 242              	.L9:
+  33:../source/tinyUnity/Scheduler.cpp **** 	{
+ 243              		.loc 2 33 0 is_stmt 0 discriminator 1
+ 244 01b4 34309FE5 		ldr	r3, .L12+12
+ 245 01b8 B030D3E1 		ldrh	r3, [r3]
+ 246 01bc 0320A0E1 		mov	r2, r3
+ 247 01c0 08301BE5 		ldr	r3, [fp, #-8]
+ 248 01c4 030052E1 		cmp	r2, r3
+ 249 01c8 EDFFFFCA 		bgt	.L11
+ 250              	.LBE5:
+  39:../source/tinyUnity/Scheduler.cpp **** 		}
+  40:../source/tinyUnity/Scheduler.cpp **** 	}
+  41:../source/tinyUnity/Scheduler.cpp **** 	//evaluate priority
+  42:../source/tinyUnity/Scheduler.cpp **** 	//make calls
+  43:../source/tinyUnity/Scheduler.cpp **** 	busy = false;
+ 251              		.loc 2 43 0 is_stmt 1
+ 252 01cc 10309FE5 		ldr	r3, .L12
+ 253 01d0 0020A0E3 		mov	r2, #0
+ 254 01d4 0020C3E5 		strb	r2, [r3]
+ 255              	.LBE4:
+  44:../source/tinyUnity/Scheduler.cpp **** }
+ 256              		.loc 2 44 0
+ 257 01d8 04D04BE2 		sub	sp, fp, #4
+ 258              		@ sp needed
+ 259 01dc 1008BDE8 		ldmfd	sp!, {r4, fp}
+ 260 01e0 1EFF2FE1 		bx	lr
+ 261              	.L13:
+ 262              		.align	2
+ 263              	.L12:
+ 264 01e4 00000000 		.word	_ZN9tinyUnity9Scheduler4busyE
+ 265 01e8 00000000 		.word	_ZN9tinyUnity9Scheduler16resolutionMillisE
+ 266 01ec 00000000 		.word	_ZN9tinyUnity9Scheduler9nowMillisE
+ 267 01f0 00000000 		.word	_ZN9tinyUnity9Scheduler7poolMaxE
+ 268              		.cfi_endproc
+ 269              	.LFE188:
+ 271              		.align	2
+ 272              		.global	_ZN9tinyUnity9Scheduler12getPoolSpaceEv
+ 274              	_ZN9tinyUnity9Scheduler12getPoolSpaceEv:
+ 275              	.LFB189:
+  45:../source/tinyUnity/Scheduler.cpp **** 
+  46:../source/tinyUnity/Scheduler.cpp **** long Scheduler::getPoolSpace()
+  47:../source/tinyUnity/Scheduler.cpp **** {
+ 276              		.loc 2 47 0
+ 277              		.cfi_startproc
+ 278              		@ Function supports interworking.
+ 279              		@ args = 0, pretend = 0, frame = 16
+ 280              		@ frame_needed = 1, uses_anonymous_args = 0
+ 281 01f4 00482DE9 		stmfd	sp!, {fp, lr}
+ 282              	.LCFI6:
+ 283              		.cfi_def_cfa_offset 8
+ 284              		.cfi_offset 11, -8
+ 285              		.cfi_offset 14, -4
+ 286 01f8 04B08DE2 		add	fp, sp, #4
+ 287              	.LCFI7:
+ 288              		.cfi_def_cfa 11, 4
+ 289 01fc 10D04DE2 		sub	sp, sp, #16
+ 290              	.LBB6:
+  48:../source/tinyUnity/Scheduler.cpp **** 	bool foundSpace=false;
+ 291              		.loc 2 48 0
+ 292 0200 0030A0E3 		mov	r3, #0
+ 293 0204 05304BE5 		strb	r3, [fp, #-5]
+  49:../source/tinyUnity/Scheduler.cpp **** 	long i=0;
+ 294              		.loc 2 49 0
+ 295 0208 0030A0E3 		mov	r3, #0
+ 296 020c 0C300BE5 		str	r3, [fp, #-12]
+ 297              	.LBB7:
+  50:../source/tinyUnity/Scheduler.cpp **** 	for(i =0;i<capacity;i++)
+ 298              		.loc 2 50 0
+ 299 0210 0030A0E3 		mov	r3, #0
+ 300 0214 0C300BE5 		str	r3, [fp, #-12]
+ 301 0218 1F0000EA 		b	.L15
+ 302              	.L19:
+ 303              	.LBB8:
+  51:../source/tinyUnity/Scheduler.cpp **** 	{
+  52:../source/tinyUnity/Scheduler.cpp **** 		Task* t=  taskQueue[i];
+ 304              		.loc 2 52 0
+ 305 021c E4309FE5 		ldr	r3, .L23
+ 306 0220 002093E5 		ldr	r2, [r3]
+ 307 0224 0C301BE5 		ldr	r3, [fp, #-12]
+ 308 0228 0331A0E1 		mov	r3, r3, asl #2
+ 309 022c 033082E0 		add	r3, r2, r3
+ 310 0230 003093E5 		ldr	r3, [r3]
+ 311 0234 10300BE5 		str	r3, [fp, #-16]
+  53:../source/tinyUnity/Scheduler.cpp **** 		if(t == nullptr)
+ 312              		.loc 2 53 0
+ 313 0238 10301BE5 		ldr	r3, [fp, #-16]
+ 314 023c 000053E3 		cmp	r3, #0
+ 315 0240 0200001A 		bne	.L16
+  54:../source/tinyUnity/Scheduler.cpp **** 		{
+  55:../source/tinyUnity/Scheduler.cpp **** 			foundSpace = true;
+ 316              		.loc 2 55 0
+ 317 0244 0130A0E3 		mov	r3, #1
+ 318 0248 05304BE5 		strb	r3, [fp, #-5]
+  56:../source/tinyUnity/Scheduler.cpp **** 			break;
+ 319              		.loc 2 56 0
+ 320 024c 180000EA 		b	.L17
+ 321              	.L16:
+  57:../source/tinyUnity/Scheduler.cpp **** 		}
+  58:../source/tinyUnity/Scheduler.cpp **** 
+  59:../source/tinyUnity/Scheduler.cpp **** 		if(isDeadTask(t))
+ 322              		.loc 2 59 0
+ 323 0250 10001BE5 		ldr	r0, [fp, #-16]
+ 324 0254 FEFFFFEB 		bl	_ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE
+ 325 0258 0030A0E1 		mov	r3, r0
+ 326 025c 000053E3 		cmp	r3, #0
+ 327 0260 0A00000A 		beq	.L18
+  60:../source/tinyUnity/Scheduler.cpp **** 		{
+  61:../source/tinyUnity/Scheduler.cpp **** 			foundSpace=true;
+ 328              		.loc 2 61 0
+ 329 0264 0130A0E3 		mov	r3, #1
+ 330 0268 05304BE5 		strb	r3, [fp, #-5]
+  62:../source/tinyUnity/Scheduler.cpp **** 			delete t;
+ 331              		.loc 2 62 0
+ 332 026c 10001BE5 		ldr	r0, [fp, #-16]
+ 333 0270 FEFFFFEB 		bl	_ZdlPv
+  63:../source/tinyUnity/Scheduler.cpp **** 			//guard
+  64:../source/tinyUnity/Scheduler.cpp **** 			taskQueue[i] = nullptr;
+ 334              		.loc 2 64 0
+ 335 0274 8C309FE5 		ldr	r3, .L23
+ 336 0278 002093E5 		ldr	r2, [r3]
+ 337 027c 0C301BE5 		ldr	r3, [fp, #-12]
+ 338 0280 0331A0E1 		mov	r3, r3, asl #2
+ 339 0284 033082E0 		add	r3, r2, r3
+ 340 0288 0020A0E3 		mov	r2, #0
+ 341 028c 002083E5 		str	r2, [r3]
+ 342              	.L18:
+ 343              	.LBE8:
+  50:../source/tinyUnity/Scheduler.cpp **** 	{
+ 344              		.loc 2 50 0
+ 345 0290 0C301BE5 		ldr	r3, [fp, #-12]
+ 346 0294 013083E2 		add	r3, r3, #1
+ 347 0298 0C300BE5 		str	r3, [fp, #-12]
+ 348              	.L15:
+  50:../source/tinyUnity/Scheduler.cpp **** 	{
+ 349              		.loc 2 50 0 is_stmt 0 discriminator 1
+ 350 029c 68309FE5 		ldr	r3, .L23+4
+ 351 02a0 B030D3E1 		ldrh	r3, [r3]
+ 352 02a4 0320A0E1 		mov	r2, r3
+ 353 02a8 0C301BE5 		ldr	r3, [fp, #-12]
+ 354 02ac 030052E1 		cmp	r2, r3
+ 355 02b0 D9FFFFCA 		bgt	.L19
+ 356              	.L17:
+ 357              	.LBE7:
+  65:../source/tinyUnity/Scheduler.cpp **** 		}
+  66:../source/tinyUnity/Scheduler.cpp **** 	}
+  67:../source/tinyUnity/Scheduler.cpp **** 
+  68:../source/tinyUnity/Scheduler.cpp **** 	if(poolMax < i)
+ 358              		.loc 2 68 0 is_stmt 1
+ 359 02b4 54309FE5 		ldr	r3, .L23+8
+ 360 02b8 B030D3E1 		ldrh	r3, [r3]
+ 361 02bc 0320A0E1 		mov	r2, r3
+ 362 02c0 0C301BE5 		ldr	r3, [fp, #-12]
+ 363 02c4 030052E1 		cmp	r2, r3
+ 364 02c8 020000AA 		bge	.L20
+  69:../source/tinyUnity/Scheduler.cpp **** 	{
+  70:../source/tinyUnity/Scheduler.cpp **** 		i= poolMax;
+ 365              		.loc 2 70 0
+ 366 02cc 3C309FE5 		ldr	r3, .L23+8
+ 367 02d0 B030D3E1 		ldrh	r3, [r3]
+ 368 02d4 0C300BE5 		str	r3, [fp, #-12]
+ 369              	.L20:
+  71:../source/tinyUnity/Scheduler.cpp **** 	}
+  72:../source/tinyUnity/Scheduler.cpp **** 
+  73:../source/tinyUnity/Scheduler.cpp **** 	if(!foundSpace)
+ 370              		.loc 2 73 0
+ 371 02d8 05305BE5 		ldrb	r3, [fp, #-5]
+ 372 02dc 013023E2 		eor	r3, r3, #1
+ 373 02e0 FF3003E2 		and	r3, r3, #255
+ 374 02e4 000053E3 		cmp	r3, #0
+ 375 02e8 0100000A 		beq	.L21
+  74:../source/tinyUnity/Scheduler.cpp **** 	return -1;
+ 376              		.loc 2 74 0
+ 377 02ec 0030E0E3 		mvn	r3, #0
+ 378 02f0 000000EA 		b	.L22
+ 379              	.L21:
+  75:../source/tinyUnity/Scheduler.cpp **** 
+  76:../source/tinyUnity/Scheduler.cpp **** 	return i;
+ 380              		.loc 2 76 0
+ 381 02f4 0C301BE5 		ldr	r3, [fp, #-12]
+ 382              	.L22:
+ 383              	.LBE6:
+  77:../source/tinyUnity/Scheduler.cpp **** }
+ 384              		.loc 2 77 0
+ 385 02f8 0300A0E1 		mov	r0, r3
+ 386 02fc 04D04BE2 		sub	sp, fp, #4
+ 387              		@ sp needed
+ 388 0300 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 389 0304 1EFF2FE1 		bx	lr
+ 390              	.L24:
+ 391              		.align	2
+ 392              	.L23:
+ 393 0308 00000000 		.word	_ZN9tinyUnity9Scheduler9taskQueueE
+ 394 030c 00000000 		.word	_ZN9tinyUnity9Scheduler8capacityE
+ 395 0310 00000000 		.word	_ZN9tinyUnity9Scheduler7poolMaxE
+ 396              		.cfi_endproc
+ 397              	.LFE189:
+ 399              		.global	__aeabi_f2iz
+ 400              		.align	2
+ 401              		.global	_ZN9tinyUnity9Scheduler8scheduleEPNS_9ComponentEif
+ 403              	_ZN9tinyUnity9Scheduler8scheduleEPNS_9ComponentEif:
+ 404              	.LFB190:
+  78:../source/tinyUnity/Scheduler.cpp **** 
+  79:../source/tinyUnity/Scheduler.cpp **** void Scheduler::schedule(Component* target, int actionID, float delay)
+  80:../source/tinyUnity/Scheduler.cpp **** {
+ 405              		.loc 2 80 0
+ 406              		.cfi_startproc
+ 407              		@ Function supports interworking.
+ 408              		@ args = 0, pretend = 0, frame = 32
+ 409              		@ frame_needed = 1, uses_anonymous_args = 0
+ 410 0314 00482DE9 		stmfd	sp!, {fp, lr}
+ 411              	.LCFI8:
+ 412              		.cfi_def_cfa_offset 8
+ 413              		.cfi_offset 11, -8
+ 414              		.cfi_offset 14, -4
+ 415 0318 04B08DE2 		add	fp, sp, #4
+ 416              	.LCFI9:
+ 417              		.cfi_def_cfa 11, 4
+ 418 031c 20D04DE2 		sub	sp, sp, #32
+ 419 0320 18000BE5 		str	r0, [fp, #-24]
+ 420 0324 1C100BE5 		str	r1, [fp, #-28]
+ 421 0328 20200BE5 		str	r2, [fp, #-32]	@ float
+ 422              	.LBB9:
+  81:../source/tinyUnity/Scheduler.cpp **** 	 int delayMillis = delay*100;
+ 423              		.loc 2 81 0
+ 424 032c 20001BE5 		ldr	r0, [fp, #-32]	@ float
+ 425 0330 88109FE5 		ldr	r1, .L28
+ 426 0334 FEFFFFEB 		bl	__aeabi_fmul
+ 427 0338 0030A0E1 		mov	r3, r0
+ 428 033c 0300A0E1 		mov	r0, r3
+ 429 0340 FEFFFFEB 		bl	__aeabi_f2iz
+ 430 0344 0030A0E1 		mov	r3, r0
+ 431 0348 08300BE5 		str	r3, [fp, #-8]
+  82:../source/tinyUnity/Scheduler.cpp **** 	 Scheduler::Task* task = new Task{ nowMillis+delayMillis,target,actionID};
+ 432              		.loc 2 82 0
+ 433 034c 0C00A0E3 		mov	r0, #12
+ 434 0350 FEFFFFEB 		bl	_Znwj
+ 435 0354 0030A0E1 		mov	r3, r0
+ 436 0358 64209FE5 		ldr	r2, .L28+4
+ 437 035c 060092E8 		ldmia	r2, {r1-r2}
+ 438 0360 08201BE5 		ldr	r2, [fp, #-8]
+ 439 0364 022081E0 		add	r2, r1, r2
+ 440 0368 002083E5 		str	r2, [r3]
+ 441 036c 18201BE5 		ldr	r2, [fp, #-24]
+ 442 0370 042083E5 		str	r2, [r3, #4]
+ 443 0374 1C201BE5 		ldr	r2, [fp, #-28]
+ 444 0378 082083E5 		str	r2, [r3, #8]
+ 445 037c 0C300BE5 		str	r3, [fp, #-12]
+  83:../source/tinyUnity/Scheduler.cpp **** 	 int i = getPoolSpace();
+ 446              		.loc 2 83 0
+ 447 0380 FEFFFFEB 		bl	_ZN9tinyUnity9Scheduler12getPoolSpaceEv
+ 448 0384 10000BE5 		str	r0, [fp, #-16]
+  84:../source/tinyUnity/Scheduler.cpp **** 	 if(i == -1)
+ 449              		.loc 2 84 0
+ 450 0388 10301BE5 		ldr	r3, [fp, #-16]
+ 451 038c 010073E3 		cmn	r3, #1
+ 452 0390 0000001A 		bne	.L26
+  85:../source/tinyUnity/Scheduler.cpp **** 	 {
+  86:../source/tinyUnity/Scheduler.cpp **** 		 return false;
+ 453              		.loc 2 86 0
+ 454 0394 060000EA 		b	.L25
+ 455              	.L26:
+  87:../source/tinyUnity/Scheduler.cpp **** 	 }
+  88:../source/tinyUnity/Scheduler.cpp **** 	 taskQueue[i] = task;
+ 456              		.loc 2 88 0
+ 457 0398 28309FE5 		ldr	r3, .L28+8
+ 458 039c 002093E5 		ldr	r2, [r3]
+ 459 03a0 10301BE5 		ldr	r3, [fp, #-16]
+ 460 03a4 0331A0E1 		mov	r3, r3, asl #2
+ 461 03a8 033082E0 		add	r3, r2, r3
+ 462 03ac 0C201BE5 		ldr	r2, [fp, #-12]
+ 463 03b0 002083E5 		str	r2, [r3]
+ 464              	.L25:
+ 465              	.LBE9:
+  89:../source/tinyUnity/Scheduler.cpp **** }
+ 466              		.loc 2 89 0
+ 467 03b4 04D04BE2 		sub	sp, fp, #4
+ 468              		@ sp needed
+ 469 03b8 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 470 03bc 1EFF2FE1 		bx	lr
+ 471              	.L29:
+ 472              		.align	2
+ 473              	.L28:
+ 474 03c0 0000C842 		.word	1120403456
+ 475 03c4 00000000 		.word	_ZN9tinyUnity9Scheduler9nowMillisE
+ 476 03c8 00000000 		.word	_ZN9tinyUnity9Scheduler9taskQueueE
+ 477              		.cfi_endproc
+ 478              	.LFE190:
+ 480              	.Letext0:
+ 481              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 482              		.file 4 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 483              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 484              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/system.h"
+ 485              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/timers.h"
+ 486              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 487              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 488              		.file 10 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 489              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 490              		.file 12 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 491              		.file 13 "../source/tinyUnity/Component.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Scheduler.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:23     .text._ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:26     .text._ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE:00000000 _ZN9tinyUnity9Scheduler10isDeadTaskEPNS0_4TaskE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:63     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:66     .text:00000000 _ZN9tinyUnity9Scheduler5StartEif
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:172    .text:00000114 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:187    .text:00000138 _ZN9tinyUnity9Scheduler13timerCallbackEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:184    .text:00000138 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:264    .text:000001e4 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:271    .text:000001f4 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:274    .text:000001f4 _ZN9tinyUnity9Scheduler12getPoolSpaceEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:393    .text:00000308 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:400    .text:00000314 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:403    .text:00000314 _ZN9tinyUnity9Scheduler8scheduleEPNS_9ComponentEif
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6yVerG.s:474    .text:000003c0 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.7a7c9736cc6d4c59c817f754af461a43
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.stdlib.h.53.a73f7e963d962393b7f9086194931e4a
+                           .group:00000000 wm4.cdefs.h.56.862c22ff4fc3f08ba284da94c8439388
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData
+__aeabi_fmul
+__aeabi_f2uiz
+__aeabi_fdiv
+timerStart
+_Znaj
+_ZN9tinyUnity9Scheduler9nowMillisE
+_ZN9tinyUnity9Scheduler16resolutionMillisE
+_ZN9tinyUnity9Scheduler4busyE
+_ZN9tinyUnity9Scheduler9taskQueueE
+_ZN9tinyUnity9Scheduler8capacityE
+_ZN9tinyUnity9Scheduler7poolMaxE
+_ZdlPv
+__aeabi_f2iz
+_Znwj

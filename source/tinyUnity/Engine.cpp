@@ -1,43 +1,21 @@
 /*
- * Object.cpp
+ * Engine.cpp
  *
- *  Created on: 2013-06-21
+ *  Created on: Sep 1, 2014
  *      Author: awiebe
  */
 
-#include "Object.h"
-//#define DEFERRED_RELEASE
+#include "Engine.h"
+
 namespace tinyUnity {
 
-Object::Object()
-{
-	this->referenceCount=1;
+Engine::Engine() {
 	// TODO Auto-generated constructor stub
 
 }
 
-Object::~Object() {
+Engine::~Engine() {
 	// TODO Auto-generated destructor stub
-}
-
-Object* Object::retain()
-{
-	this->referenceCount++;
-	return this;
-}
-
-int Object::release()
-{
-	this->referenceCount--;
-	if(this->referenceCount == 0)
-	{
-	#ifdef DEFERRED_RELEASE
-	#error "Deferred release system not implemented"
-	#else
-		this->~Object();
-	#endif
-	}
-	return this->referenceCount;
 }
 
 } /* namespace tinyUnity */

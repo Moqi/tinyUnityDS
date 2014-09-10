@@ -6,6 +6,8 @@
  */
 #include "Vector3.h"
 #include "physics/Collider.h"
+#include <vector>
+
 #ifndef TRANSFORM_H_
 #define TRANSFORM_H_
 namespace tinyUnity {
@@ -54,6 +56,8 @@ public:
 		this->scale = scale;
 	}
 
+	Transform** getChildren(){return children;}
+
 private:
 	Vector3* position;
 
@@ -61,7 +65,8 @@ private:
 	Vector3* rotation;
 	Vector3* scale;
 	Collider* collider;
-	Transform* children;
+	Transform** children;
+	Transform* parent;
 
 	unsigned char flags;
 	unsigned short glMatrixID;

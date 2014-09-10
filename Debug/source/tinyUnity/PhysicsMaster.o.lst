@@ -1,0 +1,528 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"PhysicsMaster.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.rodata
+  17              		.align	2
+  20              	_ZStL19piecewise_construct:
+  21 0000 00       		.space	1
+  22              		.text
+  23              		.align	2
+  25              	_ZL20__gthread_key_deletei:
+  26              	.LFB613:
+  27              		.file 1 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr
+   1:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Compile this one with gcc.  */
+   3:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Copyright (C) 1997-2013 Free Software Foundation, Inc.
+   4:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+   5:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** This file is part of GCC.
+   6:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+   7:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** version.
+  11:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  12:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** for more details.
+  16:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  17:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  21:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  26:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  29:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  31:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** typedef int __gthread_key_t;
+  32:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** typedef int __gthread_once_t;
+  33:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** typedef int __gthread_mutex_t;
+  34:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  36:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx)
+  39:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  41:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((unused))
+  42:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  43:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #ifdef _LIBOBJC
+  44:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  45:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Thread local storage for a single thread */
+  46:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static void *thread_local_storage = NULL;
+  47:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  48:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Backend initialization functions */
+  49:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  50:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+  52:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  54:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support available */
+  55:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return -1;
+  56:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  57:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  58:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Close the threads subsystem.  */
+  59:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+  60:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  62:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support available */
+  63:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return -1;
+  64:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  65:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  66:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Backend thread functions */
+  67:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  68:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Create a new thread of execution.  */
+  69:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline objc_thread_t
+  70:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  72:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support available */
+  73:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return NULL;
+  74:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  75:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  76:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Set the current thread's priority.  */
+  77:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+  78:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  80:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support available */
+  81:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return -1;
+  82:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  83:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  84:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Return the current thread's priority.  */
+  85:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+  86:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  88:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  90:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  91:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Yield our process time to another thread.  */
+  92:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline void
+  93:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  95:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return;
+  96:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  97:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+  98:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Terminate the current thread.  */
+  99:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 100:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 102:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support available */
+ 103:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* Should we really exit the program */
+ 104:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return -1;
+ 106:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 107:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 108:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline objc_thread_t
+ 110:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 112:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* No thread support, use 1.  */
+ 113:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return (objc_thread_t) 1;
+ 114:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 115:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 116:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 118:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 120:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   thread_local_storage = value;
+ 121:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 122:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 123:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 124:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline void *
+ 126:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 128:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return thread_local_storage;
+ 129:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 130:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 131:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Backend mutex functions */
+ 132:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 133:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Allocate a mutex.  */
+ 134:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 135:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 137:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 138:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 139:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 140:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Deallocate a mutex.  */
+ 141:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 142:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 144:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 145:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 146:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 147:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 149:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 151:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 153:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 154:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 155:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 157:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 159:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 161:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 162:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 163:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Unlock the mutex */
+ 164:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 165:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 167:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 168:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 169:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 170:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Backend condition mutex functions */
+ 171:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 172:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Allocate a condition.  */
+ 173:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 174:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 176:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 177:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 178:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 179:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Deallocate a condition.  */
+ 180:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 181:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 183:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 184:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 185:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 186:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Wait on the condition */
+ 187:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 188:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 191:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 192:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 193:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 194:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 196:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 198:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 199:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 200:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 201:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ 202:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 203:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 205:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 206:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 207:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 208:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** #else /* _LIBOBJC */
+ 209:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 210:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 211:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_active_p (void)
+ 212:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 213:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 214:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 215:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 216:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int
+ 217:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 219:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 220:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 221:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 222:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+ 225:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+ 226:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+ 227:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** 
+ 228:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** {
+  28              		.loc 1 230 0
+  29              		.cfi_startproc
+  30              		@ Function supports interworking.
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34 0000 04B02DE5 		str	fp, [sp, #-4]!
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 11, -4
+  38 0004 00B08DE2 		add	fp, sp, #0
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_register 11
+  41 0008 0CD04DE2 		sub	sp, sp, #12
+  42 000c 08000BE5 		str	r0, [fp, #-8]
+ 231:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h ****   return 0;
+  43              		.loc 1 231 0
+  44 0010 0030A0E3 		mov	r3, #0
+ 232:/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/gthr-default.h **** }
+  45              		.loc 1 232 0
+  46 0014 0300A0E1 		mov	r0, r3
+  47 0018 00D04BE2 		sub	sp, fp, #0
+  48              		@ sp needed
+  49 001c 04B09DE4 		ldr	fp, [sp], #4
+  50 0020 1EFF2FE1 		bx	lr
+  51              		.cfi_endproc
+  52              	.LFE613:
+  54              		.section	.rodata
+  55 0001 000000   		.align	2
+  58              	_ZStL13allocator_arg:
+  59 0004 00       		.space	1
+  60 0005 000000   		.align	2
+  63              	_ZStL6ignore:
+  64 0008 00       		.space	1
+  65              		.text
+  66              		.align	2
+  67              		.global	_ZN9tinyUnity13PhysicsMasterC2Ev
+  69              	_ZN9tinyUnity13PhysicsMasterC2Ev:
+  70              	.LFB1152:
+  71              		.file 2 "../source/tinyUnity/PhysicsMaster.cpp"
+   1:../source/tinyUnity/PhysicsMaster.cpp **** /*
+   2:../source/tinyUnity/PhysicsMaster.cpp ****  * PhysicsMaster.cpp
+   3:../source/tinyUnity/PhysicsMaster.cpp ****  *
+   4:../source/tinyUnity/PhysicsMaster.cpp ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/PhysicsMaster.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/PhysicsMaster.cpp ****  */
+   7:../source/tinyUnity/PhysicsMaster.cpp **** 
+   8:../source/tinyUnity/PhysicsMaster.cpp **** #include "PhysicsMaster.h"
+   9:../source/tinyUnity/PhysicsMaster.cpp **** 
+  10:../source/tinyUnity/PhysicsMaster.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/PhysicsMaster.cpp **** 
+  12:../source/tinyUnity/PhysicsMaster.cpp **** PhysicsMaster::PhysicsMaster() {
+  72              		.loc 2 12 0
+  73              		.cfi_startproc
+  74              		@ Function supports interworking.
+  75              		@ args = 0, pretend = 0, frame = 8
+  76              		@ frame_needed = 1, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0024 04B02DE5 		str	fp, [sp, #-4]!
+  79              	.LCFI2:
+  80              		.cfi_def_cfa_offset 4
+  81              		.cfi_offset 11, -4
+  82 0028 00B08DE2 		add	fp, sp, #0
+  83              	.LCFI3:
+  84              		.cfi_def_cfa_register 11
+  85 002c 0CD04DE2 		sub	sp, sp, #12
+  86 0030 08000BE5 		str	r0, [fp, #-8]
+  87              	.LBB2:
+  88              		.loc 2 12 0
+  89 0034 08301BE5 		ldr	r3, [fp, #-8]
+  90 0038 14209FE5 		ldr	r2, .L6
+  91 003c 002083E5 		str	r2, [r3]
+  92              	.LBE2:
+  13:../source/tinyUnity/PhysicsMaster.cpp **** 	// TODO Auto-generated constructor stub
+  14:../source/tinyUnity/PhysicsMaster.cpp **** 
+  15:../source/tinyUnity/PhysicsMaster.cpp **** }
+  93              		.loc 2 15 0
+  94 0040 08301BE5 		ldr	r3, [fp, #-8]
+  95 0044 0300A0E1 		mov	r0, r3
+  96 0048 00D04BE2 		sub	sp, fp, #0
+  97              		@ sp needed
+  98 004c 04B09DE4 		ldr	fp, [sp], #4
+  99 0050 1EFF2FE1 		bx	lr
+ 100              	.L7:
+ 101              		.align	2
+ 102              	.L6:
+ 103 0054 08000000 		.word	_ZTVN9tinyUnity13PhysicsMasterE+8
+ 104              		.cfi_endproc
+ 105              	.LFE1152:
+ 107              		.global	_ZN9tinyUnity13PhysicsMasterC1Ev
+ 108              		.set	_ZN9tinyUnity13PhysicsMasterC1Ev,_ZN9tinyUnity13PhysicsMasterC2Ev
+ 109              		.align	2
+ 110              		.global	_ZN9tinyUnity13PhysicsMasterD2Ev
+ 112              	_ZN9tinyUnity13PhysicsMasterD2Ev:
+ 113              	.LFB1155:
+  16:../source/tinyUnity/PhysicsMaster.cpp **** 
+  17:../source/tinyUnity/PhysicsMaster.cpp **** PhysicsMaster::~PhysicsMaster() {
+ 114              		.loc 2 17 0
+ 115              		.cfi_startproc
+ 116              		@ Function supports interworking.
+ 117              		@ args = 0, pretend = 0, frame = 8
+ 118              		@ frame_needed = 1, uses_anonymous_args = 0
+ 119 0058 00482DE9 		stmfd	sp!, {fp, lr}
+ 120              	.LCFI4:
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 11, -8
+ 123              		.cfi_offset 14, -4
+ 124 005c 04B08DE2 		add	fp, sp, #4
+ 125              	.LCFI5:
+ 126              		.cfi_def_cfa 11, 4
+ 127 0060 08D04DE2 		sub	sp, sp, #8
+ 128 0064 08000BE5 		str	r0, [fp, #-8]
+ 129              	.LBB3:
+ 130              		.loc 2 17 0
+ 131 0068 08301BE5 		ldr	r3, [fp, #-8]
+ 132 006c 28209FE5 		ldr	r2, .L12
+ 133 0070 002083E5 		str	r2, [r3]
+ 134              	.LBE3:
+  18:../source/tinyUnity/PhysicsMaster.cpp **** 	// TODO Auto-generated destructor stub
+  19:../source/tinyUnity/PhysicsMaster.cpp **** }
+ 135              		.loc 2 19 0
+ 136 0074 0030A0E3 		mov	r3, #0
+ 137 0078 000053E3 		cmp	r3, #0
+ 138 007c 0100000A 		beq	.L10
+ 139              		.loc 2 19 0 is_stmt 0 discriminator 1
+ 140 0080 08001BE5 		ldr	r0, [fp, #-8]
+ 141 0084 FEFFFFEB 		bl	_ZdlPv
+ 142              	.L10:
+ 143              		.loc 2 19 0 discriminator 2
+ 144 0088 08301BE5 		ldr	r3, [fp, #-8]
+ 145 008c 0300A0E1 		mov	r0, r3
+ 146 0090 04D04BE2 		sub	sp, fp, #4
+ 147              		@ sp needed
+ 148 0094 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 149 0098 1EFF2FE1 		bx	lr
+ 150              	.L13:
+ 151              		.align	2
+ 152              	.L12:
+ 153 009c 08000000 		.word	_ZTVN9tinyUnity13PhysicsMasterE+8
+ 154              		.cfi_endproc
+ 155              	.LFE1155:
+ 157              		.global	_ZN9tinyUnity13PhysicsMasterD1Ev
+ 158              		.set	_ZN9tinyUnity13PhysicsMasterD1Ev,_ZN9tinyUnity13PhysicsMasterD2Ev
+ 159              		.align	2
+ 160              		.global	_ZN9tinyUnity13PhysicsMasterD0Ev
+ 162              	_ZN9tinyUnity13PhysicsMasterD0Ev:
+ 163              	.LFB1157:
+  17:../source/tinyUnity/PhysicsMaster.cpp **** 	// TODO Auto-generated destructor stub
+ 164              		.loc 2 17 0 is_stmt 1
+ 165              		.cfi_startproc
+ 166              		@ Function supports interworking.
+ 167              		@ args = 0, pretend = 0, frame = 8
+ 168              		@ frame_needed = 1, uses_anonymous_args = 0
+ 169 00a0 00482DE9 		stmfd	sp!, {fp, lr}
+ 170              	.LCFI6:
+ 171              		.cfi_def_cfa_offset 8
+ 172              		.cfi_offset 11, -8
+ 173              		.cfi_offset 14, -4
+ 174 00a4 04B08DE2 		add	fp, sp, #4
+ 175              	.LCFI7:
+ 176              		.cfi_def_cfa 11, 4
+ 177 00a8 08D04DE2 		sub	sp, sp, #8
+ 178 00ac 08000BE5 		str	r0, [fp, #-8]
+ 179              		.loc 2 19 0
+ 180 00b0 08001BE5 		ldr	r0, [fp, #-8]
+ 181 00b4 FEFFFFEB 		bl	_ZN9tinyUnity13PhysicsMasterD1Ev
+ 182 00b8 08001BE5 		ldr	r0, [fp, #-8]
+ 183 00bc FEFFFFEB 		bl	_ZdlPv
+ 184 00c0 08301BE5 		ldr	r3, [fp, #-8]
+ 185 00c4 0300A0E1 		mov	r0, r3
+ 186 00c8 04D04BE2 		sub	sp, fp, #4
+ 187              		@ sp needed
+ 188 00cc 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 189 00d0 1EFF2FE1 		bx	lr
+ 190              		.cfi_endproc
+ 191              	.LFE1157:
+ 193              		.global	_ZTVN9tinyUnity13PhysicsMasterE
+ 194              		.section	.rodata
+ 195 0009 00000000 		.align	3
+ 195      000000
+ 198              	_ZTVN9tinyUnity13PhysicsMasterE:
+ 199 0010 00000000 		.word	0
+ 200 0014 00000000 		.word	0
+ 201 0018 00000000 		.word	_ZN9tinyUnity13PhysicsMasterD1Ev
+ 202 001c 00000000 		.word	_ZN9tinyUnity13PhysicsMasterD0Ev
+ 203              		.text
+ 204              	.Letext0:
+ 205              		.file 3 "/Users/awiebe/devkitPro/devkitARM/lib/gcc/arm-none-eabi/4.8.2/include/stddef.h"
+ 206              		.file 4 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 207              		.file 5 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/lock.h"
+ 208              		.file 6 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/_types.h"
+ 209              		.file 7 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/reent.h"
+ 210              		.file 8 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/arm-none-eabi/bits/c++c
+ 211              		.file 9 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/cwchar"
+ 212              		.file 10 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/cstdint"
+ 213              		.file 11 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/clocale"
+ 214              		.file 12 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/bits/stl_pair.h"
+ 215              		.file 13 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/bits/uses_allocator.h"
+ 216              		.file 14 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/tuple"
+ 217              		.file 15 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/ext/new_allocator.h"
+ 218              		.file 16 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/ext/numeric_traits.h"
+ 219              		.file 17 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/bits/cpp_type_traits.h
+ 220              		.file 18 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/debug/debug.h"
+ 221              		.file 19 "/Users/awiebe/devkitPro/devkitARM/lib/gcc/arm-none-eabi/4.8.2/include/stdarg.h"
+ 222              		.file 20 "<built-in>"
+ 223              		.file 21 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/wchar.h"
+ 224              		.file 22 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 225              		.file 23 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/locale.h"
+ 226              		.file 24 "../source/tinyUnity/PhysicsMaster.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 PhysicsMaster.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:17     .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:20     .rodata:00000000 _ZStL19piecewise_construct
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:25     .text:00000000 _ZL20__gthread_key_deletei
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:58     .rodata:00000004 _ZStL13allocator_arg
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:63     .rodata:00000008 _ZStL6ignore
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:69     .text:00000024 _ZN9tinyUnity13PhysicsMasterC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:103    .text:00000054 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:198    .rodata:00000010 _ZTVN9tinyUnity13PhysicsMasterE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:69     .text:00000024 _ZN9tinyUnity13PhysicsMasterC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:109    .text:00000058 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:112    .text:00000058 _ZN9tinyUnity13PhysicsMasterD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:153    .text:0000009c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:112    .text:00000058 _ZN9tinyUnity13PhysicsMasterD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:159    .text:000000a0 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc6dRpKy.s:162    .text:000000a0 _ZN9tinyUnity13PhysicsMasterD0Ev
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.7a7c9736cc6d4c59c817f754af461a43
+                           .group:00000000 wm4._default_types.h.6.9e4229723f5523536bc8f574589d6a99
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.stdlib.h.53.a73f7e963d962393b7f9086194931e4a
+                           .group:00000000 wm4.cconfig.h.31.c7dcfa542e28bd9698a8d20f88154445
+                           .group:00000000 wm4.cconfig.h.434.069089a5f433cea001bd4e8dc11c2229
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+                           .group:00000000 wm4.concept_check.h.31.3d579f007de71573a5abea960f72bfb9
+                           .group:00000000 wm4.type_traits.30.50c46aa307e7a8ab77156aef79316fff
+                           .group:00000000 wm4.move.h.142.423dcca5e718bf1b0a544eb61ae8c60d
+                           .group:00000000 wm4.debug.h.30.d58369f6a5680b4507179eb46c141328
+                           .group:00000000 wm4.stl_iterator.h.61.8a566d39b117b448087ef185ba94d11c
+                           .group:00000000 wm4.stl_algobase.h.495.6cac589b3940118adfc6ef3f8132a921
+                           .group:00000000 wm4.atomic_lockfree_defines.h.31.d5c6334fb1e95c9462b052951f1411df
+                           .group:00000000 wm4.alloc_traits.h.92.a767d537a24e6ec551b4cadfd08e330c
+                           .group:00000000 wm4.wchar.h.2.f837619576d797e948eb58c44fac4678
+                           .group:00000000 wm4.stddef.h.158.0b18e63b88ce7fc060257c623cb99f7e
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.wchar.h.24.393ddc216e619cf8886e89ac3510bf06
+                           .group:00000000 wm4.cwchar.48.9655a520fa8ea378dbf29aac758cd05c
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4.stdint.h.10.d0f8e374834fcfc2e296d5d5fe82f02a
+                           .group:00000000 wm4.locale.h.8.a1329ceef4af015164ee9036f2b8046e
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.locale.h.15.11f0b9b758251d0735c4c1b9e384a9a0
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.3f72bf4155744aa2d452525ff7ceebe9
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.a68b9b921e40c20d71a47376dc5677fb
+                           .group:00000000 wm4.atomicity.h.111.79decd8dc33743090fdbd96a0d0d2856
+                           .group:00000000 wm4.functional_hash.h.70.cc33b6cebe8994531b9602e1a54d32b1
+
+UNDEFINED SYMBOLS
+_ZdlPv

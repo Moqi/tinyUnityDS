@@ -11,6 +11,10 @@
 #include "Material.h"
 #include "Texture2D.h"
 namespace tinyUnity {
+
+/**
+ * Describes a material that uses the classic GL shader pipeline (immediate mode)
+ */
 class StaticMaterial: public Material
 {
 public:

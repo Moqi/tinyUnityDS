@@ -24,12 +24,11 @@ public:
 	//commit texture changes to hardware
 	void commit();
 private:
-	unsigned short width;
-	unsigned short height;
-	GL_TEXTURE_SIZE_ENUM size;
-	GL_TEXTURE_TYPE_ENUM type;
+	GL_TEXTURE_SIZE_ENUM width;
+	GL_TEXTURE_SIZE_ENUM height;
+	GL_TEXTURE_TYPE_ENUM backingType;
 	//TextureFormat format;
-	rgb mode;
+	//rgb mode;
 	bool flipx;
 		bool flipy;
 		bool	repeatx;

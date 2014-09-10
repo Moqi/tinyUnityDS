@@ -16,16 +16,12 @@ class Component {
 public:
 	Component();
 	~Component();
-	virtual void fixedUpdate();
-	virtual void update();
-	virtual void awake();
-	virtual void onCollisionEnter();
-	virtual void onCollisionExit();
 
 	GameObject* getGameObject();
 
 private:
 	GameObject* gameObject;
+	virtual void runScheduledRoutine(int withActionID);
 };
 
 }

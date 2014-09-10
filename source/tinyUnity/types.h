@@ -7,7 +7,7 @@
 
 #ifndef TYPES_H_
 #define TYPES_H_
-#include <nds/arm9/videoGL.h>
+#include <nds.h>
 
 namespace tinyUnity
 {
@@ -18,14 +18,16 @@ typedef unsigned short refCount;
 ///A 3D point in space, used in physics and drawing
 typedef v16 pointf;
 
-///A vectory of a matrix
+///A vector of a matrix
 typedef v10 matrixf;
+
+//Vecto unit, used for transformation and rotation
+typedef u32 vectorf;
 
 //A depth buffer unit
 typedef fixed12d3 depthf;
 
-//An rgb color  struct of the form struct{T r,g,b};
-typedef rgb rgb;
+//typedef rgb rgb;
 
 
 }

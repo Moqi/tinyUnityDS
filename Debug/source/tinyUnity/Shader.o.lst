@@ -1,0 +1,1246 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Shader.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.section	.rodata
+  23              		.align	2
+  24              	.LC0:
+  25 0000 2F557365 		.ascii	"/Users/awiebe/devkitPro/libnds/include/nds/arm9/vid"
+  25      72732F61 
+  25      77696562 
+  25      652F6465 
+  25      766B6974 
+  26 0033 656F474C 		.ascii	"eoGL.h\000"
+  26      2E6800
+  27 003a 0000     		.align	2
+  28              	.LC1:
+  29 003c 6C697374 		.ascii	"list != NULL\000"
+  29      20213D20 
+  29      4E554C4C 
+  29      00
+  30 0049 000000   		.align	2
+  31              	.LC2:
+  32 004c 676C4361 		.ascii	"glCallList received a null display list pointer\000"
+  32      6C6C4C69 
+  32      73742072 
+  32      65636569 
+  32      76656420 
+  33              		.align	2
+  34              	.LC3:
+  35 007c 636F756E 		.ascii	"count != 0\000"
+  35      7420213D 
+  35      203000
+  36 0087 00       		.align	2
+  37              	.LC4:
+  38 0088 676C4361 		.ascii	"glCallList received a display list of size 0\000"
+  38      6C6C4C69 
+  38      73742072 
+  38      65636569 
+  38      76656420 
+  39              		.text
+  40              		.align	2
+  42              	glCallList:
+  43              	.LFB122:
+  44              		.file 1 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+   1:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*---------------------------------------------------------------------------------
+   2:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+   3:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	videoGL.h -- Video API vaguely similar to OpenGL
+   4:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+   5:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	Copyright (C) 2005
+   6:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		Michael Noland (joat)
+   7:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		Jason Rogers (dovoto)
+   8:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		Dave Murphy (WinterMute)
+   9:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  10:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	This software is provided 'as-is', without any express or implied
+  11:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	warranty.  In no event will the authors be held liable for any
+  12:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	damages arising from the use of this software.
+  13:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  14:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	Permission is granted to anyone to use this software for any
+  15:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	purpose, including commercial applications, and to alter it and
+  16:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	redistribute it freely, subject to the following restrictions:
+  17:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  18:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	1.	The origin of this software must not be misrepresented; you
+  19:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		must not claim that you wrote the original software. If you use
+  20:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		this software in a product, an acknowledgment in the product
+  21:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		documentation would be appreciated but is not required.
+  22:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  23:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	2.	Altered source versions must be plainly marked as such, and
+  24:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		must not be misrepresented as being the original software.
+  25:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  26:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	3.	This notice may not be removed or altered from any source
+  27:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		distribution.
+  28:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  29:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  30:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** ---------------------------------------------------------------------------------*/
+  31:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \file videoGL.h
+  32:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	\brief openGL (ish) interface to DS 3D hardware.
+  33:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** */
+  34:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  35:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  36:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  37:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #ifndef VIDEOGL_ARM9_INCLUDE
+  38:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define VIDEOGL_ARM9_INCLUDE
+  39:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //---------------------------------------------------------------------------------
+  40:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  41:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/dma.h"
+  42:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/ndstypes.h"
+  43:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/sassert.h"
+  44:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/video.h"
+  45:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/cache.h"
+  46:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/trig_lut.h"
+  47:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/math.h"
+  48:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #include "nds/arm9/dynamicArray.h"
+  49:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  50:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  51:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // for some reason doxygen doesn't like "static inline" but is fine with "GL_STATIC_INL"
+  52:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define GL_STATIC_INL static inline
+  53:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //...I didn't had any problems, so maybe the bug is already solved in doxygen...
+  54:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  55:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  56:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  57:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #ifndef ARM9
+  58:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #error 3D hardware is only available from the ARM9
+  59:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #endif
+  60:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  61:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //---------------------------------------------------------------------------------
+  62:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  63:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*---------------------------------------------------------------------------------
+  64:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	lut resolution for trig functions
+  65:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	(must be power of two and must be the same as LUT resolution)
+  66:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	in other words dont change unless you also change your LUTs
+  67:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** ---------------------------------------------------------------------------------*/
+  68:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define LUT_SIZE (1<<15)
+  69:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define LUT_MASK ((1<<15) - 1)
+  70:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  71:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** ////////////////////////////////////////////////////////////
+  72:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // Misc. constants
+  73:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** ////////////////////////////////////////////////////////////
+  74:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  75:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define MAX_TEXTURES 2048  //this should be enough ! but feel free to change
+  76:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  77:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  78:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //////////////////////////////////////////////////////////////////////
+  79:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // Fixed point / floating point / integer conversion macros
+  80:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //////////////////////////////////////////////////////////////////////
+  81:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  82:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef uint16 fixed12d3; /*!< \brief Used for depth (glClearDepth, glCutoffDepth) */
+  83:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  84:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  85:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define intto12d3(n)    ((n) << 3) /*!< \brief convert int to fixed12d3 */
+  86:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define floatto12d3(n)  ((fixed12d3)((n) * (1 << 3))) /*!< \brief convert float to fixed12d3 */
+  87:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define GL_MAX_DEPTH      0x7FFF /*!< \brief the maximum value for type fixed12d3 */
+  88:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  89:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //////////////////////////////////////////////////////////////////////
+  90:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  91:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef short t16;        /*!< \brief text coordinate 12.4 fixed point */
+  92:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define f32tot16(n)          ((t16)(n >> 8)) /*!< \brief convert f32 to t16 */
+  93:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define inttot16(n)          ((n) << 4) /*!< \brief convert int to t16 */
+  94:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define t16toint(n)          ((n) >> 4) /*!< \brief convert t16 to int */
+  95:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define floattot16(n)        ((t16)((n) * (1 << 4))) /*!< \brief convert float to t16 */
+  96:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define TEXTURE_PACK(u,v)    (((u) & 0xFFFF) | ((v) << 16)) /*!< \brief Pack 2 t16 texture coordina
+  97:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+  98:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef short int v16;       /*!< \brief vertex 4.12 fixed format */
+  99:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define inttov16(n)          ((n) << 12) /*!< \brief convert int to v16 */
+ 100:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define f32tov16(n)          (n) /*!< \brief f32 to v16 */
+ 101:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define v16toint(n)          ((n) >> 12) /*!< \brief convert v16 to int */
+ 102:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define floattov16(n)        ((v16)((n) * (1 << 12))) /*!< \brief convert float to v16 */
+ 103:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define VERTEX_PACK(x,y)     (u32)(((x) & 0xFFFF) | ((y) << 16)) /*!< \brief Pack to v16 values int
+ 104:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 105:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef short int v10;       /*!< \brief normal .10 fixed point, NOT USED FOR 10bit VERTEXES!!!*/
+ 106:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define inttov10(n)          ((n) << 9) /*!< \brief convert int to v10 */
+ 107:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define f32tov10(n)          ((v10)(n >> 3)) /*!< \brief convert f32 to v10 */
+ 108:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define v10toint(n)          ((n) >> 9) /*!< \brief convert v10 to int */
+ 109:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define floattov10(n)        ((n>.998) ? 0x1FF : ((v10)((n)*(1<<9)))) /*!< \brief convert float to 
+ 110:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define NORMAL_PACK(x,y,z)   (u32)(((x) & 0x3FF) | (((y) & 0x3FF) << 10) | ((z) << 20)) /*!< \brief
+ 111:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 112:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //////////////////////////////////////////////////////////////////////
+ 113:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 114:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef unsigned short rgb; /*!< \brief Holds a color value. 1bit alpha, 5bits red, 5bits green, 5b
+ 115:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 116:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Holds a Matrix of 3x3 */
+ 117:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct m3x3 {
+ 118:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int m[9]; /*!< array that holds matrix */
+ 119:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } m3x3;
+ 120:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 121:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Holds a Matrix of 4x4 */
+ 122:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct m4x4 {
+ 123:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int m[16]; /*!< array that holds matrix */
+ 124:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } m4x4;
+ 125:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 126:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Holds a Matrix of 4x3 */
+ 127:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct m4x3 {
+ 128:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int m[12]; /*!< array that holds matrix */
+ 129:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } m4x3;
+ 130:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 131:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Holds a Vector<BR>related functions: glScalev(), glTranslatev() */
+ 132:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct GLvector {
+ 133:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int x, y, z;
+ 134:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GLvector;
+ 135:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 136:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //////////////////////////////////////////////////////////////////////
+ 137:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 138:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define GL_FALSE     0
+ 139:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define GL_TRUE      1
+ 140:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 141:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums selecting polygon draw mode<BR>
+ 142:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dpolygondefinitionsbyvertices">GBATEK http://nocash
+ 143:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glBegin() */
+ 144:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum {
+ 145:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TRIANGLES      = 0, /*!< draw triangles with each 3 vertices defining a triangle */
+ 146:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_QUADS          = 1, /*!< draw quads with each 4 vertices defining a quad */
+ 147:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TRIANGLE_STRIP = 2, /*!< draw triangles with the first triangle defined by 3 vertices, then eac
+ 148:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_QUAD_STRIP     = 3, /*!< draw quads with the first quad being defined by 4 vertices, then each 
+ 149:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TRIANGLE       = 0, /*!< same as GL_TRIANGLES, old non-OpenGL version */
+ 150:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_QUAD           = 1  /*!< same as GL_QUADS, old non-OpenGL version */
+ 151:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GL_GLBEGIN_ENUM;
+ 152:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 153:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums selecting matrix mode<BR>
+ 154:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 155:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glMatrixMode() */
+ 156:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum {
+ 157:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_PROJECTION     = 0, /*!< used to set the Projection Matrix */
+ 158:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_POSITION       = 1, /*!< used to set the Position Matrix */
+ 159:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_MODELVIEW      = 2, /*!< used to set the Modelview Matrix */
+ 160:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE        = 3  /*!< used to set the Texture Matrix */
+ 161:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GL_MATRIX_MODE_ENUM;
+ 162:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 163:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for setting up materials<BR>
+ 164:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dpolygonlightparameters">GBATEK http://nocash.emuba
+ 165:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glMaterialf() */
+ 166:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum {
+ 167:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_AMBIENT             = 0x01, /*!< sets the ambient color for the material. The color when the no
+ 168:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_DIFFUSE             = 0x02, /*!< sets the diffuse color for the material. The color when the no
+ 169:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_AMBIENT_AND_DIFFUSE = 0x03, /*!< sets the set ambient and diffuse colors for the material; just
+ 170:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_SPECULAR            = 0x04, /*!< sets the specular color for the material. The glossy(highlight
+ 171:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_SHININESS           = 0x08, /*!< sets the shininess color for the material. The color that shin
+ 172:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_EMISSION            = 0x10  /*!< sets the emission color for the material. bright color that is
+ 173:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GL_MATERIALS_ENUM;
+ 174:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 175:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for setting how polygons will be displayed<BR>
+ 176:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dpolygonattributes">GBATEK http://nocash.emubase.de
+ 177:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glPolyFmt(), glInit(), POLY_ALPHA(), POLY_ID() */
+ 178:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** enum GL_POLY_FORMAT_ENUM {
+ 179:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_FORMAT_LIGHT0   = (1<<0), /*!< enable light number 0 */
+ 180:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_FORMAT_LIGHT1   = (1<<1), /*!< enable light number 1 */
+ 181:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_FORMAT_LIGHT2   = (1<<2), /*!< enable light number 2 */
+ 182:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_FORMAT_LIGHT3   = (1<<3), /*!< enable light number 3 */
+ 183:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_MODULATION      = (0<<4), /*!< enable modulation shading mode; this is the default */
+ 184:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_DECAL           = (1<<4), /*!< enable decal shading */
+ 185:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_TOON_HIGHLIGHT  = (2<<4), /*!< enable toon/highlight shading mode */
+ 186:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_SHADOW          = (3<<4), /*!< enable shadow shading */
+ 187:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_CULL_FRONT      = (1<<6), /*!< cull front polygons */
+ 188:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_CULL_BACK       = (2<<6), /*!< cull rear polygons */
+ 189:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_CULL_NONE       = (3<<6), /*!< don't cull any polygons */
+ 190:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	POLY_FOG             = (1<<15) /*!< enable/disable fog for this polygon */
+ 191:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** };
+ 192:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 193:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for size of a texture, specify one for horizontal and one for vertical
+ 194:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glTexImage2d(), glTexParameter() */
+ 195:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** enum GL_TEXTURE_SIZE_ENUM {
+ 196:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_8    = 0, /*!< 8 texels */
+ 197:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_16   = 1, /*!< 16 texels */
+ 198:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_32   = 2, /*!< 32 texels */
+ 199:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_64   = 3, /*!< 64 texels */
+ 200:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_128  = 4, /*!< 128 texels */
+ 201:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_256  = 5, /*!< 256 texels */
+ 202:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_512  = 6, /*!< 512 texels */
+ 203:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXTURE_SIZE_1024 = 7  /*!< 1024 texels */
+ 204:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** };
+ 205:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 206:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for texture parameters, such as texture wrapping and texture coord stuff<BR>
+ 207:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dtextureattributes">GBATEK http://nocash.emubase.de
+ 208:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glTexImage2d(), glTexParameter() */
+ 209:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum  {
+ 210:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_WRAP_S = (1 << 16), /*!< wrap(repeat) texture on S axis */
+ 211:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_WRAP_T = (1 << 17), /*!< wrap(repeat) texture on T axis */
+ 212:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_FLIP_S = (1 << 18), /*!< flip texture on S axis when wrapping */
+ 213:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_FLIP_T = (1 << 19), /*!< flip texture on T axis when wrapping */
+ 214:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_COLOR0_TRANSPARENT = (1<<29), /*!< interpret color 0 as clear, same as old GL_TEXTURE_A
+ 215:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXGEN_OFF      = (0<<30), /*!< use unmodified texcoord */
+ 216:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXGEN_TEXCOORD = (1<<30), /*!< multiply texcoords by the texture-matrix */
+ 217:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXGEN_NORMAL   = (2<<30), /*!< set texcoords equal to normal * texture-matrix, used for spherical
+ 218:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	TEXGEN_POSITION = (3<<30)  /*!< set texcoords equal to vertex * texture-matrix */
+ 219:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }GL_TEXTURE_PARAM_ENUM;
+ 220:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 221:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for texture formats<BR>
+ 222:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dtextureformats">GBATEK http://nocash.emubase.de/gb
+ 223:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glTexImage2d(), glTexParameter() */
+ 224:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum {
+ 225:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_NOTEXTURE  = 0, /*!< no texture is used - useful for making palettes */
+ 226:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB32_A3   = 1, /*!< 32 color palette, 3 bits of alpha */
+ 227:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB4       = 2, /*!< 4 color palette */
+ 228:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB16      = 3, /*!< 16 color palette */
+ 229:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB256     = 4, /*!< 256 color palette */
+ 230:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_COMPRESSED = 5, /*!< compressed texture */
+ 231:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB8_A5    = 6, /*!< 8 color palette, 5 bits of alpha */
+ 232:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGBA       = 7, /*!< 15 bit direct color, 1 bit of alpha */
+ 233:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_RGB        = 8  /*!< 15 bit direct color, manually sets alpha bit to 1 */
+ 234:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GL_TEXTURE_TYPE_ENUM;
+ 235:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 236:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for texture palette data retrieval
+ 237:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glGetColorTableParameterEXT() */
+ 238:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** enum GL_TEXTURE_PALETTE_PARAM_ENUM {
+ 239:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_COLOR_TABLE_FORMAT_EXT	= 0, /*!< Retrieve the palette address in memory */
+ 240:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_COLOR_TABLE_WIDTH_EXT	= 1  /*!< Retrieve the size of the palette */
+ 241:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** };
+ 242:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 243:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief 3D Display Control Register Enums<BR>
+ 244:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol">GBATEK http://nocash.emubase.de/gb
+ 245:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glEnable(), glDisable(), glInit() */
+ 246:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** enum DISP3DCNT_ENUM {
+ 247:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TEXTURE_2D      = (1<<0),  /*!< enable/disable textures on the geometry engine */
+ 248:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TOON_HIGHLIGHT  = (1<<1),  /*!< enable = Highlight shading; disable = Toon shading */
+ 249:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_ALPHA_TEST      = (1<<2),  /*!< whether to use the alpha threshold set in glAlphaFunc() */
+ 250:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_BLEND           = (1<<3),  /*!< enable/disable alpha blending */
+ 251:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_ANTIALIAS       = (1<<4),  /*!< nable/disable edge antialiasing; polygons must have different p
+ 252:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_OUTLINE         = (1<<5),  /*!< enable/disable edge coloring; the high 3bits of the polygon ID 
+ 253:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_FOG_ONLY_ALPHA  = (1<<6),  /*!< enable = fade into background?; disable = don't fade? */
+ 254:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_FOG             = (1<<7),  /*!< enables/disables fog */
+ 255:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_COLOR_UNDERFLOW = (1<<12), /*!< enable = color buffer underflow, setting resets overflow flag; 
+ 256:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_POLY_OVERFLOW   = (1<<13), /*!< enable = polygon/vertex buffer overflow, setting resets overflo
+ 257:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_CLEAR_BMP       = (1<<14)  /*!< rear/clear plane is in BMP mode; disable = rear/color plane is 
+ 258:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** };
+ 259:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 260:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for reading stuff from the geometry engine<BR>
+ 261:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3diomap">http://nocash.emubase.de/gbatek.htm#ds3diom
+ 262:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glGetInt(), glGetFixed()*/
+ 263:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef enum {
+ 264:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_VERTEX_RAM_COUNT,    /*!< returns a count of vertexes currently stored in hardware vertex r
+ 265:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_POLYGON_RAM_COUNT,   /*!< returns a count of polygons currently stored in hardware polygon 
+ 266:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_MATRIX_VECTOR,		/*!< returns the current 3x3 directional vector matrix. Use glGetFixed() to
+ 267:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_MATRIX_POSITION,     /*!< returns the current 4x4 position matrix. Use glGetFixed() to retr
+ 268:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_MATRIX_PROJECTION,   /*!< returns the current 4x4 projection matrix. Use glGetFixed() to re
+ 269:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_MATRIX_CLIP,			/*!< returns the current 4x4 clip matrix. Use glGetFixed() to retrieve */
+ 270:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_TEXTURE_WIDTH,       /*!< returns the width of the currently bound texture. Use glGetInt() 
+ 271:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_GET_TEXTURE_HEIGHT       /*!< returns the height of the currently bound texture. Use glGetInt()
+ 272:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } GL_GET_ENUM;
+ 273:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 274:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 275:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Enums for glFlush()<BR>
+ 276:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol">GBATEK http://nocash.emubase.de/gb
+ 277:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** related functions: glEnable(), glDisable(), glInit() */
+ 278:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** enum GLFLUSH_ENUM {
+ 279:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_TRANS_MANUALSORT = (1<<0), /*!< enable manual sorting of translucent polygons, otherwise uses Y
+ 280:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_WBUFFERING       = (1<<1)  /*!< enable W depth buffering of vertices, otherwise uses Z depth bu
+ 281:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** };
+ 282:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 283:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 284:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*-----------------------------------------
+ 285:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** Structures specific to allocating and
+ 286:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** deallocating video RAM in videoGL
+ 287:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** -----------------------------------------*/
+ 288:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 289:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 290:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct s_SingleBlock {
+ 291:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 indexOut;
+ 292:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint8 *AddrSet;
+ 293:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	struct s_SingleBlock *node[ 4 ]; // 0-1 ~ prev/next memory block, 2-3 ~ prev/next empty/alloc bloc
+ 294:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 blockSize;
+ 295:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } s_SingleBlock;
+ 296:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 297:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct s_vramBlock {
+ 298:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint8 *startAddr, *endAddr;
+ 299:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	struct s_SingleBlock *firstBlock;
+ 300:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	struct s_SingleBlock *firstEmpty;
+ 301:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	struct s_SingleBlock *firstAlloc;
+ 302:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 303:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	struct s_SingleBlock *lastExamined;
+ 304:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint8 *lastExaminedAddr;
+ 305:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 lastExaminedSize;
+ 306:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 307:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray blockPtrs;
+ 308:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray deallocBlocks;
+ 309:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 310:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 blockCount;
+ 311:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 deallocCount;
+ 312:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } s_vramBlock;
+ 313:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 314:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct gl_texture_data {
+ 315:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	void* vramAddr;			// Address to the texture loaded into VRAM
+ 316:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 texIndex;		// The index in the Memory Block
+ 317:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 texIndexExt;		// The secondary index in the Memory block (only for GL_COMPRESSED textures)
+ 318:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int palIndex;			// The palette index
+ 319:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 texFormat;		// Specifications of how the texture is displayed
+ 320:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 texSize;			// The size (in blocks) of the texture
+ 321:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } gl_texture_data;
+ 322:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 323:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct gl_palette_data {
+ 324:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	void* vramAddr;			// Address to the palette loaded into VRAM
+ 325:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 palIndex;		// The index in the Memory Block
+ 326:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint16 addr;			// The offset address for texture palettes in VRAM
+ 327:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint16 palSize;			// The length of the palette
+ 328:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 connectCount;	// The number of textures currently using this palette
+ 329:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } gl_palette_data;
+ 330:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 331:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 332:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 333:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*---------------------------------------------------------------------------------
+ 334:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** This struct hold hidden globals for videoGL. The structure is initialized in the
+ 335:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** .c file and returned by glGetGlobals() so that it can be used across compilation
+ 336:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** units without problem. This is automatically done by glInit() so don't worry too
+ 337:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** much about it. This is only an issue because of hte mix of inlined/real functions.
+ 338:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** ---------------------------------------------------------------------------------*/
+ 339:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 340:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** typedef struct gl_hidden_globals {
+ 341:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GL_MATRIX_MODE_ENUM matrixMode; // holds the current Matrix Mode
+ 342:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	s_vramBlock *vramBlocks[ 2 ];		// Two classe instances, one for textures, and one for palettes
+ 343:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int vramLock[ 2 ];				// Holds the current lock state of the VRAM banks
+ 344:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 345:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	// texture globals
+ 346:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray texturePtrs;		// Pointers to each individual texture
+ 347:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray palettePtrs;		// Pointers to each individual palette
+ 348:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 349:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray deallocTex;		// Preserves deleted texture names for later use with glGenTextures
+ 350:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DynamicArray deallocPal;		// Preserves deleted palette names
+ 351:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 deallocTexSize;			// Preserved number of deleted texture names
+ 352:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint32 deallocPalSize;			// Preserved number of deleted palette names
+ 353:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 354:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int activeTexture;				// The current active texture name
+ 355:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int activePalette;				// The current active palette name
+ 356:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int texCount;
+ 357:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int palCount;
+ 358:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 359:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	// holds the current state of the clear color register
+ 360:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	u32 clearColor; // state of clear color register
+ 361:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 362:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	uint8 isActive;					// Has this been called before?
+ 363:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** } gl_hidden_globals;
+ 364:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 365:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 366:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // Pointer to global data for videoGL
+ 367:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** extern gl_hidden_globals glGlobalData;
+ 368:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 369:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // Pointer to global data for videoGL
+ 370:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** static gl_hidden_globals* glGlob = &glGlobalData;
+ 371:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 372:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //---------------------------------------------------------------------------------
+ 373:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //Fifo commands
+ 374:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** //---------------------------------------------------------------------------------
+ 375:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 376:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_COMMAND_PACK(c1,c2,c3,c4) (((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)) /*!< \bri
+ 377:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 378:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define REG2ID(r)				(u8)( ( ((u32)(&(r)))-0x04000400 ) >> 2 ) /*!< \brief converts a GFX command f
+ 379:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 380:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_NOP				REG2ID(GFX_FIFO) /*!< \brief packed command for nothing, just here to pad your 
+ 381:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_STATUS				REG2ID(GFX_STATUS) /*!< \brief packed command for geometry engine status reg
+ 382:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_COLOR				REG2ID(GFX_COLOR) /*!< \brief packed command for vertex color directly<BR><A 
+ 383:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 384:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VERTEX16			REG2ID(GFX_VERTEX16) /*!< \brief packed command for a vertex with 3 16bit p
+ 385:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VERTEX10			REG2ID(GFX_VERTEX10) /*!< \brief packed command for a vertex with 3 10bit p
+ 386:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VERTEX_XY			REG2ID(GFX_VERTEX_XY) /*!< \brief packed command for a vertex with 2 16bit
+ 387:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VERTEX_XZ			REG2ID(GFX_VERTEX_XZ) /*!< \brief packed command for a vertex with 2 16bit
+ 388:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VERTEX_YZ			REG2ID(GFX_VERTEX_YZ) /*!< \brief packed command for a vertex with 2 16bit
+ 389:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_TEX_COORD			REG2ID(GFX_TEX_COORD) /*!< \brief packed command for a texture coordinate<
+ 390:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_TEX_FORMAT			REG2ID(GFX_TEX_FORMAT) /*!< \brief packed command for texture format<BR><
+ 391:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_PAL_FORMAT			REG2ID(GFX_PAL_FORMAT) /*!< \brief packed command for texture palette att
+ 392:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 393:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_CLEAR_COLOR		REG2ID(GFX_CLEAR_COLOR) /*!< \brief packed command for clear color of the
+ 394:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_CLEAR_DEPTH		REG2ID(GFX_CLEAR_DEPTH) /*!< \brief sets depth of the rear plane<BR><A HR
+ 395:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 396:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_LIGHT_VECTOR		REG2ID(GFX_LIGHT_VECTOR) /*!< \brief packed command for direction of a l
+ 397:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_LIGHT_COLOR		REG2ID(GFX_LIGHT_COLOR) /*!< \brief packed command for color for a light<
+ 398:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_NORMAL				REG2ID(GFX_NORMAL) /*!< \brief packed command for normal for following verti
+ 399:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 400:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_DIFFUSE_AMBIENT	REG2ID(GFX_DIFFUSE_AMBIENT) /*!< \brief packed command for setting dif
+ 401:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_SPECULAR_EMISSION	REG2ID(GFX_SPECULAR_EMISSION) /*!< \brief packed command for setting
+ 402:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_SHININESS			REG2ID(GFX_SHININESS) /*!< \brief packed command for setting the shininess
+ 403:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 404:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_POLY_FORMAT		REG2ID(GFX_POLY_FORMAT) /*!< \brief packed command for setting polygon at
+ 405:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 406:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_BEGIN				REG2ID(GFX_BEGIN) /*!< \brief packed command that starts a polygon vertex lis
+ 407:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_END				REG2ID(GFX_END) /*!< \brief packed command that has no discernable effect, it's
+ 408:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_FLUSH				REG2ID(GFX_FLUSH) /*!< \brief packed command that has the same effect as swiW
+ 409:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define FIFO_VIEWPORT			REG2ID(GFX_VIEWPORT) /*!< \brief packed command for setting viewport<BR><A 
+ 410:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 411:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 412:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #ifdef __cplusplus
+ 413:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** extern "C" {
+ 414:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #endif
+ 415:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 416:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Rotates the model view matrix by angle about the specified unit vector
+ 417:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param angle The angle to rotate by
+ 418:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x X component of the unit vector axis.
+ 419:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y Y component of the unit vector axis.
+ 420:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param z Z component of the unit vector axis. */
+ 421:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glRotatef32i(int angle, int32 x, int32 y, int32 z);
+ 422:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 423:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Loads a 2D texture into texture memory and sets the currently bound texture ID to the at
+ 424:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target not used, just here for OpenGL compatibility
+ 425:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty1 not used, just here for OpenGL compatibility
+ 426:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param type The format of the texture
+ 427:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param sizeX the horizontal size of the texture; valid sizes are enumerated in GL_TEXTURE_TYPE_ENUM
+ 428:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param sizeY the vertical size of the texture; valid sizes are enumerated in GL_TEXTURE_TYPE_ENUM
+ 429:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty2 not used, just here for OpenGL compatibility
+ 430:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param param parameters for the texture
+ 431:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param texture pointer to the texture data to load
+ 432:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return 1 on success, 0 on failure*/
+ 433:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** int glTexImage2D(int target, int empty1, GL_TEXTURE_TYPE_ENUM type, int sizeX, int sizeY, int empty
+ 434:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 435:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief glColorTableEXT loads a 15-bit color format palette into palette memory, and sets it to 
+ 436:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatability
+ 437:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty1 ignored, only here for OpenGL compatability
+ 438:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param width the length of the palette (if 0, then palette is removed from currently bound texture)
+ 439:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty2 ignored, only here for OpenGL compatability
+ 440:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty3 ignored, only here for OpenGL compatability
+ 441:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param table pointer to the palette data to load (if NULL, then palette is removed from currently b
+ 442:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glColorTableEXT(int target, int empty1, uint16 width, int empty2, int empty3, const uint16* ta
+ 443:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 444:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief glColorSubTableEXT loads a 15-bit color format palette into a specific spot in a current
+ 445:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatability
+ 446:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param start the starting index that new palette data will be written to
+ 447:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param count the number of entries to write
+ 448:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty1 ignored, only here for OpenGL compatability
+ 449:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty2 ignored, only here for OpenGL compatability
+ 450:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param data pointer to the palette data to load */
+ 451:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glColorSubTableEXT( int target, int start, int count, int empty1, int empty2, const uint16* da
+ 452:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 453:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief glGetColorTableEXT retrieves a 15-bit color format palette from the palette memory of th
+ 454:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatability
+ 455:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty1 ignored, only here for OpenGL compatability
+ 456:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param empty2 ignored, only here for OpenGL compatability
+ 457:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param table pointer to where palette data will be written to */
+ 458:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glGetColorTableEXT( int target, int empty1, int empty2, uint16* table );
+ 459:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 460:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief glAssignColorTable sets the active texture with a palette set with another texture
+ 461:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatability (not really, since this isn't in OpenGL)
+ 462:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param name the name(int value) of the texture to load a palette from */
+ 463:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glAssignColorTable(int target, int name);
+ 464:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 465:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Set parameters for the current texture. Although named the same as its gl counterpart, i
+ 466:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target not used, just here for OpenGL compatibility
+ 467:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param param paramaters for the texture */
+ 468:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glTexParameter(int target, int param);
+ 469:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 470:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Returns the active texture parameter (constructed from internal call to glTexParameter) 
+ 471:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** u32 glGetTexParameter(void);
+ 472:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 473:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /* \brief glGetColorTableParameterEXT retrieves information pertaining to the currently bound textu
+ 474:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatibility
+ 475:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param pname a parameter of type GL_TEXTURE_PALETTE_PARAM_ENUM, used to read a specific attribute i
+ 476:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param params the destination for the attribute to read into */
+ 477:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glGetColorTableParameterEXT( int target, int pname, int * params );
+ 478:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 479:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief returns the address alocated to the texure named by name
+ 480:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param name the name of the texture to get a pointer to */
+ 481:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void* glGetTexturePointer(	int name);
+ 482:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 483:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief glBindTexure sets the current named texture to the active texture. Target is ignored as 
+ 484:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param target ignored, only here for OpenGL compatability
+ 485:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param name the name(int value) to set to the current texture */
+ 486:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glBindTexture(int target, int name);
+ 487:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 488:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Creates room for the specified number of textures
+ 489:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param n the number of textures to generate
+ 490:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param names pointer to the names array to fill
+ 491:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return 1 on success, 0 on failure*/
+ 492:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** int glGenTextures(int n, int *names);
+ 493:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 494:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Deletes the specified number of textures (and associated palettes)
+ 495:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param n the number of textures to delete
+ 496:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param names pointer to the names array to empty
+ 497:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return 1 on success, 0 on failure*/
+ 498:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** int glDeleteTextures(int n, int *names);
+ 499:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 500:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Resets the gl texture state freeing all texture and texture palette memory */
+ 501:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glResetTextures(void);
+ 502:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 503:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /* \brief Locks a designated vram bank to prevent consideration of the bank when allocating
+ 504:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param addr the address associated with the vram bank selected
+ 505:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return 1 on success, 0 on failure */
+ 506:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** int glLockVRAMBank( uint16 *addr );
+ 507:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 508:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 509:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /* \brief Unlocks a designated vram bank to allow consideration of the bank when allocating
+ 510:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param addr the address associated with the vram bank selected
+ 511:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return 1 on success, 0 on failure */
+ 512:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** int glUnlockVRAMBank( uint16 *addr );
+ 513:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 514:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief Sets texture coordinates for following vertices<BR>
+ 515:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dtextureattributes">GBATEK http://nocash.emubase.de
+ 516:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param u U(a.k.a. S) texture coordinate (0.0 - 1.0)
+ 517:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param v V(a.k.a. T) texture coordinate (0.0 - 1.0)*/
+ 518:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glTexCoord2f32(int32 u, int32 v);
+ 519:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 520:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \brief specify the material properties to be used in rendering lit polygons
+ 521:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param mode which material property to change
+ 522:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param color the color to set for that material property */
+ 523:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glMaterialf(GL_MATERIALS_ENUM mode, rgb color);
+ 524:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 525:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // This handles initialization of the GL state; this is called from glInit to keep globals synced b
+ 526:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glInit_C(void);
+ 527:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 528:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // This returns a pointer to the globals for videoGL
+ 529:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** gl_hidden_globals* glGetGlobals();
+ 530:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 531:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 532:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #ifdef __cplusplus
+ 533:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 534:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #endif
+ 535:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 536:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 537:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 538:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  u32 POLY_ALPHA(u32 n)
+ 539:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief used in glPolyFmt() to set the alpha level for the following polygons, set to 0 for wirefram
+ 540:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param n the level of alpha (0-31)
+ 541:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return value for hw register*/
+ 542:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  u32 POLY_ALPHA(u32 n) { return (u32)((n) << 16); };
+ 543:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 544:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 545:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  u32 POLY_ID(u32 n)
+ 546:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief used in glPolyFmt() to set the Polygon ID for the following polygons
+ 547:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param n the ID to set for following polygons (0-63)
+ 548:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \return value for hw register
+ 549:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** */
+ 550:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  u32 POLY_ID(u32 n) { return (u32)((n)<<24); };
+ 551:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 552:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 553:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glBegin(GL_GLBEGIN_ENUM mode)
+ 554:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Starts a polygon group
+ 555:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param mode the draw mode for the polygon */
+ 556:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glBegin(GL_GLBEGIN_ENUM mode) { GFX_BEGIN = mode; }
+ 557:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 558:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 559:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glEnd(void)
+ 560:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Ends a polygon group, this seems to be a dummy function that does absolutely nothing, feel f
+ 561:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glEnd(void) { GFX_END = 0; }
+ 562:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 563:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 564:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glClearDepth(fixed12d3 depth)
+ 565:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief reset the depth buffer to this value; generally set this to GL_MAX_DEPTH.<BR>
+ 566:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3drearplane">GBATEK http://nocash.emubase.de/gbatek.
+ 567:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param depth Something to do with the depth buffer, generally set to GL_MAX_DEPTH */
+ 568:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glClearDepth(fixed12d3 depth) { GFX_CLEAR_DEPTH = depth; }
+ 569:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 570:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 571:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glColor3b(uint8 red, uint8 green, uint8 blue)
+ 572:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Set the color for following vertices
+ 573:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param red the red component (0-255) Bottom 3 bits ignored
+ 574:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param green the green component (0-255) Bottom 3 bits ignored
+ 575:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param blue the blue component (0-255) Bottom 3 bits ignored*/
+ 576:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glColor3b(uint8 red, uint8 green, uint8 blue) { GFX_COLOR = (vu32)RGB15(red>>3, green>>3, blu
+ 577:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 578:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 579:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glColor(rgb color)
+ 580:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Set the color for following vertices
+ 581:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param color the 15bit color value */
+ 582:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glColor(rgb color) { GFX_COLOR = (vu32)color; }
+ 583:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 584:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 585:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glVertex3v16(v16 x, v16 y, v16 z)
+ 586:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief specifies a vertex
+ 587:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x the x component for the vertex
+ 588:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y the y component for the vertex
+ 589:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param z the z component for the vertex */
+ 590:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glVertex3v16(v16 x, v16 y, v16 z) {
+ 591:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GFX_VERTEX16 = (y << 16) | (x & 0xFFFF);
+ 592:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GFX_VERTEX16 = z;
+ 593:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 594:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 595:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 596:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glTexCoord2t16(t16 u, t16 v)
+ 597:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Sets texture coordinates for following vertices<BR>
+ 598:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dtextureattributes">GBATEK http://nocash.emubase.de
+ 599:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param u U(a.k.a. S) texture coordinate in texels
+ 600:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param v V(a.k.a. T) texture coordinate in texels */
+ 601:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glTexCoord2t16(t16 u, t16 v) { GFX_TEX_COORD = TEXTURE_PACK(u,v); }
+ 602:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 603:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 604:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn   void glPushMatrix(void)
+ 605:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Pushes the current matrix onto the stack<BR>
+ 606:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixstack">GBATEK http://nocash.emubase.de/gbate
+ 607:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glPushMatrix(void) { MATRIX_PUSH = 0; }
+ 608:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 609:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 610:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glPopMatrix(int num)
+ 611:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Pops num matrices off the stack<BR>
+ 612:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixstack">GBATEK http://nocash.emubase.de/gbate
+ 613:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param num the number to pop down the stack */
+ 614:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glPopMatrix(int num) { MATRIX_POP = num; }
+ 615:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 616:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 617:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glRestoreMatrix(int index)
+ 618:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Restores the current matrix from a location in the stack<BR>
+ 619:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixstack">GBATEK http://nocash.emubase.de/gbate
+ 620:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param index the place in the stack to restore to */
+ 621:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glRestoreMatrix(int index) { MATRIX_RESTORE = index; }
+ 622:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 623:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 624:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn   void glStoreMatrix(int index)
+ 625:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Place the current matrix into the stack at a location<BR>
+ 626:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixstack">GBATEK http://nocash.emubase.de/gbate
+ 627:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param index the place in the stack to put the current matrix */
+ 628:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glStoreMatrix(int index) { MATRIX_STORE = index; }
+ 629:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 630:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 631:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glScalev(const GLvector* v)
+ 632:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief multiply the current matrix by a translation matrix<BR>
+ 633:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 634:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param v the vector to translate by */
+ 635:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glScalev(const GLvector* v) {
+ 636:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = v->x;
+ 637:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = v->y;
+ 638:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = v->z;
+ 639:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 640:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 641:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 642:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glTranslatev(const GLvector* v)
+ 643:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief multiply the current matrix by a translation matrix<BR>
+ 644:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 645:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param v the vector to translate by */
+ 646:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glTranslatev(const GLvector* v) {
+ 647:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = v->x;
+ 648:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = v->y;
+ 649:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = v->z;
+ 650:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 651:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 652:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** // map old name to new name
+ 653:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** #define glTranslate3f32 glTranslatef32
+ 654:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 655:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 656:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glTranslatef32(int x, int y, int z)
+ 657:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief multiply the current matrix by a translation matrix<BR>
+ 658:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 659:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x translation on the x axis
+ 660:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y translation on the y axis
+ 661:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param z translation on the z axis */
+ 662:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glTranslatef32(int x, int y, int z) {
+ 663:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = x;
+ 664:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = y;
+ 665:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_TRANSLATE = z;
+ 666:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 667:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 668:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 669:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glScalef32(int x, int y, int z)
+ 670:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief multiply the current matrix by a scale matrix<BR>
+ 671:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 672:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x scaling on the x axis
+ 673:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y scaling on the y axis
+ 674:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param z scaling on the z axis */
+ 675:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glScalef32(int x, int y, int z) {
+ 676:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = x;
+ 677:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = y;
+ 678:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	MATRIX_SCALE = z;
+ 679:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 680:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 681:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 682:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glLight(int id, rgb color, v10 x, v10 y, v10 z)
+ 683:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief set a light up. Only parallel light sources are supported on the DS<BR>
+ 684:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dpolygonlightparameters">GBATEK http://nocash.emuba
+ 685:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param id the number of the light to setup
+ 686:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param color the color of the light
+ 687:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x the x component of the lights directional vector. Direction must be normalized
+ 688:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y the y component of the lights directional vector. Direction must be normalized
+ 689:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param z the z component of the lights directional vector. Direction must be normalized */
+ 690:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glLight(int id, rgb color, v10 x, v10 y, v10 z) {
+ 691:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	id = (id & 3) << 30;
+ 692:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GFX_LIGHT_VECTOR = id | ((z & 0x3FF) << 20) | ((y & 0x3FF) << 10) | (x & 0x3FF);
+ 693:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	GFX_LIGHT_COLOR = id | color;
+ 694:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 695:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 696:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 697:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glNormal(u32 normal)
+ 698:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief the normal to use for following vertices<BR>
+ 699:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dpolygonlightparameters">GBATEK http://nocash.emuba
+ 700:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \warning The nature of the format means that you can't represent the following normals exactly (0,0
+ 701:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param normal the packed normal(3 * 10bit x, y, z) */
+ 702:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glNormal(u32 normal) { GFX_NORMAL = normal; }
+ 703:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 704:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 705:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glLoadIdentity(void)
+ 706:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief loads an identity matrix to the current matrix, same as glIdentity(void) */
+ 707:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glLoadIdentity(void) { MATRIX_IDENTITY = 0; }
+ 708:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 709:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 710:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glMatrixMode(GL_MATRIX_MODE_ENUM mode)
+ 711:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief change the current matrix mode<BR>
+ 712:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dmatrixloadmultiply">GBATEK http://nocash.emubase.d
+ 713:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param mode the mode for the matrix */
+ 714:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glMatrixMode(GL_MATRIX_MODE_ENUM mode) { MATRIX_CONTROL = mode; }
+ 715:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 716:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 717:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn   void glViewport(uint8 x1, uint8 y1, uint8 x2, uint8 y2)
+ 718:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief specify the viewport for following drawing, can be set several times per frame.<BR>
+ 719:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol">GBATEK http://nocash.emubase.de/gb
+ 720:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x1 the left of the viewport
+ 721:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y1 the bottom of the viewport
+ 722:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param x2 the right of the viewport
+ 723:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param y2 the top of the viewport */
+ 724:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h ****  void glViewport(uint8 x1, uint8 y1, uint8 x2, uint8 y2) { GFX_VIEWPORT = (x1) + (y1 << 8) + (x2 <<
+ 725:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 726:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 727:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glFlush(u32 mode)
+ 728:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief Waits for a Vblank and swaps the buffers(like swiWaitForVBlank), but lets you specify some 3
+ 729:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3ddisplaycontrol">GBATEK http://nocash.emubase.de/gb
+ 730:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \param mode flags from GLFLUSH_ENUM for enabling Y-sorting of translucent polygons and W-Buffering 
+ 731:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glFlush(u32 mode) { asm volatile("" ::: "memory"); GFX_FLUSH = mode; }
+ 732:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 733:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 734:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glMaterialShinyness(void)
+ 735:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief The DS uses a table for shininess..this generates a half-ass one */
+ 736:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glMaterialShinyness(void) {
+ 737:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	u32 shiny32[128/4];
+ 738:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	u8  *shiny8 = (u8*)shiny32;
+ 739:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 740:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	int i;
+ 741:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 742:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	for (i = 0; i < 128 * 2; i += 2)
+ 743:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		shiny8[i>>1] = i;
+ 744:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 745:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	for (i = 0; i < 128 / 4; i++)
+ 746:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 		GFX_SHININESS = shiny32[i];
+ 747:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 748:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 749:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** GL_STATIC_INL
+ 750:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** /*! \fn  void glCallList(const u32* list)
+ 751:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** \brief throws a packed list of commands into the graphics FIFO via asyncronous DMA<BR>
+ 752:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** The first 32bits is the length of the packed command list, followed by a the packed list.<BR>
+ 753:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** If you want to do this really fast then write your own code that that does this synchronously and o
+ 754:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** There is sometimes a problem when you pack the GFX_END command into a list, so don't. GFX_END is a 
+ 755:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** <A HREF="http://nocash.emubase.de/gbatek.htm#ds3dgeometrycommands">GBATEK http://nocash.emubase.de/
+ 756:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** void glCallList(const u32* list) {
+  45              		.loc 1 756 0
+  46              		.cfi_startproc
+  47              		@ Function supports interworking.
+  48              		@ args = 0, pretend = 0, frame = 16
+  49              		@ frame_needed = 1, uses_anonymous_args = 0
+  50 0000 00482DE9 		stmfd	sp!, {fp, lr}
+  51              	.LCFI0:
+  52              		.cfi_def_cfa_offset 8
+  53              		.cfi_offset 11, -8
+  54              		.cfi_offset 14, -4
+  55 0004 04B08DE2 		add	fp, sp, #4
+  56              	.LCFI1:
+  57              		.cfi_def_cfa 11, 4
+  58 0008 10D04DE2 		sub	sp, sp, #16
+  59 000c 10000BE5 		str	r0, [fp, #-16]
+  60              	.LBB2:
+ 757:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	sassert(list != NULL,"glCallList received a null display list pointer");
+  61              		.loc 1 757 0
+  62 0010 10301BE5 		ldr	r3, [fp, #-16]
+  63 0014 000053E3 		cmp	r3, #0
+  64 0018 0400001A 		bne	.L2
+  65              		.loc 1 757 0 is_stmt 0 discriminator 1
+  66 001c FC009FE5 		ldr	r0, .L9
+  67 0020 FC109FE5 		ldr	r1, .L9+4
+  68 0024 FC209FE5 		ldr	r2, .L9+8
+  69 0028 FC309FE5 		ldr	r3, .L9+12
+  70 002c FEFFFFEB 		bl	__sassert
+  71              	.L2:
+ 758:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 759:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	u32 count = *list++;
+  72              		.loc 1 759 0 is_stmt 1
+  73 0030 10301BE5 		ldr	r3, [fp, #-16]
+  74 0034 042083E2 		add	r2, r3, #4
+  75 0038 10200BE5 		str	r2, [fp, #-16]
+  76 003c 003093E5 		ldr	r3, [r3]
+  77 0040 08300BE5 		str	r3, [fp, #-8]
+ 760:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 761:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	sassert(count != 0,"glCallList received a display list of size 0");
+  78              		.loc 1 761 0
+  79 0044 08301BE5 		ldr	r3, [fp, #-8]
+  80 0048 000053E3 		cmp	r3, #0
+  81 004c 0400001A 		bne	.L3
+  82              		.loc 1 761 0 is_stmt 0 discriminator 1
+  83 0050 C8009FE5 		ldr	r0, .L9
+  84 0054 D4109FE5 		ldr	r1, .L9+16
+  85 0058 D4209FE5 		ldr	r2, .L9+20
+  86 005c D4309FE5 		ldr	r3, .L9+24
+  87 0060 FEFFFFEB 		bl	__sassert
+  88              	.L3:
+ 762:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 763:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	// flush the area that we are going to DMA
+ 764:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DC_FlushRange(list, count*4);
+  89              		.loc 1 764 0 is_stmt 1
+  90 0064 08301BE5 		ldr	r3, [fp, #-8]
+  91 0068 0331A0E1 		mov	r3, r3, asl #2
+  92 006c 10001BE5 		ldr	r0, [fp, #-16]
+  93 0070 0310A0E1 		mov	r1, r3
+  94 0074 FEFFFFEB 		bl	DC_FlushRange
+ 765:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 766:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	// don't start DMAing while anything else is being DMAed because FIFO DMA is touchy as hell
+ 767:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	//    If anyone can explain this better that would be great. -- gabebear
+ 768:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	while((DMA_CR(0) & DMA_BUSY)||(DMA_CR(1) & DMA_BUSY)||(DMA_CR(2) & DMA_BUSY)||(DMA_CR(3) & DMA_BUS
+  95              		.loc 1 768 0
+  96 0078 0000A0E1 		mov	r0, r0	@ nop
+  97              	.L7:
+  98              		.loc 1 768 0 is_stmt 0 discriminator 1
+  99 007c B8309FE5 		ldr	r3, .L9+28
+ 100 0080 003093E5 		ldr	r3, [r3]
+ 101 0084 000053E3 		cmp	r3, #0
+ 102 0088 0B0000BA 		blt	.L4
+ 103              		.loc 1 768 0 discriminator 2
+ 104 008c AC309FE5 		ldr	r3, .L9+32
+ 105 0090 003093E5 		ldr	r3, [r3]
+ 106 0094 000053E3 		cmp	r3, #0
+ 107 0098 070000BA 		blt	.L4
+ 108              		.loc 1 768 0 discriminator 1
+ 109 009c A0309FE5 		ldr	r3, .L9+36
+ 110 00a0 003093E5 		ldr	r3, [r3]
+ 111 00a4 000053E3 		cmp	r3, #0
+ 112 00a8 030000BA 		blt	.L4
+ 113 00ac 94309FE5 		ldr	r3, .L9+40
+ 114 00b0 003093E5 		ldr	r3, [r3]
+ 115 00b4 000053E3 		cmp	r3, #0
+ 116 00b8 010000AA 		bge	.L5
+ 117              	.L4:
+ 118 00bc 0130A0E3 		mov	r3, #1
+ 119 00c0 000000EA 		b	.L6
+ 120              	.L5:
+ 121              		.loc 1 768 0 discriminator 3
+ 122 00c4 0030A0E3 		mov	r3, #0
+ 123              	.L6:
+ 124              		.loc 1 768 0 discriminator 4
+ 125 00c8 000053E3 		cmp	r3, #0
+ 126 00cc EAFFFF1A 		bne	.L7
+ 769:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 
+ 770:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	// send the packed list asynchronously via DMA to the FIFO
+ 771:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DMA_SRC(0) = (u32)list;
+ 127              		.loc 1 771 0 is_stmt 1
+ 128 00d0 74309FE5 		ldr	r3, .L9+44
+ 129 00d4 10201BE5 		ldr	r2, [fp, #-16]
+ 130 00d8 002083E5 		str	r2, [r3]
+ 772:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DMA_DEST(0) = 0x4000400;
+ 131              		.loc 1 772 0
+ 132 00dc 6C309FE5 		ldr	r3, .L9+48
+ 133 00e0 6C209FE5 		ldr	r2, .L9+52
+ 134 00e4 002083E5 		str	r2, [r3]
+ 773:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	DMA_CR(0) = DMA_FIFO | count;
+ 135              		.loc 1 773 0
+ 136 00e8 4C209FE5 		ldr	r2, .L9+28
+ 137 00ec 08301BE5 		ldr	r3, [fp, #-8]
+ 138 00f0 2F3383E3 		orr	r3, r3, #-1140850688
+ 139 00f4 013583E3 		orr	r3, r3, #4194304
+ 140 00f8 003082E5 		str	r3, [r2]
+ 141              	.L8:
+ 774:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** 	while(DMA_CR(0) & DMA_BUSY);
+ 142              		.loc 1 774 0 discriminator 1
+ 143 00fc 38309FE5 		ldr	r3, .L9+28
+ 144 0100 003093E5 		ldr	r3, [r3]
+ 145 0104 A33FA0E1 		mov	r3, r3, lsr #31
+ 146 0108 FF3003E2 		and	r3, r3, #255
+ 147 010c 000053E3 		cmp	r3, #0
+ 148 0110 F9FFFF1A 		bne	.L8
+ 149              	.LBE2:
+ 775:/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h **** }
+ 150              		.loc 1 775 0
+ 151 0114 04D04BE2 		sub	sp, fp, #4
+ 152              		@ sp needed
+ 153 0118 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 154 011c 1EFF2FE1 		bx	lr
+ 155              	.L10:
+ 156              		.align	2
+ 157              	.L9:
+ 158 0120 00000000 		.word	.LC0
+ 159 0124 F5020000 		.word	757
+ 160 0128 3C000000 		.word	.LC1
+ 161 012c 4C000000 		.word	.LC2
+ 162 0130 F9020000 		.word	761
+ 163 0134 7C000000 		.word	.LC3
+ 164 0138 88000000 		.word	.LC4
+ 165 013c B8000004 		.word	67109048
+ 166 0140 C4000004 		.word	67109060
+ 167 0144 D0000004 		.word	67109072
+ 168 0148 DC000004 		.word	67109084
+ 169 014c B0000004 		.word	67109040
+ 170 0150 B4000004 		.word	67109044
+ 171 0154 00040004 		.word	67109888
+ 172              		.cfi_endproc
+ 173              	.LFE122:
+ 175              		.align	2
+ 176              		.global	_ZN9tinyUnity6ShaderC2Ev
+ 178              	_ZN9tinyUnity6ShaderC2Ev:
+ 179              	.LFB188:
+ 180              		.file 2 "../source/tinyUnity/Shader.cpp"
+   1:../source/tinyUnity/Shader.cpp **** /*
+   2:../source/tinyUnity/Shader.cpp ****  * Shader.cpp
+   3:../source/tinyUnity/Shader.cpp ****  *
+   4:../source/tinyUnity/Shader.cpp ****  *  Created on: Sep 1, 2014
+   5:../source/tinyUnity/Shader.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/Shader.cpp ****  */
+   7:../source/tinyUnity/Shader.cpp **** 
+   8:../source/tinyUnity/Shader.cpp **** #include "Shader.h"
+   9:../source/tinyUnity/Shader.cpp **** 
+  10:../source/tinyUnity/Shader.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/Shader.cpp **** 
+  12:../source/tinyUnity/Shader.cpp **** Shader::Shader() {
+ 181              		.loc 2 12 0
+ 182              		.cfi_startproc
+ 183              		@ Function supports interworking.
+ 184              		@ args = 0, pretend = 0, frame = 8
+ 185              		@ frame_needed = 1, uses_anonymous_args = 0
+ 186              		@ link register save eliminated.
+ 187 0158 04B02DE5 		str	fp, [sp, #-4]!
+ 188              	.LCFI2:
+ 189              		.cfi_def_cfa_offset 4
+ 190              		.cfi_offset 11, -4
+ 191 015c 00B08DE2 		add	fp, sp, #0
+ 192              	.LCFI3:
+ 193              		.cfi_def_cfa_register 11
+ 194 0160 0CD04DE2 		sub	sp, sp, #12
+ 195 0164 08000BE5 		str	r0, [fp, #-8]
+ 196              	.LBB3:
+ 197              		.loc 2 12 0
+ 198 0168 08301BE5 		ldr	r3, [fp, #-8]
+ 199 016c 14209FE5 		ldr	r2, .L14
+ 200 0170 002083E5 		str	r2, [r3]
+ 201              	.LBE3:
+  13:../source/tinyUnity/Shader.cpp **** 	// TODO Auto-generated constructor stub
+  14:../source/tinyUnity/Shader.cpp **** 
+  15:../source/tinyUnity/Shader.cpp **** }
+ 202              		.loc 2 15 0
+ 203 0174 08301BE5 		ldr	r3, [fp, #-8]
+ 204 0178 0300A0E1 		mov	r0, r3
+ 205 017c 00D04BE2 		sub	sp, fp, #0
+ 206              		@ sp needed
+ 207 0180 04B09DE4 		ldr	fp, [sp], #4
+ 208 0184 1EFF2FE1 		bx	lr
+ 209              	.L15:
+ 210              		.align	2
+ 211              	.L14:
+ 212 0188 08000000 		.word	_ZTVN9tinyUnity6ShaderE+8
+ 213              		.cfi_endproc
+ 214              	.LFE188:
+ 216              		.global	_ZN9tinyUnity6ShaderC1Ev
+ 217              		.set	_ZN9tinyUnity6ShaderC1Ev,_ZN9tinyUnity6ShaderC2Ev
+ 218              		.align	2
+ 219              		.global	_ZN9tinyUnity6ShaderD2Ev
+ 221              	_ZN9tinyUnity6ShaderD2Ev:
+ 222              	.LFB191:
+  16:../source/tinyUnity/Shader.cpp **** 
+  17:../source/tinyUnity/Shader.cpp **** Shader::~Shader() {
+ 223              		.loc 2 17 0
+ 224              		.cfi_startproc
+ 225              		@ Function supports interworking.
+ 226              		@ args = 0, pretend = 0, frame = 8
+ 227              		@ frame_needed = 1, uses_anonymous_args = 0
+ 228 018c 00482DE9 		stmfd	sp!, {fp, lr}
+ 229              	.LCFI4:
+ 230              		.cfi_def_cfa_offset 8
+ 231              		.cfi_offset 11, -8
+ 232              		.cfi_offset 14, -4
+ 233 0190 04B08DE2 		add	fp, sp, #4
+ 234              	.LCFI5:
+ 235              		.cfi_def_cfa 11, 4
+ 236 0194 08D04DE2 		sub	sp, sp, #8
+ 237 0198 08000BE5 		str	r0, [fp, #-8]
+ 238              	.LBB4:
+ 239              		.loc 2 17 0
+ 240 019c 08301BE5 		ldr	r3, [fp, #-8]
+ 241 01a0 28209FE5 		ldr	r2, .L20
+ 242 01a4 002083E5 		str	r2, [r3]
+ 243              	.LBE4:
+  18:../source/tinyUnity/Shader.cpp **** 	// TODO Auto-generated destructor stub
+  19:../source/tinyUnity/Shader.cpp **** }
+ 244              		.loc 2 19 0
+ 245 01a8 0030A0E3 		mov	r3, #0
+ 246 01ac 000053E3 		cmp	r3, #0
+ 247 01b0 0100000A 		beq	.L18
+ 248              		.loc 2 19 0 is_stmt 0 discriminator 1
+ 249 01b4 08001BE5 		ldr	r0, [fp, #-8]
+ 250 01b8 FEFFFFEB 		bl	_ZdlPv
+ 251              	.L18:
+ 252              		.loc 2 19 0 discriminator 2
+ 253 01bc 08301BE5 		ldr	r3, [fp, #-8]
+ 254 01c0 0300A0E1 		mov	r0, r3
+ 255 01c4 04D04BE2 		sub	sp, fp, #4
+ 256              		@ sp needed
+ 257 01c8 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 258 01cc 1EFF2FE1 		bx	lr
+ 259              	.L21:
+ 260              		.align	2
+ 261              	.L20:
+ 262 01d0 08000000 		.word	_ZTVN9tinyUnity6ShaderE+8
+ 263              		.cfi_endproc
+ 264              	.LFE191:
+ 266              		.global	_ZN9tinyUnity6ShaderD1Ev
+ 267              		.set	_ZN9tinyUnity6ShaderD1Ev,_ZN9tinyUnity6ShaderD2Ev
+ 268              		.align	2
+ 269              		.global	_ZN9tinyUnity6ShaderD0Ev
+ 271              	_ZN9tinyUnity6ShaderD0Ev:
+ 272              	.LFB193:
+  17:../source/tinyUnity/Shader.cpp **** 	// TODO Auto-generated destructor stub
+ 273              		.loc 2 17 0 is_stmt 1
+ 274              		.cfi_startproc
+ 275              		@ Function supports interworking.
+ 276              		@ args = 0, pretend = 0, frame = 8
+ 277              		@ frame_needed = 1, uses_anonymous_args = 0
+ 278 01d4 00482DE9 		stmfd	sp!, {fp, lr}
+ 279              	.LCFI6:
+ 280              		.cfi_def_cfa_offset 8
+ 281              		.cfi_offset 11, -8
+ 282              		.cfi_offset 14, -4
+ 283 01d8 04B08DE2 		add	fp, sp, #4
+ 284              	.LCFI7:
+ 285              		.cfi_def_cfa 11, 4
+ 286 01dc 08D04DE2 		sub	sp, sp, #8
+ 287 01e0 08000BE5 		str	r0, [fp, #-8]
+ 288              		.loc 2 19 0
+ 289 01e4 08001BE5 		ldr	r0, [fp, #-8]
+ 290 01e8 FEFFFFEB 		bl	_ZN9tinyUnity6ShaderD1Ev
+ 291 01ec 08001BE5 		ldr	r0, [fp, #-8]
+ 292 01f0 FEFFFFEB 		bl	_ZdlPv
+ 293 01f4 08301BE5 		ldr	r3, [fp, #-8]
+ 294 01f8 0300A0E1 		mov	r0, r3
+ 295 01fc 04D04BE2 		sub	sp, fp, #4
+ 296              		@ sp needed
+ 297 0200 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 298 0204 1EFF2FE1 		bx	lr
+ 299              		.cfi_endproc
+ 300              	.LFE193:
+ 302              		.align	2
+ 303              		.global	_ZN9tinyUnity6Shader7executeEv
+ 305              	_ZN9tinyUnity6Shader7executeEv:
+ 306              	.LFB194:
+  20:../source/tinyUnity/Shader.cpp **** void Shader::execute()
+  21:../source/tinyUnity/Shader.cpp **** {
+ 307              		.loc 2 21 0
+ 308              		.cfi_startproc
+ 309              		@ Function supports interworking.
+ 310              		@ args = 0, pretend = 0, frame = 8
+ 311              		@ frame_needed = 1, uses_anonymous_args = 0
+ 312 0208 00482DE9 		stmfd	sp!, {fp, lr}
+ 313              	.LCFI8:
+ 314              		.cfi_def_cfa_offset 8
+ 315              		.cfi_offset 11, -8
+ 316              		.cfi_offset 14, -4
+ 317 020c 04B08DE2 		add	fp, sp, #4
+ 318              	.LCFI9:
+ 319              		.cfi_def_cfa 11, 4
+ 320 0210 08D04DE2 		sub	sp, sp, #8
+ 321 0214 08000BE5 		str	r0, [fp, #-8]
+  22:../source/tinyUnity/Shader.cpp **** 	prepare();
+ 322              		.loc 2 22 0
+ 323 0218 08301BE5 		ldr	r3, [fp, #-8]
+ 324 021c 003093E5 		ldr	r3, [r3]
+ 325 0220 0C3083E2 		add	r3, r3, #12
+ 326 0224 003093E5 		ldr	r3, [r3]
+ 327 0228 08001BE5 		ldr	r0, [fp, #-8]
+ 328 022c 0FE0A0E1 		mov	lr, pc
+ 329 0230 13FF2FE1 		bx	r3
+  23:../source/tinyUnity/Shader.cpp **** 
+  24:../source/tinyUnity/Shader.cpp **** 	//requires permissive
+  25:../source/tinyUnity/Shader.cpp **** 	glCallList((u32*)this->programImage);
+ 330              		.loc 2 25 0
+ 331 0234 08301BE5 		ldr	r3, [fp, #-8]
+ 332 0238 083093E5 		ldr	r3, [r3, #8]
+ 333 023c 0300A0E1 		mov	r0, r3
+ 334 0240 6EFFFFEB 		bl	glCallList
+  26:../source/tinyUnity/Shader.cpp **** }
+ 335              		.loc 2 26 0
+ 336 0244 04D04BE2 		sub	sp, fp, #4
+ 337              		@ sp needed
+ 338 0248 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 339 024c 1EFF2FE1 		bx	lr
+ 340              		.cfi_endproc
+ 341              	.LFE194:
+ 343              		.global	_ZTVN9tinyUnity6ShaderE
+ 344              		.section	.rodata
+ 345 00b5 000000   		.align	3
+ 348              	_ZTVN9tinyUnity6ShaderE:
+ 349 00b8 00000000 		.word	0
+ 350 00bc 00000000 		.word	0
+ 351 00c0 00000000 		.word	_ZN9tinyUnity6ShaderD1Ev
+ 352 00c4 00000000 		.word	_ZN9tinyUnity6ShaderD0Ev
+ 353 00c8 00000000 		.word	_ZN9tinyUnity6Shader7compileEv
+ 354 00cc 00000000 		.word	_ZN9tinyUnity6Shader7prepareEv
+ 355              		.text
+ 356              	.Letext0:
+ 357              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 358              		.file 4 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 359              		.file 5 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 360              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/system.h"
+ 361              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 362              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 363              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 364              		.file 10 "../source/tinyUnity/Shader.h"
+ 365              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 366              		.file 12 "../source/tinyUnity/Texture2D.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Shader.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:23     .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:40     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:42     .text:00000000 glCallList
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:158    .text:00000120 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:175    .text:00000158 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:178    .text:00000158 _ZN9tinyUnity6ShaderC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:212    .text:00000188 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:348    .rodata:000000b8 _ZTVN9tinyUnity6ShaderE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:178    .text:00000158 _ZN9tinyUnity6ShaderC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:218    .text:0000018c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:221    .text:0000018c _ZN9tinyUnity6ShaderD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:262    .text:000001d0 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:221    .text:0000018c _ZN9tinyUnity6ShaderD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:268    .text:000001d4 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:271    .text:000001d4 _ZN9tinyUnity6ShaderD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:305    .text:00000208 _ZN9tinyUnity6Shader7executeEv
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.7a7c9736cc6d4c59c817f754af461a43
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.stdlib.h.53.a73f7e963d962393b7f9086194931e4a
+                           .group:00000000 wm4.cdefs.h.56.862c22ff4fc3f08ba284da94c8439388
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData
+__sassert
+DC_FlushRange
+_ZdlPv
+_ZN9tinyUnity6Shader7compileEv
+_ZN9tinyUnity6Shader7prepareEv

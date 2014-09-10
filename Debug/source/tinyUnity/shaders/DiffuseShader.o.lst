@@ -1,0 +1,525 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"DiffuseShader.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.data
+  17              		.align	2
+  20              	_ZL6glGlob:
+  21 0000 00000000 		.word	glGlobalData
+  22              		.section	.text._ZN9tinyUnity8Material11wasModifiedEv,"axG",%progbits,_ZN9tinyUnity8Material11wasMo
+  23              		.align	2
+  24              		.weak	_ZN9tinyUnity8Material11wasModifiedEv
+  26              	_ZN9tinyUnity8Material11wasModifiedEv:
+  27              	.LFB186:
+  28              		.file 1 "../source/tinyUnity/shaders/../Material.h"
+   1:../source/tinyUnity/shaders/../Material.h **** /*
+   2:../source/tinyUnity/shaders/../Material.h ****  * Material.h
+   3:../source/tinyUnity/shaders/../Material.h ****  *
+   4:../source/tinyUnity/shaders/../Material.h ****  *  Created on: 2013-06-15
+   5:../source/tinyUnity/shaders/../Material.h ****  *      Author: awiebe
+   6:../source/tinyUnity/shaders/../Material.h ****  */
+   7:../source/tinyUnity/shaders/../Material.h **** 
+   8:../source/tinyUnity/shaders/../Material.h **** #ifndef MATERIAL_H_
+   9:../source/tinyUnity/shaders/../Material.h **** #define MATERIAL_H_
+  10:../source/tinyUnity/shaders/../Material.h **** #include "Texture2D.h"
+  11:../source/tinyUnity/shaders/../Material.h **** #include "Shader.h"
+  12:../source/tinyUnity/shaders/../Material.h **** namespace tinyUnity{
+  13:../source/tinyUnity/shaders/../Material.h **** class Shader;
+  14:../source/tinyUnity/shaders/../Material.h **** /**
+  15:../source/tinyUnity/shaders/../Material.h ****  * Abstract superclass for static and shader pipeline.
+  16:../source/tinyUnity/shaders/../Material.h ****  */
+  17:../source/tinyUnity/shaders/../Material.h ****  class Material {
+  18:../source/tinyUnity/shaders/../Material.h **** public:
+  19:../source/tinyUnity/shaders/../Material.h **** 	Material();
+  20:../source/tinyUnity/shaders/../Material.h **** 	virtual ~Material();
+  21:../source/tinyUnity/shaders/../Material.h **** 	virtual void execute();
+  22:../source/tinyUnity/shaders/../Material.h **** 	inline bool wasModified(){return updated;}
+  29              		.loc 1 22 0
+  30              		.cfi_startproc
+  31              		@ Function supports interworking.
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 1, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35 0000 04B02DE5 		str	fp, [sp, #-4]!
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 11, -4
+  39 0004 00B08DE2 		add	fp, sp, #0
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_register 11
+  42 0008 0CD04DE2 		sub	sp, sp, #12
+  43 000c 08000BE5 		str	r0, [fp, #-8]
+  44              		.loc 1 22 0
+  45 0010 08301BE5 		ldr	r3, [fp, #-8]
+  46 0014 1030D3E5 		ldrb	r3, [r3, #16]	@ zero_extendqisi2
+  47 0018 0300A0E1 		mov	r0, r3
+  48 001c 00D04BE2 		sub	sp, fp, #0
+  49              		@ sp needed
+  50 0020 04B09DE4 		ldr	fp, [sp], #4
+  51 0024 1EFF2FE1 		bx	lr
+  52              		.cfi_endproc
+  53              	.LFE186:
+  55              		.section	.text._ZN9tinyUnity12StaticShaderC2Ev,"axG",%progbits,_ZN9tinyUnity12StaticShaderC5Ev,com
+  56              		.align	2
+  57              		.weak	_ZN9tinyUnity12StaticShaderC2Ev
+  59              	_ZN9tinyUnity12StaticShaderC2Ev:
+  60              	.LFB189:
+  61              		.file 2 "../source/tinyUnity/shaders/StaticShader.h"
+   1:../source/tinyUnity/shaders/StaticShader.h **** /*
+   2:../source/tinyUnity/shaders/StaticShader.h ****  * StaticShader.h
+   3:../source/tinyUnity/shaders/StaticShader.h ****  *
+   4:../source/tinyUnity/shaders/StaticShader.h ****  *  Created on: Sep 1, 2014
+   5:../source/tinyUnity/shaders/StaticShader.h ****  *      Author: awiebe
+   6:../source/tinyUnity/shaders/StaticShader.h ****  */
+   7:../source/tinyUnity/shaders/StaticShader.h **** 
+   8:../source/tinyUnity/shaders/StaticShader.h **** #ifndef STATICSHADER_H_
+   9:../source/tinyUnity/shaders/StaticShader.h **** #define STATICSHADER_H_
+  10:../source/tinyUnity/shaders/StaticShader.h **** #include "../Shader.h"
+  11:../source/tinyUnity/shaders/StaticShader.h **** namespace tinyUnity {
+  12:../source/tinyUnity/shaders/StaticShader.h **** 
+  13:../source/tinyUnity/shaders/StaticShader.h **** class StaticShader: public Shader {
+  62              		.loc 2 13 0
+  63              		.cfi_startproc
+  64              		@ Function supports interworking.
+  65              		@ args = 0, pretend = 0, frame = 8
+  66              		@ frame_needed = 1, uses_anonymous_args = 0
+  67 0000 00482DE9 		stmfd	sp!, {fp, lr}
+  68              	.LCFI2:
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 11, -8
+  71              		.cfi_offset 14, -4
+  72 0004 04B08DE2 		add	fp, sp, #4
+  73              	.LCFI3:
+  74              		.cfi_def_cfa 11, 4
+  75 0008 08D04DE2 		sub	sp, sp, #8
+  76 000c 08000BE5 		str	r0, [fp, #-8]
+  77              	.LBB2:
+  78              		.loc 2 13 0
+  79 0010 08301BE5 		ldr	r3, [fp, #-8]
+  80 0014 0300A0E1 		mov	r0, r3
+  81 0018 FEFFFFEB 		bl	_ZN9tinyUnity6ShaderC2Ev
+  82 001c 08301BE5 		ldr	r3, [fp, #-8]
+  83 0020 14209FE5 		ldr	r2, .L6
+  84 0024 002083E5 		str	r2, [r3]
+  85              	.LBE2:
+  86 0028 08301BE5 		ldr	r3, [fp, #-8]
+  87 002c 0300A0E1 		mov	r0, r3
+  88 0030 04D04BE2 		sub	sp, fp, #4
+  89              		@ sp needed
+  90 0034 0048BDE8 		ldmfd	sp!, {fp, lr}
+  91 0038 1EFF2FE1 		bx	lr
+  92              	.L7:
+  93              		.align	2
+  94              	.L6:
+  95 003c 08000000 		.word	_ZTVN9tinyUnity12StaticShaderE+8
+  96              		.cfi_endproc
+  97              	.LFE189:
+  99              		.weak	_ZN9tinyUnity12StaticShaderC1Ev
+ 100              		.set	_ZN9tinyUnity12StaticShaderC1Ev,_ZN9tinyUnity12StaticShaderC2Ev
+ 101              		.section	.text._ZN9tinyUnity12StaticShaderD2Ev,"axG",%progbits,_ZN9tinyUnity12StaticShaderD5Ev,com
+ 102              		.align	2
+ 103              		.weak	_ZN9tinyUnity12StaticShaderD2Ev
+ 105              	_ZN9tinyUnity12StaticShaderD2Ev:
+ 106              	.LFB192:
+ 107              		.loc 2 13 0
+ 108              		.cfi_startproc
+ 109              		@ Function supports interworking.
+ 110              		@ args = 0, pretend = 0, frame = 8
+ 111              		@ frame_needed = 1, uses_anonymous_args = 0
+ 112 0000 00482DE9 		stmfd	sp!, {fp, lr}
+ 113              	.LCFI4:
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 11, -8
+ 116              		.cfi_offset 14, -4
+ 117 0004 04B08DE2 		add	fp, sp, #4
+ 118              	.LCFI5:
+ 119              		.cfi_def_cfa 11, 4
+ 120 0008 08D04DE2 		sub	sp, sp, #8
+ 121 000c 08000BE5 		str	r0, [fp, #-8]
+ 122              	.LBB3:
+ 123              		.loc 2 13 0
+ 124 0010 08301BE5 		ldr	r3, [fp, #-8]
+ 125 0014 34209FE5 		ldr	r2, .L12
+ 126 0018 002083E5 		str	r2, [r3]
+ 127 001c 08301BE5 		ldr	r3, [fp, #-8]
+ 128 0020 0300A0E1 		mov	r0, r3
+ 129 0024 FEFFFFEB 		bl	_ZN9tinyUnity6ShaderD2Ev
+ 130              	.LBE3:
+ 131 0028 0030A0E3 		mov	r3, #0
+ 132 002c 000053E3 		cmp	r3, #0
+ 133 0030 0100000A 		beq	.L10
+ 134              		.loc 2 13 0 is_stmt 0 discriminator 1
+ 135 0034 08001BE5 		ldr	r0, [fp, #-8]
+ 136 0038 FEFFFFEB 		bl	_ZdlPv
+ 137              	.L10:
+ 138              		.loc 2 13 0 discriminator 2
+ 139 003c 08301BE5 		ldr	r3, [fp, #-8]
+ 140 0040 0300A0E1 		mov	r0, r3
+ 141 0044 04D04BE2 		sub	sp, fp, #4
+ 142              		@ sp needed
+ 143 0048 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 144 004c 1EFF2FE1 		bx	lr
+ 145              	.L13:
+ 146              		.align	2
+ 147              	.L12:
+ 148 0050 08000000 		.word	_ZTVN9tinyUnity12StaticShaderE+8
+ 149              		.cfi_endproc
+ 150              	.LFE192:
+ 152              		.weak	_ZN9tinyUnity12StaticShaderD1Ev
+ 153              		.set	_ZN9tinyUnity12StaticShaderD1Ev,_ZN9tinyUnity12StaticShaderD2Ev
+ 154              		.section	.text._ZN9tinyUnity12StaticShaderD0Ev,"axG",%progbits,_ZN9tinyUnity12StaticShaderD0Ev,com
+ 155              		.align	2
+ 156              		.weak	_ZN9tinyUnity12StaticShaderD0Ev
+ 158              	_ZN9tinyUnity12StaticShaderD0Ev:
+ 159              	.LFB194:
+ 160              		.loc 2 13 0 is_stmt 1
+ 161              		.cfi_startproc
+ 162              		@ Function supports interworking.
+ 163              		@ args = 0, pretend = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165 0000 00482DE9 		stmfd	sp!, {fp, lr}
+ 166              	.LCFI6:
+ 167              		.cfi_def_cfa_offset 8
+ 168              		.cfi_offset 11, -8
+ 169              		.cfi_offset 14, -4
+ 170 0004 04B08DE2 		add	fp, sp, #4
+ 171              	.LCFI7:
+ 172              		.cfi_def_cfa 11, 4
+ 173 0008 08D04DE2 		sub	sp, sp, #8
+ 174 000c 08000BE5 		str	r0, [fp, #-8]
+ 175              		.loc 2 13 0
+ 176 0010 08001BE5 		ldr	r0, [fp, #-8]
+ 177 0014 FEFFFFEB 		bl	_ZN9tinyUnity12StaticShaderD1Ev
+ 178 0018 08001BE5 		ldr	r0, [fp, #-8]
+ 179 001c FEFFFFEB 		bl	_ZdlPv
+ 180 0020 08301BE5 		ldr	r3, [fp, #-8]
+ 181 0024 0300A0E1 		mov	r0, r3
+ 182 0028 04D04BE2 		sub	sp, fp, #4
+ 183              		@ sp needed
+ 184 002c 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 185 0030 1EFF2FE1 		bx	lr
+ 186              		.cfi_endproc
+ 187              	.LFE194:
+ 189              		.text
+ 190              		.align	2
+ 191              		.global	_ZN9tinyUnity13DiffuseShaderC2Ev
+ 193              	_ZN9tinyUnity13DiffuseShaderC2Ev:
+ 194              	.LFB195:
+ 195              		.file 3 "../source/tinyUnity/shaders/DiffuseShader.cpp"
+   1:../source/tinyUnity/shaders/DiffuseShader.cpp **** /*
+   2:../source/tinyUnity/shaders/DiffuseShader.cpp ****  * DiffuseShader.cpp
+   3:../source/tinyUnity/shaders/DiffuseShader.cpp ****  *
+   4:../source/tinyUnity/shaders/DiffuseShader.cpp ****  *  Created on: Sep 1, 2014
+   5:../source/tinyUnity/shaders/DiffuseShader.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/shaders/DiffuseShader.cpp ****  */
+   7:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+   8:../source/tinyUnity/shaders/DiffuseShader.cpp **** #include "DiffuseShader.h"
+   9:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  10:../source/tinyUnity/shaders/DiffuseShader.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  12:../source/tinyUnity/shaders/DiffuseShader.cpp **** DiffuseShader::DiffuseShader() {
+ 196              		.loc 3 12 0
+ 197              		.cfi_startproc
+ 198              		@ Function supports interworking.
+ 199              		@ args = 0, pretend = 0, frame = 8
+ 200              		@ frame_needed = 1, uses_anonymous_args = 0
+ 201 0000 00482DE9 		stmfd	sp!, {fp, lr}
+ 202              	.LCFI8:
+ 203              		.cfi_def_cfa_offset 8
+ 204              		.cfi_offset 11, -8
+ 205              		.cfi_offset 14, -4
+ 206 0004 04B08DE2 		add	fp, sp, #4
+ 207              	.LCFI9:
+ 208              		.cfi_def_cfa 11, 4
+ 209 0008 08D04DE2 		sub	sp, sp, #8
+ 210 000c 08000BE5 		str	r0, [fp, #-8]
+ 211              	.LBB4:
+ 212              		.loc 3 12 0
+ 213 0010 08301BE5 		ldr	r3, [fp, #-8]
+ 214 0014 0300A0E1 		mov	r0, r3
+ 215 0018 FEFFFFEB 		bl	_ZN9tinyUnity12StaticShaderC2Ev
+ 216 001c 08301BE5 		ldr	r3, [fp, #-8]
+ 217 0020 14209FE5 		ldr	r2, .L20
+ 218 0024 002083E5 		str	r2, [r3]
+ 219              	.LBE4:
+  13:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	// TODO Auto-generated constructor stub
+  14:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  15:../source/tinyUnity/shaders/DiffuseShader.cpp **** }
+ 220              		.loc 3 15 0
+ 221 0028 08301BE5 		ldr	r3, [fp, #-8]
+ 222 002c 0300A0E1 		mov	r0, r3
+ 223 0030 04D04BE2 		sub	sp, fp, #4
+ 224              		@ sp needed
+ 225 0034 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 226 0038 1EFF2FE1 		bx	lr
+ 227              	.L21:
+ 228              		.align	2
+ 229              	.L20:
+ 230 003c 08000000 		.word	_ZTVN9tinyUnity13DiffuseShaderE+8
+ 231              		.cfi_endproc
+ 232              	.LFE195:
+ 234              		.global	_ZN9tinyUnity13DiffuseShaderC1Ev
+ 235              		.set	_ZN9tinyUnity13DiffuseShaderC1Ev,_ZN9tinyUnity13DiffuseShaderC2Ev
+ 236              		.align	2
+ 237              		.global	_ZN9tinyUnity13DiffuseShaderD2Ev
+ 239              	_ZN9tinyUnity13DiffuseShaderD2Ev:
+ 240              	.LFB198:
+  16:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  17:../source/tinyUnity/shaders/DiffuseShader.cpp **** DiffuseShader::~DiffuseShader() {
+ 241              		.loc 3 17 0
+ 242              		.cfi_startproc
+ 243              		@ Function supports interworking.
+ 244              		@ args = 0, pretend = 0, frame = 8
+ 245              		@ frame_needed = 1, uses_anonymous_args = 0
+ 246 0040 00482DE9 		stmfd	sp!, {fp, lr}
+ 247              	.LCFI10:
+ 248              		.cfi_def_cfa_offset 8
+ 249              		.cfi_offset 11, -8
+ 250              		.cfi_offset 14, -4
+ 251 0044 04B08DE2 		add	fp, sp, #4
+ 252              	.LCFI11:
+ 253              		.cfi_def_cfa 11, 4
+ 254 0048 08D04DE2 		sub	sp, sp, #8
+ 255 004c 08000BE5 		str	r0, [fp, #-8]
+ 256              	.LBB5:
+ 257              		.loc 3 17 0
+ 258 0050 08301BE5 		ldr	r3, [fp, #-8]
+ 259 0054 34209FE5 		ldr	r2, .L26
+ 260 0058 002083E5 		str	r2, [r3]
+ 261 005c 08301BE5 		ldr	r3, [fp, #-8]
+  18:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	// TODO Auto-generated destructor stub
+  19:../source/tinyUnity/shaders/DiffuseShader.cpp **** }
+ 262              		.loc 3 19 0
+ 263 0060 0300A0E1 		mov	r0, r3
+ 264 0064 FEFFFFEB 		bl	_ZN9tinyUnity12StaticShaderD2Ev
+ 265              	.LBE5:
+ 266 0068 0030A0E3 		mov	r3, #0
+ 267 006c 000053E3 		cmp	r3, #0
+ 268 0070 0100000A 		beq	.L24
+ 269              		.loc 3 19 0 is_stmt 0 discriminator 1
+ 270 0074 08001BE5 		ldr	r0, [fp, #-8]
+ 271 0078 FEFFFFEB 		bl	_ZdlPv
+ 272              	.L24:
+ 273              		.loc 3 19 0 discriminator 2
+ 274 007c 08301BE5 		ldr	r3, [fp, #-8]
+ 275 0080 0300A0E1 		mov	r0, r3
+ 276 0084 04D04BE2 		sub	sp, fp, #4
+ 277              		@ sp needed
+ 278 0088 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 279 008c 1EFF2FE1 		bx	lr
+ 280              	.L27:
+ 281              		.align	2
+ 282              	.L26:
+ 283 0090 08000000 		.word	_ZTVN9tinyUnity13DiffuseShaderE+8
+ 284              		.cfi_endproc
+ 285              	.LFE198:
+ 287              		.global	_ZN9tinyUnity13DiffuseShaderD1Ev
+ 288              		.set	_ZN9tinyUnity13DiffuseShaderD1Ev,_ZN9tinyUnity13DiffuseShaderD2Ev
+ 289              		.align	2
+ 290              		.global	_ZN9tinyUnity13DiffuseShaderD0Ev
+ 292              	_ZN9tinyUnity13DiffuseShaderD0Ev:
+ 293              	.LFB200:
+  17:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	// TODO Auto-generated destructor stub
+ 294              		.loc 3 17 0 is_stmt 1
+ 295              		.cfi_startproc
+ 296              		@ Function supports interworking.
+ 297              		@ args = 0, pretend = 0, frame = 8
+ 298              		@ frame_needed = 1, uses_anonymous_args = 0
+ 299 0094 00482DE9 		stmfd	sp!, {fp, lr}
+ 300              	.LCFI12:
+ 301              		.cfi_def_cfa_offset 8
+ 302              		.cfi_offset 11, -8
+ 303              		.cfi_offset 14, -4
+ 304 0098 04B08DE2 		add	fp, sp, #4
+ 305              	.LCFI13:
+ 306              		.cfi_def_cfa 11, 4
+ 307 009c 08D04DE2 		sub	sp, sp, #8
+ 308 00a0 08000BE5 		str	r0, [fp, #-8]
+ 309              		.loc 3 19 0
+ 310 00a4 08001BE5 		ldr	r0, [fp, #-8]
+ 311 00a8 FEFFFFEB 		bl	_ZN9tinyUnity13DiffuseShaderD1Ev
+ 312 00ac 08001BE5 		ldr	r0, [fp, #-8]
+ 313 00b0 FEFFFFEB 		bl	_ZdlPv
+ 314 00b4 08301BE5 		ldr	r3, [fp, #-8]
+ 315 00b8 0300A0E1 		mov	r0, r3
+ 316 00bc 04D04BE2 		sub	sp, fp, #4
+ 317              		@ sp needed
+ 318 00c0 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 319 00c4 1EFF2FE1 		bx	lr
+ 320              		.cfi_endproc
+ 321              	.LFE200:
+ 323              		.align	2
+ 324              		.global	_ZN9tinyUnity13DiffuseShader7prepareEv
+ 326              	_ZN9tinyUnity13DiffuseShader7prepareEv:
+ 327              	.LFB201:
+  20:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  21:../source/tinyUnity/shaders/DiffuseShader.cpp **** //void DiffuseShader::compile()
+  22:../source/tinyUnity/shaders/DiffuseShader.cpp **** //{
+  23:../source/tinyUnity/shaders/DiffuseShader.cpp **** //
+  24:../source/tinyUnity/shaders/DiffuseShader.cpp **** //}
+  25:../source/tinyUnity/shaders/DiffuseShader.cpp **** 
+  26:../source/tinyUnity/shaders/DiffuseShader.cpp **** void DiffuseShader::prepare()
+  27:../source/tinyUnity/shaders/DiffuseShader.cpp **** {
+ 328              		.loc 3 27 0
+ 329              		.cfi_startproc
+ 330              		@ Function supports interworking.
+ 331              		@ args = 0, pretend = 0, frame = 8
+ 332              		@ frame_needed = 1, uses_anonymous_args = 0
+ 333 00c8 00482DE9 		stmfd	sp!, {fp, lr}
+ 334              	.LCFI14:
+ 335              		.cfi_def_cfa_offset 8
+ 336              		.cfi_offset 11, -8
+ 337              		.cfi_offset 14, -4
+ 338 00cc 04B08DE2 		add	fp, sp, #4
+ 339              	.LCFI15:
+ 340              		.cfi_def_cfa 11, 4
+ 341 00d0 08D04DE2 		sub	sp, sp, #8
+ 342 00d4 08000BE5 		str	r0, [fp, #-8]
+  28:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	if(this->material->wasModified())
+ 343              		.loc 3 28 0
+ 344 00d8 08301BE5 		ldr	r3, [fp, #-8]
+ 345 00dc 043093E5 		ldr	r3, [r3, #4]
+ 346 00e0 0300A0E1 		mov	r0, r3
+ 347 00e4 FEFFFFEB 		bl	_ZN9tinyUnity8Material11wasModifiedEv
+  29:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	{
+  30:../source/tinyUnity/shaders/DiffuseShader.cpp **** 		//
+  31:../source/tinyUnity/shaders/DiffuseShader.cpp **** 	}
+  32:../source/tinyUnity/shaders/DiffuseShader.cpp **** }
+ 348              		.loc 3 32 0
+ 349 00e8 04D04BE2 		sub	sp, fp, #4
+ 350              		@ sp needed
+ 351 00ec 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 352 00f0 1EFF2FE1 		bx	lr
+ 353              		.cfi_endproc
+ 354              	.LFE201:
+ 356              		.global	_ZTVN9tinyUnity13DiffuseShaderE
+ 357              		.section	.rodata
+ 358              		.align	3
+ 361              	_ZTVN9tinyUnity13DiffuseShaderE:
+ 362 0000 00000000 		.word	0
+ 363 0004 00000000 		.word	0
+ 364 0008 00000000 		.word	_ZN9tinyUnity13DiffuseShaderD1Ev
+ 365 000c 00000000 		.word	_ZN9tinyUnity13DiffuseShaderD0Ev
+ 366 0010 00000000 		.word	_ZN9tinyUnity6Shader7compileEv
+ 367 0014 00000000 		.word	_ZN9tinyUnity13DiffuseShader7prepareEv
+ 368              		.weak	_ZTVN9tinyUnity12StaticShaderE
+ 369              		.section	.rodata._ZTVN9tinyUnity12StaticShaderE,"aG",%progbits,_ZTVN9tinyUnity12StaticShaderE,comd
+ 370              		.align	3
+ 373              	_ZTVN9tinyUnity12StaticShaderE:
+ 374 0000 00000000 		.word	0
+ 375 0004 00000000 		.word	0
+ 376 0008 00000000 		.word	_ZN9tinyUnity12StaticShaderD1Ev
+ 377 000c 00000000 		.word	_ZN9tinyUnity12StaticShaderD0Ev
+ 378 0010 00000000 		.word	_ZN9tinyUnity6Shader7compileEv
+ 379 0014 00000000 		.word	_ZN9tinyUnity6Shader7prepareEv
+ 380              		.text
+ 381              	.Letext0:
+ 382              		.file 4 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/machine/_default_types.h"
+ 383              		.file 5 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdint.h"
+ 384              		.file 6 "/Users/awiebe/devkitPro/libnds/include/nds/ndstypes.h"
+ 385              		.file 7 "/Users/awiebe/devkitPro/libnds/include/nds/system.h"
+ 386              		.file 8 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/dynamicArray.h"
+ 387              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/background.h"
+ 388              		.file 10 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/videoGL.h"
+ 389              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/sprite.h"
+ 390              		.file 12 "../source/tinyUnity/shaders/DiffuseShader.h"
+ 391              		.file 13 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
+ 392              		.file 14 "../source/tinyUnity/shaders/../Texture2D.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 DiffuseShader.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:23     .text._ZN9tinyUnity8Material11wasModifiedEv:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:26     .text._ZN9tinyUnity8Material11wasModifiedEv:00000000 _ZN9tinyUnity8Material11wasModifiedEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:56     .text._ZN9tinyUnity12StaticShaderC2Ev:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:59     .text._ZN9tinyUnity12StaticShaderC2Ev:00000000 _ZN9tinyUnity12StaticShaderC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:95     .text._ZN9tinyUnity12StaticShaderC2Ev:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:373    .rodata._ZTVN9tinyUnity12StaticShaderE:00000000 _ZTVN9tinyUnity12StaticShaderE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:59     .text._ZN9tinyUnity12StaticShaderC2Ev:00000000 _ZN9tinyUnity12StaticShaderC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:102    .text._ZN9tinyUnity12StaticShaderD2Ev:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:105    .text._ZN9tinyUnity12StaticShaderD2Ev:00000000 _ZN9tinyUnity12StaticShaderD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:148    .text._ZN9tinyUnity12StaticShaderD2Ev:00000050 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:105    .text._ZN9tinyUnity12StaticShaderD2Ev:00000000 _ZN9tinyUnity12StaticShaderD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:155    .text._ZN9tinyUnity12StaticShaderD0Ev:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:158    .text._ZN9tinyUnity12StaticShaderD0Ev:00000000 _ZN9tinyUnity12StaticShaderD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:190    .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:193    .text:00000000 _ZN9tinyUnity13DiffuseShaderC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:230    .text:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:361    .rodata:00000000 _ZTVN9tinyUnity13DiffuseShaderE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:193    .text:00000000 _ZN9tinyUnity13DiffuseShaderC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:236    .text:00000040 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:239    .text:00000040 _ZN9tinyUnity13DiffuseShaderD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:283    .text:00000090 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:239    .text:00000040 _ZN9tinyUnity13DiffuseShaderD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:289    .text:00000094 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:292    .text:00000094 _ZN9tinyUnity13DiffuseShaderD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:326    .text:000000c8 _ZN9tinyUnity13DiffuseShader7prepareEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:358    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccpCz3c1.s:370    .rodata._ZTVN9tinyUnity12StaticShaderE:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 _ZN9tinyUnity12StaticShaderC5Ev
+                           .group:00000000 _ZN9tinyUnity12StaticShaderD5Ev
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
+                           .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4._default_types.h.15.8b2cb27e528498f8ff711db085d6e489
+                           .group:00000000 wm4.stdint.h.20.796e373797e732130a803d4c0338fa1b
+                           .group:00000000 wm4.stdbool.h.29.918586c125f920236001deb211f41e92
+                           .group:00000000 wm4.ndstypes.h.43.843a766a29031d4e29a34080490bc9e7
+                           .group:00000000 wm4.bios.h.152.378f3b1fd073814d612a1ba3332493e4
+                           .group:00000000 wm4.card.h.35.5af8b1d928ff6ee2d22f183e9cc6cbe4
+                           .group:00000000 wm4.dma.h.46.470076ab039e7830357de3d6642dfa27
+                           .group:00000000 wm4.interrupts.h.36.0043cda252880b023f6c6ebf569dd321
+                           .group:00000000 wm4.ipc.h.30.fbcd65cbf2747d2105139787728cf9e6
+                           .group:00000000 wm4.memory.h.33.5d65bad382e61a8ebefcc049f5d87b52
+                           .group:00000000 wm4.system.h.37.48409549d245f15638a161f782a42fc7
+                           .group:00000000 wm4.timers.h.39.4b84c7e880d6307c6b835d087ae7883b
+                           .group:00000000 wm4.input.h.26.668c351ed5998cd41b7cf188a22bed7c
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.184.ee8e6917b4e86549ab466905cf65c430
+                           .group:00000000 wm4.stddef.h.39.7a7c9736cc6d4c59c817f754af461a43
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.stdlib.h.53.a73f7e963d962393b7f9086194931e4a
+                           .group:00000000 wm4.cdefs.h.56.862c22ff4fc3f08ba284da94c8439388
+                           .group:00000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
+                           .group:00000000 wm4.stddef.h.158.bfd00fa34c523ce50423876e66a2d374
+                           .group:00000000 wm4.malloc.h.4.62bd13b8107d5245f60bd92bb5994838
+                           .group:00000000 wm4.malloc.h.148.73b7de3bd065dafbd594b04197a9466e
+                           .group:00000000 wm4.sassert.h.35.09af1094f947be321ad495ba445e020a
+                           .group:00000000 wm4.video.h.100.1e8430a318c8dbd537397e7b54f75e06
+                           .group:00000000 wm4.background.h.126.e2819423dbec0f01a2c161be17215d1b
+                           .group:00000000 wm4.trig_lut.h.31.05e8d4f6471e5776263e413a2d294f89
+                           .group:00000000 wm4.math.h.33.ee7a4ca882824fafdd2f17cf66692f53
+                           .group:00000000 wm4.videoGL.h.52.c73e1a09c4f988160d4a8ba260f501f7
+                           .group:00000000 wm4.exceptions.h.25.52606812c666ab6cfd8bf635c7f2a084
+                           .group:00000000 wm4.guitarGrip.h.26.5ddf3818ecb5c8b4af08c800ce313a80
+                           .group:00000000 wm4.piano.h.29.f45975aa2219b49eb0380c2585d1f4b5
+                           .group:00000000 wm4.rumble.h.29.041709ebb3e71022d49e6e8cd0c3ddfc
+                           .group:00000000 wm4.sprite.h.48.d5d68d7969c43c17fbe48e3349c2572c
+
+UNDEFINED SYMBOLS
+glGlobalData
+_ZN9tinyUnity6ShaderC2Ev
+_ZN9tinyUnity6ShaderD2Ev
+_ZdlPv
+_ZN9tinyUnity6Shader7compileEv
+_ZN9tinyUnity6Shader7prepareEv

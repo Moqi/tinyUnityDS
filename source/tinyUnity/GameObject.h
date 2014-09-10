@@ -9,7 +9,9 @@
 #define GAMEOBJECT_H_
 
 #include "Object.h"
+#include "Transform.h"
 #include "physics/Rigidbody.h"
+
 //#include "Renderer.h"
 //#include "Transform.h"
 //#include "AudioSource.h"
@@ -21,19 +23,21 @@ class GameObject: public tinyUnity::Object {
 public:
 	GameObject();
 	virtual ~GameObject();
-
+	Transform* transform;
 	/**Type must be checked at runtime, because otherwise cyclical includes occur*/
 	//template <class T> T* getComponent();
 private:
 	//Rigidbody* rigidbody;
 //	Renderer* renderer;
-//	Transform* transform;
+
 //	AudioSource* audioSource;
 //	AudioListener* AudioListener;
 //	Collider* collider;
 	//void* components;
 	//unsigned char componentCount;
-
+	void OnPreRender();
+	void OnPostRender();
+	friend class Camera;
 };
 
 } /* namespace tinyUnity */

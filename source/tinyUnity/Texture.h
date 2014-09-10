@@ -16,6 +16,7 @@ public:
 //	Texture(TextureDecodeStream* in);
 	Texture(unsigned char* byte);
 	virtual ~Texture();
+	int getBindID();
 };
 
 } /* namespace tinyUnity */

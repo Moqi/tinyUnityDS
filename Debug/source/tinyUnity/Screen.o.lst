@@ -1,0 +1,192 @@
+   1              		.cpu arm9
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"Screen.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.align	2
+  17              		.global	_ZN9tinyUnity6ScreenC2Ev
+  19              	_ZN9tinyUnity6ScreenC2Ev:
+  20              	.LFB1:
+  21              		.file 1 "../source/tinyUnity/Screen.cpp"
+   1:../source/tinyUnity/Screen.cpp **** /*
+   2:../source/tinyUnity/Screen.cpp ****  * Screen.cpp
+   3:../source/tinyUnity/Screen.cpp ****  *
+   4:../source/tinyUnity/Screen.cpp ****  *  Created on: Sep 5, 2014
+   5:../source/tinyUnity/Screen.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/Screen.cpp ****  */
+   7:../source/tinyUnity/Screen.cpp **** 
+   8:../source/tinyUnity/Screen.cpp **** #include "Screen.h"
+   9:../source/tinyUnity/Screen.cpp **** 
+  10:../source/tinyUnity/Screen.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/Screen.cpp **** 
+  12:../source/tinyUnity/Screen.cpp **** Screen::Screen() {
+  22              		.loc 1 12 0
+  23              		.cfi_startproc
+  24              		@ Function supports interworking.
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 1, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 04B02DE5 		str	fp, [sp, #-4]!
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 4
+  31              		.cfi_offset 11, -4
+  32 0004 00B08DE2 		add	fp, sp, #0
+  33              	.LCFI1:
+  34              		.cfi_def_cfa_register 11
+  35 0008 0CD04DE2 		sub	sp, sp, #12
+  36 000c 08000BE5 		str	r0, [fp, #-8]
+  37              	.LBB2:
+  38              		.loc 1 12 0
+  39 0010 08301BE5 		ldr	r3, [fp, #-8]
+  40 0014 2C209FE5 		ldr	r2, .L4
+  41 0018 002083E5 		str	r2, [r3]
+  42 001c 08301BE5 		ldr	r3, [fp, #-8]
+  43 0020 0020E0E3 		mvn	r2, #0
+  44 0024 0420C3E5 		strb	r2, [r3, #4]
+  45 0028 08301BE5 		ldr	r3, [fp, #-8]
+  46 002c 4020E0E3 		mvn	r2, #64
+  47 0030 0520C3E5 		strb	r2, [r3, #5]
+  48              	.LBE2:
+  13:../source/tinyUnity/Screen.cpp **** 	// TODO Auto-generated constructor stub
+  14:../source/tinyUnity/Screen.cpp **** 
+  15:../source/tinyUnity/Screen.cpp **** }
+  49              		.loc 1 15 0
+  50 0034 08301BE5 		ldr	r3, [fp, #-8]
+  51 0038 0300A0E1 		mov	r0, r3
+  52 003c 00D04BE2 		sub	sp, fp, #0
+  53              		@ sp needed
+  54 0040 04B09DE4 		ldr	fp, [sp], #4
+  55 0044 1EFF2FE1 		bx	lr
+  56              	.L5:
+  57              		.align	2
+  58              	.L4:
+  59 0048 08000000 		.word	_ZTVN9tinyUnity6ScreenE+8
+  60              		.cfi_endproc
+  61              	.LFE1:
+  63              		.global	_ZN9tinyUnity6ScreenC1Ev
+  64              		.set	_ZN9tinyUnity6ScreenC1Ev,_ZN9tinyUnity6ScreenC2Ev
+  65              		.align	2
+  66              		.global	_ZN9tinyUnity6ScreenD2Ev
+  68              	_ZN9tinyUnity6ScreenD2Ev:
+  69              	.LFB4:
+  16:../source/tinyUnity/Screen.cpp **** 
+  17:../source/tinyUnity/Screen.cpp **** Screen::~Screen() {
+  70              		.loc 1 17 0
+  71              		.cfi_startproc
+  72              		@ Function supports interworking.
+  73              		@ args = 0, pretend = 0, frame = 8
+  74              		@ frame_needed = 1, uses_anonymous_args = 0
+  75 004c 00482DE9 		stmfd	sp!, {fp, lr}
+  76              	.LCFI2:
+  77              		.cfi_def_cfa_offset 8
+  78              		.cfi_offset 11, -8
+  79              		.cfi_offset 14, -4
+  80 0050 04B08DE2 		add	fp, sp, #4
+  81              	.LCFI3:
+  82              		.cfi_def_cfa 11, 4
+  83 0054 08D04DE2 		sub	sp, sp, #8
+  84 0058 08000BE5 		str	r0, [fp, #-8]
+  85              	.LBB3:
+  86              		.loc 1 17 0
+  87 005c 08301BE5 		ldr	r3, [fp, #-8]
+  88 0060 28209FE5 		ldr	r2, .L10
+  89 0064 002083E5 		str	r2, [r3]
+  90              	.LBE3:
+  18:../source/tinyUnity/Screen.cpp **** 	// TODO Auto-generated destructor stub
+  19:../source/tinyUnity/Screen.cpp **** }
+  91              		.loc 1 19 0
+  92 0068 0030A0E3 		mov	r3, #0
+  93 006c 000053E3 		cmp	r3, #0
+  94 0070 0100000A 		beq	.L8
+  95              		.loc 1 19 0 is_stmt 0 discriminator 1
+  96 0074 08001BE5 		ldr	r0, [fp, #-8]
+  97 0078 FEFFFFEB 		bl	_ZdlPv
+  98              	.L8:
+  99              		.loc 1 19 0 discriminator 2
+ 100 007c 08301BE5 		ldr	r3, [fp, #-8]
+ 101 0080 0300A0E1 		mov	r0, r3
+ 102 0084 04D04BE2 		sub	sp, fp, #4
+ 103              		@ sp needed
+ 104 0088 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 105 008c 1EFF2FE1 		bx	lr
+ 106              	.L11:
+ 107              		.align	2
+ 108              	.L10:
+ 109 0090 08000000 		.word	_ZTVN9tinyUnity6ScreenE+8
+ 110              		.cfi_endproc
+ 111              	.LFE4:
+ 113              		.global	_ZN9tinyUnity6ScreenD1Ev
+ 114              		.set	_ZN9tinyUnity6ScreenD1Ev,_ZN9tinyUnity6ScreenD2Ev
+ 115              		.align	2
+ 116              		.global	_ZN9tinyUnity6ScreenD0Ev
+ 118              	_ZN9tinyUnity6ScreenD0Ev:
+ 119              	.LFB6:
+  17:../source/tinyUnity/Screen.cpp **** 	// TODO Auto-generated destructor stub
+ 120              		.loc 1 17 0 is_stmt 1
+ 121              		.cfi_startproc
+ 122              		@ Function supports interworking.
+ 123              		@ args = 0, pretend = 0, frame = 8
+ 124              		@ frame_needed = 1, uses_anonymous_args = 0
+ 125 0094 00482DE9 		stmfd	sp!, {fp, lr}
+ 126              	.LCFI4:
+ 127              		.cfi_def_cfa_offset 8
+ 128              		.cfi_offset 11, -8
+ 129              		.cfi_offset 14, -4
+ 130 0098 04B08DE2 		add	fp, sp, #4
+ 131              	.LCFI5:
+ 132              		.cfi_def_cfa 11, 4
+ 133 009c 08D04DE2 		sub	sp, sp, #8
+ 134 00a0 08000BE5 		str	r0, [fp, #-8]
+ 135              		.loc 1 19 0
+ 136 00a4 08001BE5 		ldr	r0, [fp, #-8]
+ 137 00a8 FEFFFFEB 		bl	_ZN9tinyUnity6ScreenD1Ev
+ 138 00ac 08001BE5 		ldr	r0, [fp, #-8]
+ 139 00b0 FEFFFFEB 		bl	_ZdlPv
+ 140 00b4 08301BE5 		ldr	r3, [fp, #-8]
+ 141 00b8 0300A0E1 		mov	r0, r3
+ 142 00bc 04D04BE2 		sub	sp, fp, #4
+ 143              		@ sp needed
+ 144 00c0 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 145 00c4 1EFF2FE1 		bx	lr
+ 146              		.cfi_endproc
+ 147              	.LFE6:
+ 149              		.global	_ZTVN9tinyUnity6ScreenE
+ 150              		.section	.rodata
+ 151              		.align	3
+ 154              	_ZTVN9tinyUnity6ScreenE:
+ 155 0000 00000000 		.word	0
+ 156 0004 00000000 		.word	0
+ 157 0008 00000000 		.word	_ZN9tinyUnity6ScreenD1Ev
+ 158 000c 00000000 		.word	_ZN9tinyUnity6ScreenD0Ev
+ 159              		.text
+ 160              	.Letext0:
+ 161              		.file 2 "../source/tinyUnity/Screen.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Screen.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:19     .text:00000000 _ZN9tinyUnity6ScreenC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:59     .text:00000048 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:154    .rodata:00000000 _ZTVN9tinyUnity6ScreenE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:19     .text:00000000 _ZN9tinyUnity6ScreenC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:65     .text:0000004c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:68     .text:0000004c _ZN9tinyUnity6ScreenD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:109    .text:00000090 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:68     .text:0000004c _ZN9tinyUnity6ScreenD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:115    .text:00000094 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:118    .text:00000094 _ZN9tinyUnity6ScreenD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccd62J7L.s:151    .rodata:00000000 $d
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+
+UNDEFINED SYMBOLS
+_ZdlPv
