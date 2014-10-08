@@ -14,6 +14,7 @@ class Engine {
 public:
 	Engine();
 	virtual ~Engine();
+	void Start();
 };
 
 } /* namespace tinyUnity */

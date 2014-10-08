@@ -222,21 +222,21 @@
  207              		.file 12 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Rigidbody.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:20     .data:00000000 _ZL6glGlob
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:23     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:26     .text:00000000 _ZN9tinyUnity9RigidbodyC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:63     .text:0000003c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:189    .rodata:00000000 _ZTVN9tinyUnity9RigidbodyE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:26     .text:00000000 _ZN9tinyUnity9RigidbodyC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:69     .text:00000040 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:72     .text:00000040 _ZN9tinyUnity9RigidbodyD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:116    .text:00000090 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:72     .text:00000040 _ZN9tinyUnity9RigidbodyD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:122    .text:00000094 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:125    .text:00000094 _ZN9tinyUnity9RigidbodyD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:159    .text:000000c8 _ZN9tinyUnity9Rigidbody11fixedUpdateEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc7NjMLI.s:186    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:26     .text:00000000 _ZN9tinyUnity9RigidbodyC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:63     .text:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:189    .rodata:00000000 _ZTVN9tinyUnity9RigidbodyE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:26     .text:00000000 _ZN9tinyUnity9RigidbodyC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:69     .text:00000040 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:72     .text:00000040 _ZN9tinyUnity9RigidbodyD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:116    .text:00000090 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:72     .text:00000040 _ZN9tinyUnity9RigidbodyD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:122    .text:00000094 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:125    .text:00000094 _ZN9tinyUnity9RigidbodyD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:159    .text:000000c8 _ZN9tinyUnity9Rigidbody11fixedUpdateEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccGzjZrp.s:186    .rodata:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e

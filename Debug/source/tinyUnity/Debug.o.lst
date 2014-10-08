@@ -286,7 +286,7 @@
   58 0001 000000   		.text
   59              		.align	2
   61              	_Z41__static_initialization_and_destruction_0ii:
-  62              	.LFB1126:
+  62              	.LFB1135:
   63              		.file 2 "../source/tinyUnity/Debug.cpp"
    1:../source/tinyUnity/Debug.cpp **** /*
    2:../source/tinyUnity/Debug.cpp ****  * Debug.cpp
@@ -430,10 +430,10 @@
  108 0080 00000000 		.word	_ZNSt8ios_base4InitD1Ev
  109 0084 00000000 		.word	__dso_handle
  110              		.cfi_endproc
- 111              	.LFE1126:
+ 111              	.LFE1135:
  113              		.align	2
  115              	_GLOBAL__sub_I_Debug.cpp:
- 116              	.LFB1127:
+ 116              	.LFB1136:
  117              		.loc 2 21 0
  118              		.cfi_startproc
  119              		@ Function supports interworking.
@@ -460,7 +460,7 @@
  140              	.L8:
  141 00a8 FFFF0000 		.word	65535
  142              		.cfi_endproc
- 143              	.LFE1127:
+ 143              	.LFE1136:
  145              		.section	.init_array,"aw",%init_array
  146              		.align	2
  147 0000 00000000 		.word	_GLOBAL__sub_I_Debug.cpp(target1)
@@ -492,18 +492,18 @@
  173              		.file 27 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/c++/4.8.2/bits/stl_pair.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Debug.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:17     .rodata:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:20     .rodata:00000000 _ZStL19piecewise_construct
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:23     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:25     .text:00000000 _ZL20__gthread_key_deletei
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:55     .bss:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:56     .bss:00000000 _ZStL8__ioinit
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:61     .text:00000024 _Z41__static_initialization_and_destruction_0ii
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:106    .text:00000078 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:113    .text:00000088 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:115    .text:00000088 _GLOBAL__sub_I_Debug.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:141    .text:000000a8 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccaaQmqs.s:146    .init_array:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:17     .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:20     .rodata:00000000 _ZStL19piecewise_construct
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:25     .text:00000000 _ZL20__gthread_key_deletei
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:55     .bss:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:56     .bss:00000000 _ZStL8__ioinit
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:61     .text:00000024 _Z41__static_initialization_and_destruction_0ii
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:106    .text:00000078 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:113    .text:00000088 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:115    .text:00000088 _GLOBAL__sub_I_Debug.cpp
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:141    .text:000000a8 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccY0ALi8.s:146    .init_array:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.cconfig.h.31.c7dcfa542e28bd9698a8d20f88154445

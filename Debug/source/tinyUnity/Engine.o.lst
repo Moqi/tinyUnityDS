@@ -70,115 +70,150 @@
   57              		.global	_ZN9tinyUnity6EngineC1Ev
   58              		.set	_ZN9tinyUnity6EngineC1Ev,_ZN9tinyUnity6EngineC2Ev
   59              		.align	2
-  60              		.global	_ZN9tinyUnity6EngineD2Ev
-  62              	_ZN9tinyUnity6EngineD2Ev:
-  63              	.LFB4:
+  60              		.global	_ZN9tinyUnity6Engine5StartEv
+  62              	_ZN9tinyUnity6Engine5StartEv:
+  63              	.LFB3:
   16:../source/tinyUnity/Engine.cpp **** 
-  17:../source/tinyUnity/Engine.cpp **** Engine::~Engine() {
-  64              		.loc 1 17 0
+  17:../source/tinyUnity/Engine.cpp **** void Engine::Start()
+  18:../source/tinyUnity/Engine.cpp **** {
+  64              		.loc 1 18 0
   65              		.cfi_startproc
   66              		@ Function supports interworking.
   67              		@ args = 0, pretend = 0, frame = 8
   68              		@ frame_needed = 1, uses_anonymous_args = 0
-  69 0034 00482DE9 		stmfd	sp!, {fp, lr}
-  70              	.LCFI2:
-  71              		.cfi_def_cfa_offset 8
-  72              		.cfi_offset 11, -8
-  73              		.cfi_offset 14, -4
-  74 0038 04B08DE2 		add	fp, sp, #4
+  69              		@ link register save eliminated.
+  70 0034 04B02DE5 		str	fp, [sp, #-4]!
+  71              	.LCFI2:
+  72              		.cfi_def_cfa_offset 4
+  73              		.cfi_offset 11, -4
+  74 0038 00B08DE2 		add	fp, sp, #0
   75              	.LCFI3:
-  76              		.cfi_def_cfa 11, 4
-  77 003c 08D04DE2 		sub	sp, sp, #8
+  76              		.cfi_def_cfa_register 11
+  77 003c 0CD04DE2 		sub	sp, sp, #12
   78 0040 08000BE5 		str	r0, [fp, #-8]
-  79              	.LBB3:
-  80              		.loc 1 17 0
-  81 0044 08301BE5 		ldr	r3, [fp, #-8]
-  82 0048 28209FE5 		ldr	r2, .L10
-  83 004c 002083E5 		str	r2, [r3]
-  84              	.LBE3:
-  18:../source/tinyUnity/Engine.cpp **** 	// TODO Auto-generated destructor stub
-  19:../source/tinyUnity/Engine.cpp **** }
-  85              		.loc 1 19 0
-  86 0050 0030A0E3 		mov	r3, #0
-  87 0054 000053E3 		cmp	r3, #0
-  88 0058 0100000A 		beq	.L8
-  89              		.loc 1 19 0 is_stmt 0 discriminator 1
-  90 005c 08001BE5 		ldr	r0, [fp, #-8]
-  91 0060 FEFFFFEB 		bl	_ZdlPv
-  92              	.L8:
-  93              		.loc 1 19 0 discriminator 2
-  94 0064 08301BE5 		ldr	r3, [fp, #-8]
-  95 0068 0300A0E1 		mov	r0, r3
-  96 006c 04D04BE2 		sub	sp, fp, #4
-  97              		@ sp needed
-  98 0070 0048BDE8 		ldmfd	sp!, {fp, lr}
-  99 0074 1EFF2FE1 		bx	lr
- 100              	.L11:
- 101              		.align	2
- 102              	.L10:
- 103 0078 08000000 		.word	_ZTVN9tinyUnity6EngineE+8
- 104              		.cfi_endproc
- 105              	.LFE4:
- 107              		.global	_ZN9tinyUnity6EngineD1Ev
- 108              		.set	_ZN9tinyUnity6EngineD1Ev,_ZN9tinyUnity6EngineD2Ev
- 109              		.align	2
- 110              		.global	_ZN9tinyUnity6EngineD0Ev
- 112              	_ZN9tinyUnity6EngineD0Ev:
- 113              	.LFB6:
-  17:../source/tinyUnity/Engine.cpp **** 	// TODO Auto-generated destructor stub
- 114              		.loc 1 17 0 is_stmt 1
- 115              		.cfi_startproc
- 116              		@ Function supports interworking.
- 117              		@ args = 0, pretend = 0, frame = 8
- 118              		@ frame_needed = 1, uses_anonymous_args = 0
- 119 007c 00482DE9 		stmfd	sp!, {fp, lr}
- 120              	.LCFI4:
- 121              		.cfi_def_cfa_offset 8
- 122              		.cfi_offset 11, -8
- 123              		.cfi_offset 14, -4
- 124 0080 04B08DE2 		add	fp, sp, #4
- 125              	.LCFI5:
- 126              		.cfi_def_cfa 11, 4
- 127 0084 08D04DE2 		sub	sp, sp, #8
- 128 0088 08000BE5 		str	r0, [fp, #-8]
- 129              		.loc 1 19 0
- 130 008c 08001BE5 		ldr	r0, [fp, #-8]
- 131 0090 FEFFFFEB 		bl	_ZN9tinyUnity6EngineD1Ev
- 132 0094 08001BE5 		ldr	r0, [fp, #-8]
- 133 0098 FEFFFFEB 		bl	_ZdlPv
- 134 009c 08301BE5 		ldr	r3, [fp, #-8]
- 135 00a0 0300A0E1 		mov	r0, r3
- 136 00a4 04D04BE2 		sub	sp, fp, #4
- 137              		@ sp needed
- 138 00a8 0048BDE8 		ldmfd	sp!, {fp, lr}
- 139 00ac 1EFF2FE1 		bx	lr
- 140              		.cfi_endproc
- 141              	.LFE6:
- 143              		.global	_ZTVN9tinyUnity6EngineE
- 144              		.section	.rodata
- 145              		.align	3
- 148              	_ZTVN9tinyUnity6EngineE:
- 149 0000 00000000 		.word	0
- 150 0004 00000000 		.word	0
- 151 0008 00000000 		.word	_ZN9tinyUnity6EngineD1Ev
- 152 000c 00000000 		.word	_ZN9tinyUnity6EngineD0Ev
- 153              		.text
- 154              	.Letext0:
- 155              		.file 2 "../source/tinyUnity/Engine.h"
+  19:../source/tinyUnity/Engine.cpp **** 	//ComputePhysics();
+  20:../source/tinyUnity/Engine.cpp **** 	//DrawScene();
+  21:../source/tinyUnity/Engine.cpp **** 	//Destroy();
+  22:../source/tinyUnity/Engine.cpp **** 
+  23:../source/tinyUnity/Engine.cpp **** }
+  79              		.loc 1 23 0
+  80 0044 00D04BE2 		sub	sp, fp, #0
+  81              		@ sp needed
+  82 0048 04B09DE4 		ldr	fp, [sp], #4
+  83 004c 1EFF2FE1 		bx	lr
+  84              		.cfi_endproc
+  85              	.LFE3:
+  87              		.align	2
+  88              		.global	_ZN9tinyUnity6EngineD2Ev
+  90              	_ZN9tinyUnity6EngineD2Ev:
+  91              	.LFB5:
+  24:../source/tinyUnity/Engine.cpp **** 
+  25:../source/tinyUnity/Engine.cpp **** Engine::~Engine() {
+  92              		.loc 1 25 0
+  93              		.cfi_startproc
+  94              		@ Function supports interworking.
+  95              		@ args = 0, pretend = 0, frame = 8
+  96              		@ frame_needed = 1, uses_anonymous_args = 0
+  97 0050 00482DE9 		stmfd	sp!, {fp, lr}
+  98              	.LCFI4:
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 11, -8
+ 101              		.cfi_offset 14, -4
+ 102 0054 04B08DE2 		add	fp, sp, #4
+ 103              	.LCFI5:
+ 104              		.cfi_def_cfa 11, 4
+ 105 0058 08D04DE2 		sub	sp, sp, #8
+ 106 005c 08000BE5 		str	r0, [fp, #-8]
+ 107              	.LBB3:
+ 108              		.loc 1 25 0
+ 109 0060 08301BE5 		ldr	r3, [fp, #-8]
+ 110 0064 28209FE5 		ldr	r2, .L11
+ 111 0068 002083E5 		str	r2, [r3]
+ 112              	.LBE3:
+  26:../source/tinyUnity/Engine.cpp **** 	// TODO Auto-generated destructor stub
+  27:../source/tinyUnity/Engine.cpp **** }
+ 113              		.loc 1 27 0
+ 114 006c 0030A0E3 		mov	r3, #0
+ 115 0070 000053E3 		cmp	r3, #0
+ 116 0074 0100000A 		beq	.L9
+ 117              		.loc 1 27 0 is_stmt 0 discriminator 1
+ 118 0078 08001BE5 		ldr	r0, [fp, #-8]
+ 119 007c FEFFFFEB 		bl	_ZdlPv
+ 120              	.L9:
+ 121              		.loc 1 27 0 discriminator 2
+ 122 0080 08301BE5 		ldr	r3, [fp, #-8]
+ 123 0084 0300A0E1 		mov	r0, r3
+ 124 0088 04D04BE2 		sub	sp, fp, #4
+ 125              		@ sp needed
+ 126 008c 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 127 0090 1EFF2FE1 		bx	lr
+ 128              	.L12:
+ 129              		.align	2
+ 130              	.L11:
+ 131 0094 08000000 		.word	_ZTVN9tinyUnity6EngineE+8
+ 132              		.cfi_endproc
+ 133              	.LFE5:
+ 135              		.global	_ZN9tinyUnity6EngineD1Ev
+ 136              		.set	_ZN9tinyUnity6EngineD1Ev,_ZN9tinyUnity6EngineD2Ev
+ 137              		.align	2
+ 138              		.global	_ZN9tinyUnity6EngineD0Ev
+ 140              	_ZN9tinyUnity6EngineD0Ev:
+ 141              	.LFB7:
+  25:../source/tinyUnity/Engine.cpp **** 	// TODO Auto-generated destructor stub
+ 142              		.loc 1 25 0 is_stmt 1
+ 143              		.cfi_startproc
+ 144              		@ Function supports interworking.
+ 145              		@ args = 0, pretend = 0, frame = 8
+ 146              		@ frame_needed = 1, uses_anonymous_args = 0
+ 147 0098 00482DE9 		stmfd	sp!, {fp, lr}
+ 148              	.LCFI6:
+ 149              		.cfi_def_cfa_offset 8
+ 150              		.cfi_offset 11, -8
+ 151              		.cfi_offset 14, -4
+ 152 009c 04B08DE2 		add	fp, sp, #4
+ 153              	.LCFI7:
+ 154              		.cfi_def_cfa 11, 4
+ 155 00a0 08D04DE2 		sub	sp, sp, #8
+ 156 00a4 08000BE5 		str	r0, [fp, #-8]
+ 157              		.loc 1 27 0
+ 158 00a8 08001BE5 		ldr	r0, [fp, #-8]
+ 159 00ac FEFFFFEB 		bl	_ZN9tinyUnity6EngineD1Ev
+ 160 00b0 08001BE5 		ldr	r0, [fp, #-8]
+ 161 00b4 FEFFFFEB 		bl	_ZdlPv
+ 162 00b8 08301BE5 		ldr	r3, [fp, #-8]
+ 163 00bc 0300A0E1 		mov	r0, r3
+ 164 00c0 04D04BE2 		sub	sp, fp, #4
+ 165              		@ sp needed
+ 166 00c4 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 167 00c8 1EFF2FE1 		bx	lr
+ 168              		.cfi_endproc
+ 169              	.LFE7:
+ 171              		.global	_ZTVN9tinyUnity6EngineE
+ 172              		.section	.rodata
+ 173              		.align	3
+ 176              	_ZTVN9tinyUnity6EngineE:
+ 177 0000 00000000 		.word	0
+ 178 0004 00000000 		.word	0
+ 179 0008 00000000 		.word	_ZN9tinyUnity6EngineD1Ev
+ 180 000c 00000000 		.word	_ZN9tinyUnity6EngineD0Ev
+ 181              		.text
+ 182              	.Letext0:
+ 183              		.file 2 "../source/tinyUnity/Engine.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Engine.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:16     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:19     .text:00000000 _ZN9tinyUnity6EngineC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:53     .text:00000030 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:148    .rodata:00000000 _ZTVN9tinyUnity6EngineE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:19     .text:00000000 _ZN9tinyUnity6EngineC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:59     .text:00000034 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:62     .text:00000034 _ZN9tinyUnity6EngineD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:103    .text:00000078 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:62     .text:00000034 _ZN9tinyUnity6EngineD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:109    .text:0000007c $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:112    .text:0000007c _ZN9tinyUnity6EngineD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cctFzNBv.s:145    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:16     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:19     .text:00000000 _ZN9tinyUnity6EngineC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:53     .text:00000030 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:176    .rodata:00000000 _ZTVN9tinyUnity6EngineE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:19     .text:00000000 _ZN9tinyUnity6EngineC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:59     .text:00000034 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:62     .text:00000034 _ZN9tinyUnity6Engine5StartEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:90     .text:00000050 _ZN9tinyUnity6EngineD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:131    .text:00000094 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:90     .text:00000050 _ZN9tinyUnity6EngineD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:137    .text:00000098 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:140    .text:00000098 _ZN9tinyUnity6EngineD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccRiohUA.s:173    .rodata:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
 

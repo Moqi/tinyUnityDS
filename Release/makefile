@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include source/tinyUnity/shaders/subdir.mk
 -include source/tinyUnity/physics/subdir.mk
+-include source/tinyUnity/gui/subdir.mk
 -include source/tinyUnity/audio/subdir.mk
 -include source/tinyUnity/subdir.mk
 -include source/subdir.mk

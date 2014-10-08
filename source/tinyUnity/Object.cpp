@@ -26,18 +26,29 @@ Object* Object::retain()
 	return this;
 }
 
+void Object::destroy()
+{
+#if TINY_UNITY_DEFFERED_RELEASE
+	#error "Deferred release system not implemented, implement or set TINY_UNITY_DEFERRED_RELEASE to 0 in config.h"
+#else
+	destroyImmediate();
+#endif
+}
+
+void Object::destroyImmediate()
+{
+	delete this;
+}
+
 int Object::release()
 {
 	this->referenceCount--;
-	if(this->referenceCount == 0)
+	if(this->referenceCount <= 0)
 	{
-	#ifdef DEFERRED_RELEASE
-	#error "Deferred release system not implemented"
-	#else
-		this->~Object();
-	#endif
+	destroy();
 	}
 	return this->referenceCount;
 }
+
 
 } /* namespace tinyUnity */

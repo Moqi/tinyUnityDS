@@ -230,24 +230,24 @@
  216              		.file 12 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Mesh.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:20     .data:00000000 _ZL6glGlob
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:23     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:26     .text:00000000 _ZN9tinyUnity4MeshC2EPNS_7SubMeshE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:61     .text:00000034 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:199    .rodata:00000000 _ZTVN9tinyUnity4MeshE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:26     .text:00000000 _ZN9tinyUnity4MeshC1EPNS_7SubMeshE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:67     .text:00000038 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:70     .text:00000038 _ZN9tinyUnity4MeshC2EPl
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:104    .text:0000006c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:70     .text:00000038 _ZN9tinyUnity4MeshC1EPl
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:110    .text:00000070 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:113    .text:00000070 _ZN9tinyUnity4MeshD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:154    .text:000000b4 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:113    .text:00000070 _ZN9tinyUnity4MeshD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:160    .text:000000b8 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:163    .text:000000b8 _ZN9tinyUnity4MeshD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc5ez5eO.s:196    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:26     .text:00000000 _ZN9tinyUnity4MeshC2EPNS_7SubMeshE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:61     .text:00000034 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:199    .rodata:00000000 _ZTVN9tinyUnity4MeshE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:26     .text:00000000 _ZN9tinyUnity4MeshC1EPNS_7SubMeshE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:67     .text:00000038 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:70     .text:00000038 _ZN9tinyUnity4MeshC2EPl
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:104    .text:0000006c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:70     .text:00000038 _ZN9tinyUnity4MeshC1EPl
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:110    .text:00000070 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:113    .text:00000070 _ZN9tinyUnity4MeshD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:154    .text:000000b4 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:113    .text:00000070 _ZN9tinyUnity4MeshD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:160    .text:000000b8 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:163    .text:000000b8 _ZN9tinyUnity4MeshD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccefnysW.s:196    .rodata:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e

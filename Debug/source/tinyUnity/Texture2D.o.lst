@@ -181,20 +181,20 @@
  171              		.file 11 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Texture2D.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:20     .data:00000000 _ZL6glGlob
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:23     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:26     .text:00000000 _ZN9tinyUnity9Texture2DC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:60     .text:00000030 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:155    .rodata:00000000 _ZTVN9tinyUnity9Texture2DE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:26     .text:00000000 _ZN9tinyUnity9Texture2DC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:66     .text:00000034 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:69     .text:00000034 _ZN9tinyUnity9Texture2DD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:110    .text:00000078 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:69     .text:00000034 _ZN9tinyUnity9Texture2DD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:116    .text:0000007c $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:119    .text:0000007c _ZN9tinyUnity9Texture2DD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccyAkOmg.s:152    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:26     .text:00000000 _ZN9tinyUnity9Texture2DC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:60     .text:00000030 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:155    .rodata:00000000 _ZTVN9tinyUnity9Texture2DE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:26     .text:00000000 _ZN9tinyUnity9Texture2DC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:66     .text:00000034 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:69     .text:00000034 _ZN9tinyUnity9Texture2DD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:110    .text:00000078 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:69     .text:00000034 _ZN9tinyUnity9Texture2DD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:116    .text:0000007c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:119    .text:0000007c _ZN9tinyUnity9Texture2DD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccl9N6in.s:152    .rodata:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e

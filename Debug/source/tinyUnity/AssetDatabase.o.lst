@@ -20,14 +20,381 @@
   22              		.global	_ZN9tinyUnity13AssetDatabase9usesShinyE
   25              	_ZN9tinyUnity13AssetDatabase9usesShinyE:
   26 0001 00       		.space	1
-  27              		.text
-  28              	.Letext0:
-  29              		.file 1 "../source/tinyUnity/AssetDatabase.cpp"
+  27 0002 0000     		.align	2
+  28              	_ZN9tinyUnity13AssetDatabaseL2DBE:
+  29 0004 00000000 		.space	4
+  30              		.section	.rodata
+  31              		.align	2
+  32              	.LC0:
+  33 0000 61737365 		.ascii	"assetFile.db\000"
+  33      7446696C 
+  33      652E6462 
+  33      00
+  34              		.data
+  35              		.align	2
+  38              	_ZN9tinyUnity13AssetDatabaseL6dbPathE:
+  39 0000 00000000 		.word	.LC0
+  40              		.bss
+  41              		.align	2
+  42              	_ZN9tinyUnity13AssetDatabaseL9assetFileE:
+  43 0008 00000000 		.space	4
+  44              		.text
+  45              		.align	2
+  46              		.global	_ZN9tinyUnity13AssetDatabase9loadAssetEi
+  48              	_ZN9tinyUnity13AssetDatabase9loadAssetEi:
+  49              	.LFB0:
+  50              		.file 1 "../source/tinyUnity/AssetDatabase.cpp"
+   1:../source/tinyUnity/AssetDatabase.cpp **** /*
+   2:../source/tinyUnity/AssetDatabase.cpp ****  * Object.cpp
+   3:../source/tinyUnity/AssetDatabase.cpp ****  *
+   4:../source/tinyUnity/AssetDatabase.cpp ****  *  Created on: 2013-06-21
+   5:../source/tinyUnity/AssetDatabase.cpp ****  *      Author: awiebe
+   6:../source/tinyUnity/AssetDatabase.cpp ****  */
+   7:../source/tinyUnity/AssetDatabase.cpp **** 
+   8:../source/tinyUnity/AssetDatabase.cpp **** #include <stdio.h>
+   9:../source/tinyUnity/AssetDatabase.cpp **** //#define DEFERRED_RELEASE
+  10:../source/tinyUnity/AssetDatabase.cpp **** namespace tinyUnity {
+  11:../source/tinyUnity/AssetDatabase.cpp **** 
+  12:../source/tinyUnity/AssetDatabase.cpp **** namespace AssetDatabase
+  13:../source/tinyUnity/AssetDatabase.cpp **** {
+  14:../source/tinyUnity/AssetDatabase.cpp **** 	bool usesToon,usesShiny;
+  15:../source/tinyUnity/AssetDatabase.cpp **** 	typedef struct heapNode { unsigned short id; unsigned int offset; unsigned int length;} heapNode;
+  16:../source/tinyUnity/AssetDatabase.cpp **** 	struct db
+  17:../source/tinyUnity/AssetDatabase.cpp **** 	{
+  18:../source/tinyUnity/AssetDatabase.cpp **** 	heapNode* indexHeap;
+  19:../source/tinyUnity/AssetDatabase.cpp **** 	};
+  20:../source/tinyUnity/AssetDatabase.cpp **** 	static db DB;
+  21:../source/tinyUnity/AssetDatabase.cpp **** 	static char* dbPath= "assetFile.db";
+  22:../source/tinyUnity/AssetDatabase.cpp **** 	static FILE* assetFile = fopen(dbPath,"r");
+  23:../source/tinyUnity/AssetDatabase.cpp **** 	void* loadAsset(int id)
+  24:../source/tinyUnity/AssetDatabase.cpp **** 	{
+  51              		.loc 1 24 0
+  52              		.cfi_startproc
+  53              		@ Function supports interworking.
+  54              		@ args = 0, pretend = 0, frame = 56
+  55              		@ frame_needed = 1, uses_anonymous_args = 0
+  56 0000 00482DE9 		stmfd	sp!, {fp, lr}
+  57              	.LCFI0:
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 11, -8
+  60              		.cfi_offset 14, -4
+  61 0004 04B08DE2 		add	fp, sp, #4
+  62              	.LCFI1:
+  63              		.cfi_def_cfa 11, 4
+  64 0008 38D04DE2 		sub	sp, sp, #56
+  65 000c 38000BE5 		str	r0, [fp, #-56]
+  66              	.LBB2:
+  25:../source/tinyUnity/AssetDatabase.cpp **** 		int i =1;
+  67              		.loc 1 25 0
+  68 0010 0130A0E3 		mov	r3, #1
+  69 0014 08300BE5 		str	r3, [fp, #-8]
+  26:../source/tinyUnity/AssetDatabase.cpp **** 		heapNode* indexHeap = DB.indexHeap;
+  70              		.loc 1 26 0
+  71 0018 74319FE5 		ldr	r3, .L9
+  72 001c 003093E5 		ldr	r3, [r3]
+  73 0020 0C300BE5 		str	r3, [fp, #-12]
+  27:../source/tinyUnity/AssetDatabase.cpp **** 		heapNode n = indexHeap[0];
+  74              		.loc 1 27 0
+  75 0024 0C201BE5 		ldr	r2, [fp, #-12]
+  76 0028 28304BE2 		sub	r3, fp, #40
+  77 002c 070092E8 		ldmia	r2, {r0, r1, r2}
+  78 0030 070083E8 		stmia	r3, {r0, r1, r2}
+  28:../source/tinyUnity/AssetDatabase.cpp **** 		i++;
+  79              		.loc 1 28 0
+  80 0034 08301BE5 		ldr	r3, [fp, #-8]
+  81 0038 013083E2 		add	r3, r3, #1
+  82 003c 08300BE5 		str	r3, [fp, #-8]
+  29:../source/tinyUnity/AssetDatabase.cpp **** 
+  30:../source/tinyUnity/AssetDatabase.cpp **** 		while(id != n.id)
+  83              		.loc 1 30 0
+  84 0040 2E0000EA 		b	.L2
+  85              	.L5:
+  86              	.LBB3:
+  31:../source/tinyUnity/AssetDatabase.cpp **** 		{
+  32:../source/tinyUnity/AssetDatabase.cpp **** 			int left = 2*i;
+  87              		.loc 1 32 0
+  88 0044 08301BE5 		ldr	r3, [fp, #-8]
+  89 0048 8330A0E1 		mov	r3, r3, asl #1
+  90 004c 10300BE5 		str	r3, [fp, #-16]
+  33:../source/tinyUnity/AssetDatabase.cpp **** 			int right = 2*i+1;
+  91              		.loc 1 33 0
+  92 0050 08301BE5 		ldr	r3, [fp, #-8]
+  93 0054 8330A0E1 		mov	r3, r3, asl #1
+  94 0058 013083E2 		add	r3, r3, #1
+  95 005c 14300BE5 		str	r3, [fp, #-20]
+  34:../source/tinyUnity/AssetDatabase.cpp **** 			heapNode l = indexHeap[left];
+  96              		.loc 1 34 0
+  97 0060 10201BE5 		ldr	r2, [fp, #-16]
+  98 0064 0230A0E1 		mov	r3, r2
+  99 0068 8330A0E1 		mov	r3, r3, asl #1
+ 100 006c 023083E0 		add	r3, r3, r2
+ 101 0070 0331A0E1 		mov	r3, r3, asl #2
+ 102 0074 0C201BE5 		ldr	r2, [fp, #-12]
+ 103 0078 032082E0 		add	r2, r2, r3
+ 104 007c 34304BE2 		sub	r3, fp, #52
+ 105 0080 070092E8 		ldmia	r2, {r0, r1, r2}
+ 106 0084 070083E8 		stmia	r3, {r0, r1, r2}
+  35:../source/tinyUnity/AssetDatabase.cpp **** 			if(l.id >= id)
+ 107              		.loc 1 35 0
+ 108 0088 B4335BE1 		ldrh	r3, [fp, #-52]
+ 109 008c 0320A0E1 		mov	r2, r3
+ 110 0090 38301BE5 		ldr	r3, [fp, #-56]
+ 111 0094 030052E1 		cmp	r2, r3
+ 112 0098 0C0000BA 		blt	.L3
+  36:../source/tinyUnity/AssetDatabase.cpp **** 			{
+  37:../source/tinyUnity/AssetDatabase.cpp **** 				i = left;
+ 113              		.loc 1 37 0
+ 114 009c 10301BE5 		ldr	r3, [fp, #-16]
+ 115 00a0 08300BE5 		str	r3, [fp, #-8]
+  38:../source/tinyUnity/AssetDatabase.cpp **** 				n = indexHeap[i];
+ 116              		.loc 1 38 0
+ 117 00a4 08201BE5 		ldr	r2, [fp, #-8]
+ 118 00a8 0230A0E1 		mov	r3, r2
+ 119 00ac 8330A0E1 		mov	r3, r3, asl #1
+ 120 00b0 023083E0 		add	r3, r3, r2
+ 121 00b4 0331A0E1 		mov	r3, r3, asl #2
+ 122 00b8 0C201BE5 		ldr	r2, [fp, #-12]
+ 123 00bc 032082E0 		add	r2, r2, r3
+ 124 00c0 28304BE2 		sub	r3, fp, #40
+ 125 00c4 070092E8 		ldmia	r2, {r0, r1, r2}
+ 126 00c8 070083E8 		stmia	r3, {r0, r1, r2}
+ 127 00cc 0B0000EA 		b	.L2
+ 128              	.L3:
+  39:../source/tinyUnity/AssetDatabase.cpp **** 			}else
+  40:../source/tinyUnity/AssetDatabase.cpp **** 			{
+  41:../source/tinyUnity/AssetDatabase.cpp **** 				i = right;
+ 129              		.loc 1 41 0
+ 130 00d0 14301BE5 		ldr	r3, [fp, #-20]
+ 131 00d4 08300BE5 		str	r3, [fp, #-8]
+  42:../source/tinyUnity/AssetDatabase.cpp **** 				n = indexHeap[i];
+ 132              		.loc 1 42 0
+ 133 00d8 08201BE5 		ldr	r2, [fp, #-8]
+ 134 00dc 0230A0E1 		mov	r3, r2
+ 135 00e0 8330A0E1 		mov	r3, r3, asl #1
+ 136 00e4 023083E0 		add	r3, r3, r2
+ 137 00e8 0331A0E1 		mov	r3, r3, asl #2
+ 138 00ec 0C201BE5 		ldr	r2, [fp, #-12]
+ 139 00f0 032082E0 		add	r2, r2, r3
+ 140 00f4 28304BE2 		sub	r3, fp, #40
+ 141 00f8 070092E8 		ldmia	r2, {r0, r1, r2}
+ 142 00fc 070083E8 		stmia	r3, {r0, r1, r2}
+ 143              	.L2:
+ 144              	.LBE3:
+  30:../source/tinyUnity/AssetDatabase.cpp **** 		{
+ 145              		.loc 1 30 0 discriminator 1
+ 146 0100 B8325BE1 		ldrh	r3, [fp, #-40]
+ 147 0104 0320A0E1 		mov	r2, r3
+ 148 0108 38301BE5 		ldr	r3, [fp, #-56]
+ 149 010c 030052E1 		cmp	r2, r3
+ 150 0110 CBFFFF1A 		bne	.L5
+  43:../source/tinyUnity/AssetDatabase.cpp **** 			}
+  44:../source/tinyUnity/AssetDatabase.cpp **** 		}
+  45:../source/tinyUnity/AssetDatabase.cpp **** 		char* buffer = new char[n.length];
+ 151              		.loc 1 45 0
+ 152 0114 20301BE5 		ldr	r3, [fp, #-32]
+ 153 0118 0300A0E1 		mov	r0, r3
+ 154 011c FEFFFFEB 		bl	_Znaj
+ 155 0120 18000BE5 		str	r0, [fp, #-24]
+  46:../source/tinyUnity/AssetDatabase.cpp **** 		fseek(assetFile, n.offset, 0);
+ 156              		.loc 1 46 0
+ 157 0124 6C309FE5 		ldr	r3, .L9+4
+ 158 0128 002093E5 		ldr	r2, [r3]
+ 159 012c 24301BE5 		ldr	r3, [fp, #-36]
+ 160 0130 0200A0E1 		mov	r0, r2
+ 161 0134 0310A0E1 		mov	r1, r3
+ 162 0138 0020A0E3 		mov	r2, #0
+ 163 013c FEFFFFEB 		bl	fseek
+  47:../source/tinyUnity/AssetDatabase.cpp **** 		unsigned int read = fread(buffer,n.length,1,assetFile);
+ 164              		.loc 1 47 0
+ 165 0140 20201BE5 		ldr	r2, [fp, #-32]
+ 166 0144 4C309FE5 		ldr	r3, .L9+4
+ 167 0148 003093E5 		ldr	r3, [r3]
+ 168 014c 18001BE5 		ldr	r0, [fp, #-24]
+ 169 0150 0210A0E1 		mov	r1, r2
+ 170 0154 0120A0E3 		mov	r2, #1
+ 171 0158 FEFFFFEB 		bl	fread
+ 172 015c 1C000BE5 		str	r0, [fp, #-28]
+  48:../source/tinyUnity/AssetDatabase.cpp **** 		if(read != n.length)
+ 173              		.loc 1 48 0
+ 174 0160 20201BE5 		ldr	r2, [fp, #-32]
+ 175 0164 1C301BE5 		ldr	r3, [fp, #-28]
+ 176 0168 030052E1 		cmp	r2, r3
+ 177 016c 0300000A 		beq	.L6
+  49:../source/tinyUnity/AssetDatabase.cpp **** 		{
+  50:../source/tinyUnity/AssetDatabase.cpp **** 			delete buffer;
+ 178              		.loc 1 50 0
+ 179 0170 18001BE5 		ldr	r0, [fp, #-24]
+ 180 0174 FEFFFFEB 		bl	_ZdlPv
+  51:../source/tinyUnity/AssetDatabase.cpp **** 			return nullptr;
+ 181              		.loc 1 51 0
+ 182 0178 0030A0E3 		mov	r3, #0
+ 183 017c 000000EA 		b	.L8
+ 184              	.L6:
+  52:../source/tinyUnity/AssetDatabase.cpp **** 		}
+  53:../source/tinyUnity/AssetDatabase.cpp **** 		return buffer;
+ 185              		.loc 1 53 0
+ 186 0180 18301BE5 		ldr	r3, [fp, #-24]
+ 187              	.L8:
+ 188              	.LBE2:
+  54:../source/tinyUnity/AssetDatabase.cpp **** 	}
+ 189              		.loc 1 54 0
+ 190 0184 0300A0E1 		mov	r0, r3
+ 191 0188 04D04BE2 		sub	sp, fp, #4
+ 192              		@ sp needed
+ 193 018c 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 194 0190 1EFF2FE1 		bx	lr
+ 195              	.L10:
+ 196              		.align	2
+ 197              	.L9:
+ 198 0194 04000000 		.word	_ZN9tinyUnity13AssetDatabaseL2DBE
+ 199 0198 08000000 		.word	_ZN9tinyUnity13AssetDatabaseL9assetFileE
+ 200              		.cfi_endproc
+ 201              	.LFE0:
+ 203              		.section	.rodata
+ 204 000d 000000   		.align	2
+ 205              	.LC1:
+ 206 0010 7200     		.ascii	"r\000"
+ 207 0012 0000     		.text
+ 208              		.align	2
+ 210              	_Z41__static_initialization_and_destruction_0ii:
+ 211              	.LFB1:
+  55:../source/tinyUnity/AssetDatabase.cpp **** }
+  56:../source/tinyUnity/AssetDatabase.cpp **** 
+  57:../source/tinyUnity/AssetDatabase.cpp **** } /* namespace tinyUnity */
+ 212              		.loc 1 57 0
+ 213              		.cfi_startproc
+ 214              		@ Function supports interworking.
+ 215              		@ args = 0, pretend = 0, frame = 8
+ 216              		@ frame_needed = 1, uses_anonymous_args = 0
+ 217 019c 00482DE9 		stmfd	sp!, {fp, lr}
+ 218              	.LCFI2:
+ 219              		.cfi_def_cfa_offset 8
+ 220              		.cfi_offset 11, -8
+ 221              		.cfi_offset 14, -4
+ 222 01a0 04B08DE2 		add	fp, sp, #4
+ 223              	.LCFI3:
+ 224              		.cfi_def_cfa 11, 4
+ 225 01a4 08D04DE2 		sub	sp, sp, #8
+ 226 01a8 08000BE5 		str	r0, [fp, #-8]
+ 227 01ac 0C100BE5 		str	r1, [fp, #-12]
+ 228              		.loc 1 57 0
+ 229 01b0 08301BE5 		ldr	r3, [fp, #-8]
+ 230 01b4 010053E3 		cmp	r3, #1
+ 231 01b8 0B00001A 		bne	.L11
+ 232              		.loc 1 57 0 is_stmt 0 discriminator 1
+ 233 01bc 0C201BE5 		ldr	r2, [fp, #-12]
+ 234 01c0 30309FE5 		ldr	r3, .L13
+ 235 01c4 030052E1 		cmp	r2, r3
+ 236 01c8 0700001A 		bne	.L11
+  22:../source/tinyUnity/AssetDatabase.cpp **** 	void* loadAsset(int id)
+ 237              		.loc 1 22 0 is_stmt 1
+ 238 01cc 28309FE5 		ldr	r3, .L13+4
+ 239 01d0 003093E5 		ldr	r3, [r3]
+ 240 01d4 0300A0E1 		mov	r0, r3
+ 241 01d8 20109FE5 		ldr	r1, .L13+8
+ 242 01dc FEFFFFEB 		bl	fopen
+ 243 01e0 0020A0E1 		mov	r2, r0
+ 244 01e4 18309FE5 		ldr	r3, .L13+12
+ 245 01e8 002083E5 		str	r2, [r3]
+ 246              	.L11:
+ 247              		.loc 1 57 0
+ 248 01ec 04D04BE2 		sub	sp, fp, #4
+ 249              		@ sp needed
+ 250 01f0 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 251 01f4 1EFF2FE1 		bx	lr
+ 252              	.L14:
+ 253              		.align	2
+ 254              	.L13:
+ 255 01f8 FFFF0000 		.word	65535
+ 256 01fc 00000000 		.word	_ZN9tinyUnity13AssetDatabaseL6dbPathE
+ 257 0200 10000000 		.word	.LC1
+ 258 0204 08000000 		.word	_ZN9tinyUnity13AssetDatabaseL9assetFileE
+ 259              		.cfi_endproc
+ 260              	.LFE1:
+ 262              		.align	2
+ 264              	_GLOBAL__sub_I__ZN9tinyUnity13AssetDatabase8usesToonE:
+ 265              	.LFB2:
+ 266              		.loc 1 57 0
+ 267              		.cfi_startproc
+ 268              		@ Function supports interworking.
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 1, uses_anonymous_args = 0
+ 271 0208 00482DE9 		stmfd	sp!, {fp, lr}
+ 272              	.LCFI4:
+ 273              		.cfi_def_cfa_offset 8
+ 274              		.cfi_offset 11, -8
+ 275              		.cfi_offset 14, -4
+ 276 020c 04B08DE2 		add	fp, sp, #4
+ 277              	.LCFI5:
+ 278              		.cfi_def_cfa 11, 4
+ 279              		.loc 1 57 0
+ 280 0210 0100A0E3 		mov	r0, #1
+ 281 0214 0C109FE5 		ldr	r1, .L16
+ 282 0218 DFFFFFEB 		bl	_Z41__static_initialization_and_destruction_0ii
+ 283 021c 04D04BE2 		sub	sp, fp, #4
+ 284              		@ sp needed
+ 285 0220 0048BDE8 		ldmfd	sp!, {fp, lr}
+ 286 0224 1EFF2FE1 		bx	lr
+ 287              	.L17:
+ 288              		.align	2
+ 289              	.L16:
+ 290 0228 FFFF0000 		.word	65535
+ 291              		.cfi_endproc
+ 292              	.LFE2:
+ 294              		.section	.init_array,"aw",%init_array
+ 295              		.align	2
+ 296 0000 00000000 		.word	_GLOBAL__sub_I__ZN9tinyUnity13AssetDatabase8usesToonE(target1)
+ 297              		.text
+ 298              	.Letext0:
+ 299              		.file 2 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/lock.h"
+ 300              		.file 3 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/_types.h"
+ 301              		.file 4 "/Users/awiebe/devkitPro/devkitARM/lib/gcc/arm-none-eabi/4.8.2/include/stddef.h"
+ 302              		.file 5 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/sys/reent.h"
+ 303              		.file 6 "/Users/awiebe/devkitPro/devkitARM/arm-none-eabi/include/stdio.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 AssetDatabase.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccTw9CaO.s:20     .bss:00000000 _ZN9tinyUnity13AssetDatabase8usesToonE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccTw9CaO.s:21     .bss:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccTw9CaO.s:25     .bss:00000001 _ZN9tinyUnity13AssetDatabase9usesShinyE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:20     .bss:00000000 _ZN9tinyUnity13AssetDatabase8usesToonE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:21     .bss:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:25     .bss:00000001 _ZN9tinyUnity13AssetDatabase9usesShinyE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:28     .bss:00000004 _ZN9tinyUnity13AssetDatabaseL2DBE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:31     .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:35     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:38     .data:00000000 _ZN9tinyUnity13AssetDatabaseL6dbPathE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:42     .bss:00000008 _ZN9tinyUnity13AssetDatabaseL9assetFileE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:45     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:48     .text:00000000 _ZN9tinyUnity13AssetDatabase9loadAssetEi
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:198    .text:00000194 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:208    .text:0000019c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:210    .text:0000019c _Z41__static_initialization_and_destruction_0ii
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:255    .text:000001f8 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:262    .text:00000208 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:264    .text:00000208 _GLOBAL__sub_I__ZN9tinyUnity13AssetDatabase8usesToonE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:290    .text:00000228 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccoaLlkW.s:295    .init_array:00000000 $d
+                     .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
+                           .group:00000000 wm4.newlib.h.8.30891898d18e8c5555d1f81eacc760e7
+                           .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
+                           .group:00000000 wm4.config.h.212.4163ef2871a828c674038d036b081cfd
+                           .group:00000000 wm4._ansi.h.23.dab33ce643b14ed3207d08fca482d2c9
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.184.8fa234aa19425f0f0e24c20d25835c37
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.stddef.h.39.0957d2f05694096385609826115b8971
+                           .group:00000000 wm4._default_types.h.6.9e4229723f5523536bc8f574589d6a99
+                           .group:00000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
+                           .group:00000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
+                           .group:00000000 wm4.stddef.h.158.e57d9a24f6f3b6eaa274e44743a335a7
+                           .group:00000000 wm4.reent.h.17.8bd9e4098e0428508c282cad794fae43
+                           .group:00000000 wm4.types.h.23.0d949686bbcadd1621462d4fa1f884f9
+                           .group:00000000 wm4.types.h.2.e9cec8c90ab35f77d9f499e06ae02400
+                           .group:00000000 wm4.types.h.80.ab5b2ab7c46830867a4d034fb8364364
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.64.98eafd910a6b23471ff5bcdc64f734e8
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+_Znaj
+fseek
+fread
+_ZdlPv
+fopen

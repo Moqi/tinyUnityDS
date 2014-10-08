@@ -14,8 +14,17 @@ namespace tinyUnity {
 
 class Debug {
 public:
-	void Log(char*,bool error);
-	void AttachStream(std::ostream);
+	static void Log(char*s,bool error)
+	{
+		if(error)
+		{
+			out << "ERR";
+		}
+		out << s << std::endl;
+	}
+	static void AttachStream(std::ostream& o);
+private:
+	static std::ostream& out;
 };
 
 } /* namespace tinyUnity */

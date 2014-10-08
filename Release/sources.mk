@@ -31,6 +31,7 @@ C_UPPER_DEPS :=
 SUBDIRS := \
 source/tinyUnity/shaders \
 source/tinyUnity/physics \
+source/tinyUnity/gui \
 source/tinyUnity/audio \
 source/tinyUnity \
 source \

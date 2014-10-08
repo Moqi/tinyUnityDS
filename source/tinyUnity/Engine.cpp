@@ -14,6 +14,14 @@ Engine::Engine() {
 
 }
 
+void Engine::Start()
+{
+	//ComputePhysics();
+	//DrawScene();
+	//Destroy();
+
+}
+
 Engine::~Engine() {
 	// TODO Auto-generated destructor stub
 }

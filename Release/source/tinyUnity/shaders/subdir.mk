@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../source/tinyUnity/shaders/DiffuseShader.cpp 
+../source/tinyUnity/shaders/DiffuseShader.cpp \
+../source/tinyUnity/shaders/StaticShader.cpp 
 
 OBJS += \
-./source/tinyUnity/shaders/DiffuseShader.o 
+./source/tinyUnity/shaders/DiffuseShader.o \
+./source/tinyUnity/shaders/StaticShader.o 
 
 CPP_DEPS += \
-./source/tinyUnity/shaders/DiffuseShader.d 
+./source/tinyUnity/shaders/DiffuseShader.d \
+./source/tinyUnity/shaders/StaticShader.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

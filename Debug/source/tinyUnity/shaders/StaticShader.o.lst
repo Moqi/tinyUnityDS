@@ -30,8 +30,8 @@
   32              		.file 9 "/Users/awiebe/devkitPro/libnds/include/nds/arm9/video.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 StaticShader.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc3DeCBr.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cc3DeCBr.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWsmpp2.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWsmpp2.s:20     .data:00000000 _ZL6glGlob
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
                            .group:00000000 wm4.libversion.h.2.18bf62264b22c269b0002d03167cd230

@@ -20,7 +20,6 @@ class Texture2D
 public:
 	Texture2D();
 	virtual ~Texture2D();
-
 	//commit texture changes to hardware
 	void commit();
 private:

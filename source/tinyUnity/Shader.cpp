@@ -21,7 +21,7 @@ void Shader::execute()
 {
 	prepare();
 
-	//requires permissive
+	//requires -fpermissive
 	glCallList((u32*)this->programImage);
 }
 } /* namespace tinyUnity */

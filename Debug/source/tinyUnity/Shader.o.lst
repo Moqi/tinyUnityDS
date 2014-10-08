@@ -1133,7 +1133,7 @@
  328 022c 0FE0A0E1 		mov	lr, pc
  329 0230 13FF2FE1 		bx	r3
   23:../source/tinyUnity/Shader.cpp **** 
-  24:../source/tinyUnity/Shader.cpp **** 	//requires permissive
+  24:../source/tinyUnity/Shader.cpp **** 	//requires -fpermissive
   25:../source/tinyUnity/Shader.cpp **** 	glCallList((u32*)this->programImage);
  330              		.loc 2 25 0
  331 0234 08301BE5 		ldr	r3, [fp, #-8]
@@ -1172,24 +1172,24 @@
  366              		.file 12 "../source/tinyUnity/Texture2D.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Shader.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:20     .data:00000000 _ZL6glGlob
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:23     .rodata:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:40     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:42     .text:00000000 glCallList
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:158    .text:00000120 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:175    .text:00000158 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:178    .text:00000158 _ZN9tinyUnity6ShaderC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:212    .text:00000188 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:348    .rodata:000000b8 _ZTVN9tinyUnity6ShaderE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:178    .text:00000158 _ZN9tinyUnity6ShaderC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:218    .text:0000018c $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:221    .text:0000018c _ZN9tinyUnity6ShaderD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:262    .text:000001d0 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:221    .text:0000018c _ZN9tinyUnity6ShaderD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:268    .text:000001d4 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:271    .text:000001d4 _ZN9tinyUnity6ShaderD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cchDKRKR.s:305    .text:00000208 _ZN9tinyUnity6Shader7executeEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:23     .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:40     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:42     .text:00000000 glCallList
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:158    .text:00000120 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:175    .text:00000158 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:178    .text:00000158 _ZN9tinyUnity6ShaderC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:212    .text:00000188 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:348    .rodata:000000b8 _ZTVN9tinyUnity6ShaderE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:178    .text:00000158 _ZN9tinyUnity6ShaderC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:218    .text:0000018c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:221    .text:0000018c _ZN9tinyUnity6ShaderD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:262    .text:000001d0 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:221    .text:0000018c _ZN9tinyUnity6ShaderD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:268    .text:000001d4 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:271    .text:000001d4 _ZN9tinyUnity6ShaderD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccrLROmO.s:305    .text:00000208 _ZN9tinyUnity6Shader7executeEv
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e

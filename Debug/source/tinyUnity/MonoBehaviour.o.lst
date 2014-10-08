@@ -363,28 +363,28 @@
  336              		.file 4 "../source/tinyUnity/Component.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 MonoBehaviour.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:17     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:20     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 _ZN9tinyUnity9BehaviourC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:56     .text._ZN9tinyUnity9BehaviourC2Ev:0000003c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:20     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 _ZN9tinyUnity9BehaviourC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:63     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:66     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 _ZN9tinyUnity9BehaviourD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:101    .text._ZN9tinyUnity9BehaviourD2Ev:0000003c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:66     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 _ZN9tinyUnity9BehaviourD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:108    .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:111    .text:00000000 _ZN9tinyUnity13MonoBehaviourC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:148    .text:0000003c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:318    .rodata:00000000 _ZTVN9tinyUnity13MonoBehaviourE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:111    .text:00000000 _ZN9tinyUnity13MonoBehaviourC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:154    .text:00000040 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:157    .text:00000040 _ZN9tinyUnity13MonoBehaviourD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:201    .text:00000090 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:157    .text:00000040 _ZN9tinyUnity13MonoBehaviourD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:207    .text:00000094 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:210    .text:00000094 _ZN9tinyUnity13MonoBehaviourD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:244    .text:000000c8 _ZN9tinyUnity13MonoBehaviour6EnableEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:280    .text:00000100 _ZN9tinyUnity13MonoBehaviour7DisableEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccWemVqO.s:315    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:17     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:20     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 _ZN9tinyUnity9BehaviourC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:56     .text._ZN9tinyUnity9BehaviourC2Ev:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:20     .text._ZN9tinyUnity9BehaviourC2Ev:00000000 _ZN9tinyUnity9BehaviourC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:63     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:66     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 _ZN9tinyUnity9BehaviourD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:101    .text._ZN9tinyUnity9BehaviourD2Ev:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:66     .text._ZN9tinyUnity9BehaviourD2Ev:00000000 _ZN9tinyUnity9BehaviourD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:108    .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:111    .text:00000000 _ZN9tinyUnity13MonoBehaviourC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:148    .text:0000003c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:318    .rodata:00000000 _ZTVN9tinyUnity13MonoBehaviourE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:111    .text:00000000 _ZN9tinyUnity13MonoBehaviourC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:154    .text:00000040 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:157    .text:00000040 _ZN9tinyUnity13MonoBehaviourD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:201    .text:00000090 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:157    .text:00000040 _ZN9tinyUnity13MonoBehaviourD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:207    .text:00000094 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:210    .text:00000094 _ZN9tinyUnity13MonoBehaviourD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:244    .text:000000c8 _ZN9tinyUnity13MonoBehaviour6EnableEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:280    .text:00000100 _ZN9tinyUnity13MonoBehaviour7DisableEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccHHRsJq.s:315    .rodata:00000000 $d
                      .debug_frame:00000010 $d
                            .group:00000000 _ZN9tinyUnity9BehaviourC5Ev
                            .group:00000000 _ZN9tinyUnity9BehaviourD5Ev

@@ -1835,7 +1835,7 @@
  429              		.align	2
  430              		.global	_ZN9tinyUnity6CameraC2Ev
  432              	_ZN9tinyUnity6CameraC2Ev:
- 433              	.LFB847:
+ 433              	.LFB848:
  434              		.file 3 "../source/tinyUnity/Camera.cpp"
    1:../source/tinyUnity/Camera.cpp **** /*
    2:../source/tinyUnity/Camera.cpp ****  * Camera.cpp
@@ -1891,13 +1891,13 @@
  471              	.L29:
  472 02b4 08000000 		.word	_ZTVN9tinyUnity6CameraE+8
  473              		.cfi_endproc
- 474              	.LFE847:
+ 474              	.LFE848:
  476              		.global	_ZN9tinyUnity6CameraC1Ev
  477              		.set	_ZN9tinyUnity6CameraC1Ev,_ZN9tinyUnity6CameraC2Ev
  478              		.align	2
  479              		.global	_ZN9tinyUnity6CameraD2Ev
  481              	_ZN9tinyUnity6CameraD2Ev:
- 482              	.LFB850:
+ 482              	.LFB851:
   16:../source/tinyUnity/Camera.cpp **** 
   17:../source/tinyUnity/Camera.cpp **** Camera::~Camera() {
  483              		.loc 3 17 0
@@ -1946,13 +1946,13 @@
  524              	.L35:
  525 0308 08000000 		.word	_ZTVN9tinyUnity6CameraE+8
  526              		.cfi_endproc
- 527              	.LFE850:
+ 527              	.LFE851:
  529              		.global	_ZN9tinyUnity6CameraD1Ev
  530              		.set	_ZN9tinyUnity6CameraD1Ev,_ZN9tinyUnity6CameraD2Ev
  531              		.align	2
  532              		.global	_ZN9tinyUnity6CameraD0Ev
  534              	_ZN9tinyUnity6CameraD0Ev:
- 535              	.LFB852:
+ 535              	.LFB853:
   17:../source/tinyUnity/Camera.cpp **** 	// TODO Auto-generated destructor stub
  536              		.loc 3 17 0 is_stmt 1
  537              		.cfi_startproc
@@ -1981,12 +1981,12 @@
  560 0338 0048BDE8 		ldmfd	sp!, {fp, lr}
  561 033c 1EFF2FE1 		bx	lr
  562              		.cfi_endproc
- 563              	.LFE852:
+ 563              	.LFE853:
  565              		.global	__aeabi_ui2f
  566              		.align	2
  567              		.global	_ZN9tinyUnity6Camera6renderEv
  569              	_ZN9tinyUnity6Camera6renderEv:
- 570              	.LFB853:
+ 570              	.LFB854:
   20:../source/tinyUnity/Camera.cpp **** 
   21:../source/tinyUnity/Camera.cpp **** void Camera::render()
   22:../source/tinyUnity/Camera.cpp **** {
@@ -2103,11 +2103,11 @@
  669 0464 0048BDE8 		ldmfd	sp!, {fp, lr}
  670 0468 1EFF2FE1 		bx	lr
  671              		.cfi_endproc
- 672              	.LFE853:
+ 672              	.LFE854:
  674              		.align	2
  675              		.global	_ZN9tinyUnity6Camera16renderBackgroundEv
  677              	_ZN9tinyUnity6Camera16renderBackgroundEv:
- 678              	.LFB854:
+ 678              	.LFB855:
   35:../source/tinyUnity/Camera.cpp **** 
   36:../source/tinyUnity/Camera.cpp **** void Camera::renderBackground()
   37:../source/tinyUnity/Camera.cpp **** {
@@ -2286,7 +2286,7 @@
  804 0584 00000000 		.word	_ZN9tinyUnity6Camera18SKYBOX_QUADS_INDEXE
  805 0588 00000000 		.word	_ZN9tinyUnity6Camera17SKYBOX_QUADS_VERTE
  806              		.cfi_endproc
- 807              	.LFE854:
+ 807              	.LFE855:
  809              		.global	_ZTVN9tinyUnity6CameraE
  810              		.section	.rodata
  811 0001 00000000 		.align	3
@@ -2319,49 +2319,49 @@
  839              		.file 21 "<built-in>"
 DEFINED SYMBOLS
                             *ABS*:00000000 Camera.cpp
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:17     .data:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:20     .data:00000000 _ZL6glGlob
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:23     .text:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:25     .text:00000000 glBegin
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:55     .text:0000002c $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:59     .text:00000030 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:61     .text:00000030 glVertex3v16
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:102    .text:00000084 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:106    .text:00000088 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:108    .text:00000088 glTranslatef32
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:147    .text:000000d0 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:151    .text:000000d4 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:153    .text:000000d4 glLoadIdentity
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:179    .text:000000f4 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:183    .text:000000f8 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:185    .text:000000f8 glFlush
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:213    .text:00000120 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:219    .text:00000124 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:221    .text:00000124 glVertex3f
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:288    .text:000001dc $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:295    .text:000001e0 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:297    .text:000001e0 glRotatef32
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:351    .text:00000268 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:356    .rodata:00000000 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:359    .rodata:00000000 _ZStL19piecewise_construct
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:362    .text._ZNK9tinyUnity9Transform11getPositionEv:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:365    .text._ZNK9tinyUnity9Transform11getPositionEv:00000000 _ZNK9tinyUnity9Transform11getPositionEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:396    .text._ZNK9tinyUnity9Transform11getRotationEv:00000000 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:399    .text._ZNK9tinyUnity9Transform11getRotationEv:00000000 _ZNK9tinyUnity9Transform11getRotationEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:429    .text:0000026c $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:432    .text:0000026c _ZN9tinyUnity6CameraC2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:472    .text:000002b4 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:814    .rodata:00000008 _ZTVN9tinyUnity6CameraE
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:432    .text:0000026c _ZN9tinyUnity6CameraC1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:478    .text:000002b8 $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:481    .text:000002b8 _ZN9tinyUnity6CameraD2Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:525    .text:00000308 $d
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:481    .text:000002b8 _ZN9tinyUnity6CameraD1Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:531    .text:0000030c $a
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:534    .text:0000030c _ZN9tinyUnity6CameraD0Ev
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:569    .text:00000340 _ZN9tinyUnity6Camera6renderEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:677    .text:0000046c _ZN9tinyUnity6Camera16renderBackgroundEv
-/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//ccxtnZqn.s:804    .text:00000584 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:17     .data:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:20     .data:00000000 _ZL6glGlob
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:23     .text:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:25     .text:00000000 glBegin
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:55     .text:0000002c $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:59     .text:00000030 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:61     .text:00000030 glVertex3v16
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:102    .text:00000084 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:106    .text:00000088 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:108    .text:00000088 glTranslatef32
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:147    .text:000000d0 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:151    .text:000000d4 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:153    .text:000000d4 glLoadIdentity
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:179    .text:000000f4 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:183    .text:000000f8 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:185    .text:000000f8 glFlush
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:213    .text:00000120 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:219    .text:00000124 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:221    .text:00000124 glVertex3f
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:288    .text:000001dc $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:295    .text:000001e0 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:297    .text:000001e0 glRotatef32
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:351    .text:00000268 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:356    .rodata:00000000 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:359    .rodata:00000000 _ZStL19piecewise_construct
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:362    .text._ZNK9tinyUnity9Transform11getPositionEv:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:365    .text._ZNK9tinyUnity9Transform11getPositionEv:00000000 _ZNK9tinyUnity9Transform11getPositionEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:396    .text._ZNK9tinyUnity9Transform11getRotationEv:00000000 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:399    .text._ZNK9tinyUnity9Transform11getRotationEv:00000000 _ZNK9tinyUnity9Transform11getRotationEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:429    .text:0000026c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:432    .text:0000026c _ZN9tinyUnity6CameraC2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:472    .text:000002b4 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:814    .rodata:00000008 _ZTVN9tinyUnity6CameraE
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:432    .text:0000026c _ZN9tinyUnity6CameraC1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:478    .text:000002b8 $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:481    .text:000002b8 _ZN9tinyUnity6CameraD2Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:525    .text:00000308 $d
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:481    .text:000002b8 _ZN9tinyUnity6CameraD1Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:531    .text:0000030c $a
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:534    .text:0000030c _ZN9tinyUnity6CameraD0Ev
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:569    .text:00000340 _ZN9tinyUnity6Camera6renderEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:677    .text:0000046c _ZN9tinyUnity6Camera16renderBackgroundEv
+/var/folders/0q/0rgskkgj3ms6cdw3tql51gsc0000gv/T//cclArnLk.s:804    .text:00000584 $d
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.7940548cbb415e0ae4b2385326857eac
                            .group:00000000 wm4.nds.h.219.3a246e32827d01484c32560cb6386a4e
@@ -2421,6 +2421,7 @@ DEFINED SYMBOLS
                            .group:00000000 wm4.atomic_lockfree_defines.h.31.d5c6334fb1e95c9462b052951f1411df
                            .group:00000000 wm4.alloc_traits.h.92.a767d537a24e6ec551b4cadfd08e330c
                            .group:00000000 wm4.functional_hash.h.70.cc33b6cebe8994531b9602e1a54d32b1
+                           .group:00000000 wm4.config.h.9.adf03a5a4c6c746d153e41cf03da5d6e
 
 UNDEFINED SYMBOLS
 glGlobalData
